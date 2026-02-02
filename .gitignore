@@ -1,0 +1,233 @@
+# ============================================
+# .gitignore - Bootcamp Arquitectura de Software
+# ============================================
+
+# ============================================
+# Node.js y pnpm
+# ============================================
+node_modules/
+.pnpm-debug.log*
+.pnpm-store/
+pnpm-lock.yaml
+
+# Archivos de npm (por si acaso, pero NO deberíamos usarlos)
+package-lock.json
+npm-debug.log*
+yarn.lock
+
+# ============================================
+# Soluciones de Ejercicios y Proyectos
+# ============================================
+# Las soluciones NO se suben a GitHub para fomentar aprendizaje activo
+**/solution/
+**/solucion/
+**/solutions/
+**/soluciones/
+
+# ============================================
+# Variables de Entorno y Configuración
+# ============================================
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Configuraciones locales
+config.local.js
+config.local.json
+
+# ============================================
+# Bases de Datos Locales
+# ============================================
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# PostgreSQL local
+postgres-data/
+pgdata/
+
+# ============================================
+# Logs y Archivos Temporales
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Archivos temporales
+*.tmp
+*.temp
+.cache/
+tmp/
+temp/
+
+# ============================================
+# Build y Distribución
+# ============================================
+dist/
+build/
+out/
+.output/
+.vercel/
+.netlify/
+
+# ============================================
+# IDEs y Editores
+# ============================================
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ============================================
+# Sistema Operativo
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================
+# Docker
+# ============================================
+docker-compose.override.yml
+.dockerignore
+
+# Volúmenes y datos de contenedores
+volumes/
+docker-data/
+
+# ============================================
+# Archivos Multimedia Grandes
+# ============================================
+# Videos para YouTube (muy pesados para Git)
+# Usar Git LFS o subirlos directamente a YouTube
+**/*.mp4
+**/*.mov
+**/*.avi
+**/*.mkv
+**/*.webm
+**/*.flv
+
+# Grabaciones de pantalla
+*.screenflow
+
+# ============================================
+# Testing
+# ============================================
+coverage/
+.nyc_output/
+*.lcov
+
+# Jest
+jest-cache/
+
+# ============================================
+# Dependencias de Desarrollo
+# ============================================
+.eslintcache
+.stylelintcache
+.parcel-cache/
+
+# ============================================
+# Recursos Opcionales/Privados
+# ============================================
+# Libros o PDFs con copyright (si los hay)
+**/ebooks-private/
+**/recursos-privados/
+
+# Notas personales del instructor
+notas-instructor/
+NOTAS_INSTRUCTOR.md
+
+# ============================================
+# Backups
+# ============================================
+*.backup
+*.bak
+*.orig
+
+# ============================================
+# Otros
+# ============================================
+# Certificados y claves
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+
+# Archivos comprimidos (generalmente no necesarios en Git)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Excepciones: mantener algunos zips si son recursos educativos pequeños
+!**/recursos/**/*.zip
+
+# ============================================
+# Mantener Archivos Importantes
+# ============================================
+# Asegurar que estos NO se ignoren
+!.gitkeep
+!.gitignore
+!.github/
+
+# Mantener assets educativos
+!**/*.svg
+!**/*.png
+!**/*.jpg
+!**/*.jpeg
+!**/*.gif
+!**/0-assets/**
+
+# Mantener documentación
+!**/*.md
+!**/README.md
+
+# ============================================
+# Fin del .gitignore
+# ============================================
