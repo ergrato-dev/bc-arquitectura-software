@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="Bootcamp de Arquitectura de Software">
+  <defs>
+    <style>
+      .background { fill: #1a1a2e; }
+      .accent-primary { fill: #d4a017; }
+      .accent-secondary { fill: #16213e; }
+      .text-main { fill: #ffffff; font-family: 'Arial', 'Helvetica', sans-serif; font-weight: 700; }
+      .text-sub { fill: #e8e8e8; font-family: 'Arial', 'Helvetica', sans-serif; font-weight: 400; }
+      .text-accent { fill: #d4a017; font-family: 'Arial', 'Helvetica', sans-serif; font-weight: 600; }
+      .icon-stroke { fill: none; stroke: #d4a017; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .icon-fill { fill: #d4a017; opacity: 0.2; }
+      .line { fill: none; stroke: #d4a017; stroke-width: 2; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="background" width="1200" height="300"/>
+  
+  <!-- Decorative geometric shapes - Left side -->
+  <rect class="accent-secondary" x="0" y="0" width="400" height="300" opacity="0.3"/>
+  
+  <!-- Architectural layers representation - Left -->
+  <g opacity="0.4">
+    <rect class="icon-fill" x="40" y="60" width="120" height="40" rx="4"/>
+    <rect class="icon-fill" x="40" y="120" width="120" height="40" rx="4"/>
+    <rect class="icon-fill" x="40" y="180" width="120" height="40" rx="4"/>
+    
+    <rect class="icon-stroke" x="40" y="60" width="120" height="40" rx="4"/>
+    <rect class="icon-stroke" x="40" y="120" width="120" height="40" rx="4"/>
+    <rect class="icon-stroke" x="40" y="180" width="120" height="40" rx="4"/>
+    
+    <!-- Connecting lines between layers -->
+    <line class="line" x1="100" y1="100" x2="100" y2="120" opacity="0.6"/>
+    <line class="line" x1="100" y1="160" x2="100" y2="180" opacity="0.6"/>
+  </g>
+  
+  <!-- Component icons - Right side -->
+  <g opacity="0.3">
+    <!-- Hexagon pattern -->
+    <polygon class="icon-stroke" points="1050,80 1070,90 1070,110 1050,120 1030,110 1030,90"/>
+    <polygon class="icon-stroke" points="1090,80 1110,90 1110,110 1090,120 1070,110 1070,90"/>
+    <polygon class="icon-stroke" points="1070,120 1090,130 1090,150 1070,160 1050,150 1050,130"/>
+    <polygon class="icon-stroke" points="1110,120 1130,130 1130,150 1110,160 1090,150 1090,130"/>
+    
+    <!-- Code brackets -->
+    <path class="icon-stroke" d="M 1030 200 L 1010 220 L 1030 240" stroke-width="3"/>
+    <path class="icon-stroke" d="M 1130 200 L 1150 220 L 1130 240" stroke-width="3"/>
+  </g>
+  
+  <!-- Main title -->
+  <text class="text-main" x="220" y="120" font-size="56">BOOTCAMP</text>
+  <text class="text-main" x="220" y="175" font-size="56">ARQUITECTURA DE SOFTWARE</text>
+  
+  <!-- Subtitle -->
+  <text class="text-sub" x="220" y="210" font-size="20">9 Semanas • 54 Horas • JavaScript ES2023</text>
+  
+  <!-- Accent badge -->
+  <g>
+    <rect class="accent-primary" x="220" y="230" width="140" height="32" rx="16"/>
+    <text class="text-main" x="290" y="252" font-size="16" text-anchor="middle">SENA 2026</text>
+  </g>
+  
+  <!-- Additional badge -->
+  <g>
+    <rect class="accent-secondary" x="375" y="230" width="160" height="32" rx="16" stroke="#d4a017" stroke-width="2"/>
+    <text class="text-accent" x="455" y="252" font-size="16" text-anchor="middle">bc-channel-epti</text>
+  </g>
+  
+  <!-- Decorative corner accent - Top right -->
+  <path class="icon-stroke" d="M 1180 20 L 1180 50 M 1180 20 L 1150 20" stroke-width="3"/>
+  
+  <!-- Decorative corner accent - Bottom left -->
+  <path class="icon-stroke" d="M 20 280 L 20 250 M 20 280 L 50 280" stroke-width="3"/>
+  
+  <!-- Small connecting dots -->
+  <circle class="accent-primary" cx="200" cy="140" r="4"/>
+  <circle class="accent-primary" cx="200" cy="155" r="4"/>
+  <line class="line" x1="200" y1="140" x2="220" y2="145" opacity="0.5"/>
+  <line class="line" x1="200" y1="155" x2="220" y2="155" opacity="0.5"/>
+</svg>

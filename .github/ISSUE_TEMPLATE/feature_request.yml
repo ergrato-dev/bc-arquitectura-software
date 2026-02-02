@@ -1,0 +1,152 @@
+name: 💡 Sugerencia de Mejora
+description: Sugiere una mejora o nueva funcionalidad para el bootcamp
+title: '[FEATURE] '
+labels: ['enhancement', 'needs-discussion']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por ayudarnos a mejorar el bootcamp! Tus sugerencias son valiosas.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Tipo de Mejora
+      description: ¿Qué tipo de mejora propones?
+      options:
+        - Nuevo contenido teórico
+        - Nuevo ejercicio práctico
+        - Nuevo caso de estudio
+        - Mejora de explicación existente
+        - Nuevo diagrama
+        - Recurso adicional
+        - Herramienta o tecnología
+        - Mejora de estructura
+        - Otro
+    validations:
+      required: true
+
+  - type: dropdown
+    id: week
+    attributes:
+      label: Semana Relacionada
+      description: ¿A qué semana aplica esta mejora?
+      options:
+        - Week 01 - Fundamentos
+        - Week 02 - SOLID
+        - Week 03 - Patrones Arquitectónicos
+        - Week 04 - Diseño de Componentes
+        - Week 05 - Patrones de Diseño
+        - Week 06 - Arquitecturas Modernas
+        - Week 07 - Cloud
+        - Week 08 - Seguridad
+        - Week 09 - Proyecto Final
+        - General / Todas las semanas
+        - Infraestructura
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: '¿Qué Problema Resuelve?'
+      description: Explica qué necesidad o problema aborda tu sugerencia
+      placeholder: |
+        Por ejemplo:
+        - Los estudiantes encuentran difícil entender X concepto
+        - Falta un ejemplo de Y en un contexto real
+        - No hay suficiente práctica sobre Z
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solución Propuesta
+      description: Describe tu idea de mejora en detalle
+      placeholder: |
+        Describe:
+        - Qué agregarías o cambiarías
+        - Cómo ayudaría a los estudiantes
+        - Cómo se integraría con el contenido existente
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Beneficios Educativos
+      description: ¿Cómo mejora esto el aprendizaje?
+      placeholder: |
+        - Facilita la comprensión de...
+        - Proporciona práctica adicional en...
+        - Conecta mejor con casos reales...
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Ejemplos o Referencias
+      description: Si tienes ejemplos, recursos o referencias que inspiran tu idea
+      placeholder: |
+        - Enlace a artículo: https://...
+        - Libro que lo menciona: "Clean Architecture" por Robert C. Martin
+        - Caso de uso: Arquitectura de Netflix
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas Consideradas
+      description: ¿Consideraste otras formas de lograr lo mismo?
+      placeholder: Describe otras opciones que hayas pensado
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridad Sugerida
+      description: ¿Qué tan importante crees que es esto?
+      options:
+        - Alta - Impacta significativamente el aprendizaje
+        - Media - Sería una buena adición
+        - Baja - Nice to have
+    validations:
+      required: true
+
+  - type: dropdown
+    id: willingness
+    attributes:
+      label: ¿Dispuesto a Contribuir?
+      description: ¿Te gustaría ayudar a implementar esta mejora?
+      options:
+        - 'Sí, puedo implementarlo yo mismo/a'
+        - 'Sí, con orientación puedo ayudar'
+        - 'No, solo sugiero la idea'
+        - 'No estoy seguro/a'
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Información Adicional
+      description: Cualquier otra información relevante
+      placeholder: Mockups, bocetos, código de ejemplo, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: He buscado en issues existentes y esta idea no ha sido propuesta
+          required: true
+        - label: Esta mejora está alineada con los objetivos educativos del bootcamp
+          required: true
+        - label: He considerado el impacto en estudiantes y mantenedores
+          required: true

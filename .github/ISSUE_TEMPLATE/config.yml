@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discusiones Generales
+    url: https://github.com/ergrato-dev/bc-arquitectura-software/discussions
+    about: Para discusiones generales, ideas o compartir experiencias
+  - name: 📺 Canal de YouTube
+    url: https://youtube.com/@bc-channel-epti
+    about: Videos complementarios del bootcamp
+  - name: 📖 Documentación
+    url: https://github.com/ergrato-dev/bc-arquitectura-software/blob/main/README.md
+    about: Lee primero la documentación completa

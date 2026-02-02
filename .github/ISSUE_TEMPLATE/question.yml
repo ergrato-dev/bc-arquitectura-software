@@ -1,0 +1,115 @@
+name: ❓ Pregunta o Ayuda
+description: Haz una pregunta sobre el contenido del bootcamp
+title: '[QUESTION] '
+labels: ['question', 'help-wanted']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Hola! Antes de preguntar, verifica:
+        - ✅ README y documentación del proyecto
+        - ✅ Material teórico de la semana
+        - ✅ Issues y Discussions existentes
+        - ✅ Recursos adicionales en `4-recursos/`
+
+        Si no encontraste respuesta, ¡pregunta aquí!
+
+  - type: dropdown
+    id: week
+    attributes:
+      label: Semana Relacionada
+      description: ¿Sobre qué semana es tu pregunta?
+      options:
+        - Week 01 - Fundamentos
+        - Week 02 - SOLID
+        - Week 03 - Patrones Arquitectónicos
+        - Week 04 - Diseño de Componentes
+        - Week 05 - Patrones de Diseño
+        - Week 06 - Arquitecturas Modernas
+        - Week 07 - Cloud
+        - Week 08 - Seguridad
+        - Week 09 - Proyecto Final
+        - General
+        - Setup/Instalación
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoría
+      description: ¿Sobre qué es tu pregunta?
+      options:
+        - Concepto teórico
+        - Código de ejemplo
+        - Ejercicio práctico
+        - Proyecto
+        - Diagrama
+        - Herramientas
+        - Configuración
+        - Otro
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Tu Pregunta
+      description: Formula tu pregunta de forma clara
+      placeholder: |
+        Sé específico:
+        - ❌ "No entiendo SOLID"
+        - ✅ "¿Cómo se diferencia SRP de alta cohesión?"
+        - ✅ "¿Por qué el Factory Pattern usa una función en vez de new?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: ¿Qué has intentado o entendido hasta ahora?
+      placeholder: |
+        - Lo que he leído/intentado
+        - Mi comprensión actual del tema
+        - Dónde me quedé atorado
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Código Relacionado (si aplica)
+      description: Si tu pregunta involucra código, inclúyelo aquí
+      render: javascript
+      placeholder: |
+        // Pega tu código aquí
+        const example = () => {
+          // ...
+        };
+    validations:
+      required: false
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: Lo que He Intentado
+      description: ¿Qué soluciones has probado?
+      placeholder: |
+        1. Leí la teoría en...
+        2. Consulté el recurso...
+        3. Intenté implementar...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: He buscado en la documentación del proyecto
+          required: true
+        - label: He revisado issues similares
+          required: true
+        - label: Mi pregunta es específica y clara
+          required: true

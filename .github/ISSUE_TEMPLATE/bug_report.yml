@@ -1,0 +1,146 @@
+name: 🐛 Reporte de Error
+description: Reporta un error en el contenido, código o documentación
+title: '[BUG] '
+labels: ['bug', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar un error. Esto nos ayuda a mejorar el bootcamp para todos los estudiantes.
+
+  - type: dropdown
+    id: week
+    attributes:
+      label: Semana Afectada
+      description: ¿En qué semana encontraste el error?
+      options:
+        - Week 01 - Fundamentos
+        - Week 02 - SOLID
+        - Week 03 - Patrones Arquitectónicos
+        - Week 04 - Diseño de Componentes
+        - Week 05 - Patrones de Diseño
+        - Week 06 - Arquitecturas Modernas
+        - Week 07 - Cloud
+        - Week 08 - Seguridad
+        - Week 09 - Proyecto Final
+        - Documentación General
+        - Configuración/Setup
+        - Otro
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoría
+      description: ¿Qué tipo de error encontraste?
+      options:
+        - Código con errores
+        - Explicación incorrecta
+        - Diagrama incorrecto
+        - Link roto
+        - Typo/Ortografía
+        - Error en ejercicio
+        - Error en proyecto
+        - Otro
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del Error
+      description: Describe claramente qué está mal
+      placeholder: |
+        Por ejemplo:
+        - El código en el archivo X no funciona porque...
+        - La explicación de Y dice Z pero debería decir...
+        - El diagrama muestra A conectado a B, pero en realidad...
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Ubicación
+      description: ¿Dónde está el error?
+      placeholder: |
+        Archivo: bootcamp/week-02/1-teoria/solid-principles.md
+        Línea: 45-50
+        Sección: "Principio Open/Closed"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento Esperado
+      description: ¿Qué debería pasar o decir en su lugar?
+      placeholder: Explica cuál sería el contenido o comportamiento correcto
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamiento Actual
+      description: ¿Qué pasa o dice actualmente?
+      placeholder: Describe lo que realmente sucede o dice
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para Reproducir (si aplica)
+      description: Si es un error de código, ¿cómo reproducirlo?
+      placeholder: |
+        1. Ir a 'bootcamp/week-02/2-practicas/...'
+        2. Ejecutar el archivo '...'
+        3. Ver error en consola
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Si es relevante, agrega capturas de pantalla
+      placeholder: Arrastra y suelta imágenes aquí
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Entorno (si es relevante)
+      description: Información de tu entorno si el error es de código
+      placeholder: |
+        - OS: [Ubuntu 22.04 / macOS 14 / Windows 11]
+        - Node.js: [v20.11.0]
+        - pnpm: [v8.15.0]
+        - Editor: [VS Code 1.85]
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexto Adicional
+      description: Cualquier otra información que pueda ser útil
+      placeholder: Información adicional, sugerencias, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Por favor verifica lo siguiente
+      options:
+        - label: He buscado en los issues existentes y este error no ha sido reportado
+          required: true
+        - label: He proporcionado toda la información solicitada
+          required: true
+        - label: Este error afecta el aprendizaje o la funcionalidad del material
+          required: true
