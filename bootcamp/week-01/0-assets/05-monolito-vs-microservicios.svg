@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <style>
+      .title { font: bold 20px sans-serif; fill: #e0e0e0; }
+      .subtitle { font: 14px sans-serif; fill: #b0b0b0; }
+      .label { font: bold 13px sans-serif; fill: #e0e0e0; }
+      .small-text { font: 11px sans-serif; fill: #b0b0b0; }
+      .monolith-box { fill: #2d2d2d; stroke: #4a9eff; stroke-width: 3; rx: 8; }
+      .micro-box { fill: #2d2d2d; stroke: #4ecdc4; stroke-width: 2; rx: 5; }
+      .layer { fill: #3a3a3a; stroke: #555; stroke-width: 1; }
+      .db-cylinder { fill: #2d2d2d; stroke: #d4a017; stroke-width: 2; }
+      .arrow { fill: none; stroke: #d4a017; stroke-width: 2; }
+      .pro { fill: #4ecdc4; }
+      .con { fill: #ff6b6b; }
+    </style>
+  </defs>
+
+  <!-- Título general -->
+  <text x="500" y="30" class="title" text-anchor="middle">Monolito vs Microservicios</text>
+  <text x="500" y="50" class="subtitle" text-anchor="middle">Dos enfoques arquitectónicos fundamentales</text>
+
+  <!-- === MONOLITO === -->
+  <text x="200" y="90" class="title" text-anchor="middle" style="fill: #4a9eff;">Arquitectura Monolítica</text>
+
+  <!-- Caja monolito -->
+  <rect x="50" y="110" width="300" height="280" class="monolith-box"/>
+  
+  <!-- Capas del monolito -->
+  <rect x="70" y="130" width="260" height="50" class="layer"/>
+  <text x="200" y="160" class="label" text-anchor="middle">Capa de Presentación (UI)</text>
+
+  <rect x="70" y="190" width="260" height="50" class="layer"/>
+  <text x="200" y="220" class="label" text-anchor="middle">Lógica de Negocio</text>
+
+  <rect x="70" y="250" width="260" height="50" class="layer"/>
+  <text x="200" y="280" class="label" text-anchor="middle">Capa de Datos</text>
+
+  <rect x="70" y="310" width="260" height="50" class="layer"/>
+  <text x="200" y="340" class="label" text-anchor="middle">Código Todo Junto</text>
+
+  <!-- Base de datos monolito -->
+  <ellipse cx="200" cy="420" rx="60" ry="15" class="db-cylinder"/>
+  <rect x="140" y="420" width="120" height="40" class="db-cylinder"/>
+  <ellipse cx="200" cy="460" rx="60" ry="15" class="db-cylinder"/>
+  <text x="200" y="445" class="label" text-anchor="middle">BD Única</text>
+
+  <!-- Flecha -->
+  <path d="M 200 390 L 200 410" class="arrow"/>
+
+  <!-- === MICROSERVICIOS === -->
+  <text x="700" y="90" class="title" text-anchor="middle" style="fill: #4ecdc4;">Arquitectura de Microservicios</text>
+
+  <!-- Servicio 1: Users -->
+  <rect x="520" y="110" width="130" height="100" class="micro-box"/>
+  <text x="585" y="135" class="label" text-anchor="middle">👤 Servicio</text>
+  <text x="585" y="152" class="label" text-anchor="middle">Users</text>
+  <text x="585" y="175" class="small-text" text-anchor="middle">Node.js</text>
+  <text x="585" y="190" class="small-text" text-anchor="middle">Puerto 3001</text>
+  
+  <ellipse cx="585" cy="230" rx="35" ry="10" class="db-cylinder" style="stroke-width: 1;"/>
+  <rect x="550" y="230" width="70" height="25" class="db-cylinder" style="stroke-width: 1;"/>
+  <ellipse cx="585" cy="255" rx="35" ry="10" class="db-cylinder" style="stroke-width: 1;"/>
+  <text x="585" y="247" class="small-text" text-anchor="middle">DB Users</text>
+
+  <!-- Servicio 2: Orders -->
+  <rect x="680" y="110" width="130" height="100" class="micro-box"/>
+  <text x="745" y="135" class="label" text-anchor="middle">🛒 Servicio</text>
+  <text x="745" y="152" class="label" text-anchor="middle">Orders</text>
+  <text x="745" y="175" class="small-text" text-anchor="middle">Python</text>
+  <text x="745" y="190" class="small-text" text-anchor="middle">Puerto 3002</text>
+  
+  <ellipse cx="745" cy="230" rx="35" ry="10" class="db-cylinder" style="stroke-width: 1;"/>
+  <rect x="710" y="230" width="70" height="25" class="db-cylinder" style="stroke-width: 1;"/>
+  <ellipse cx="745" cy="255" rx="35" ry="10" class="db-cylinder" style="stroke-width: 1;"/>
+  <text x="745" y="247" class="small-text" text-anchor="middle">DB Orders</text>
+
+  <!-- Servicio 3: Payments -->
+  <rect x="840" y="110" width="130" height="100" class="micro-box"/>
+  <text x="905" y="135" class="label" text-anchor="middle">💳 Servicio</text>
+  <text x="905" y="152" class="label" text-anchor="middle">Payments</text>
+  <text x="905" y="175" class="small-text" text-anchor="middle">Java</text>
+  <text x="905" y="190" class="small-text" text-anchor="middle">Puerto 3003</text>
+  
+  <ellipse cx="905" cy="230" rx="35" ry="10" class="db-cylinder" style="stroke-width: 1;"/>
+  <rect x="870" y="230" width="70" height="25" class="db-cylinder" style="stroke-width: 1;"/>
+  <ellipse cx="905" cy="255" rx="35" ry="10" class="db-cylinder" style="stroke-width: 1;"/>
+  <text x="905" y="247" class="small-text" text-anchor="middle">DB Payments</text>
+
+  <!-- Servicio 4: Notifications -->
+  <rect x="680" y="280" width="130" height="100" class="micro-box"/>
+  <text x="745" y="305" class="label" text-anchor="middle">📧 Servicio</text>
+  <text x="745" y="322" class="label" text-anchor="middle">Notifications</text>
+  <text x="745" y="345" class="small-text" text-anchor="middle">Go</text>
+  <text x="745" y="360" class="small-text" text-anchor="middle">Puerto 3004</text>
+  
+  <text x="745" y="375" class="small-text" text-anchor="middle" style="fill: #4ecdc4;">Sin BD</text>
+
+  <!-- Flechas comunicación -->
+  <path d="M 650 160 L 680 160" class="arrow"/>
+  <path d="M 810 160 L 840 160" class="arrow"/>
+  <path d="M 745 210 L 745 280" class="arrow"/>
+
+  <!-- === COMPARACIÓN === -->
+  <text x="500" y="430" class="title" text-anchor="middle">Comparación</text>
+
+  <!-- Pros/Cons Monolito -->
+  <text x="200" y="460" class="label" text-anchor="middle" style="fill: #4ecdc4;">✅ Ventajas</text>
+  <text x="200" y="478" class="small-text" text-anchor="middle">• Simple de desarrollar</text>
+  <text x="200" y="493" class="small-text" text-anchor="middle">• Fácil de desplegar</text>
+  <text x="200" y="508" class="small-text" text-anchor="middle">• Menos complejidad inicial</text>
+
+  <text x="200" y="535" class="label" text-anchor="middle" style="fill: #ff6b6b;">❌ Desventajas</text>
+  <text x="200" y="553" class="small-text" text-anchor="middle">• Difícil escalar</text>
+  <text x="200" y="568" class="small-text" text-anchor="middle">• Cambios riesgosos</text>
+  <text x="200" y="583" class="small-text" text-anchor="middle">• Tech stack único</text>
+
+  <!-- Pros/Cons Microservicios -->
+  <text x="745" y="460" class="label" text-anchor="middle" style="fill: #4ecdc4;">✅ Ventajas</text>
+  <text x="745" y="478" class="small-text" text-anchor="middle">• Escalabilidad independiente</text>
+  <text x="745" y="493" class="small-text" text-anchor="middle">• Tecnologías variadas</text>
+  <text x="745" y="508" class="small-text" text-anchor="middle">• Despliegue independiente</text>
+  <text x="745" y="523" class="small-text" text-anchor="middle">• Fallos aislados</text>
+
+  <text x="745" y="550" class="label" text-anchor="middle" style="fill: #ff6b6b;">❌ Desventajas</text>
+  <text x="745" y="568" class="small-text" text-anchor="middle">• Mayor complejidad</text>
+  <text x="745" y="583" class="small-text" text-anchor="middle">• Comunicación entre servicios</text>
+
+  <!-- Divider -->
+  <line x1="420" y1="100" x2="420" y2="400" stroke="#555" stroke-width="2" stroke-dasharray="5,5"/>
+</svg>

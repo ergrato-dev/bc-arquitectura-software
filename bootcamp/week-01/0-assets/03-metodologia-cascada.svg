@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .title { font: bold 20px sans-serif; fill: #e0e0e0; }
+      .subtitle { font: 14px sans-serif; fill: #b0b0b0; }
+      .label { font: bold 14px sans-serif; fill: #2d2d2d; }
+      .description { font: 11px sans-serif; fill: #2d2d2d; }
+      .phase-box { fill: #4a9eff; stroke: #d4a017; stroke-width: 2; }
+      .arrow { fill: none; stroke: #d4a017; stroke-width: 3; marker-end: url(#arrowhead); }
+      .timeline-text { font: 12px sans-serif; fill: #b0b0b0; }
+      .note { font: italic 11px sans-serif; fill: #ff6b6b; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d4a017" />
+    </marker>
+  </defs>
+
+  <!-- Título -->
+  <text x="400" y="30" class="title" text-anchor="middle">Metodología en Cascada (Waterfall)</text>
+  <text x="400" y="50" class="subtitle" text-anchor="middle">Proceso secuencial y lineal</text>
+
+  <!-- Fase 1: Requisitos -->
+  <rect x="250" y="90" width="300" height="60" class="phase-box" rx="5"/>
+  <text x="400" y="115" class="label" text-anchor="middle">1. Análisis de Requisitos</text>
+  <text x="400" y="132" class="description" text-anchor="middle">📋 Documentación completa de requisitos</text>
+
+  <!-- Flecha 1 -->
+  <path d="M 400 150 L 400 180" class="arrow"/>
+
+  <!-- Fase 2: Diseño -->
+  <rect x="250" y="180" width="300" height="60" class="phase-box" rx="5"/>
+  <text x="400" y="205" class="label" text-anchor="middle">2. Diseño del Sistema</text>
+  <text x="400" y="222" class="description" text-anchor="middle">🏗️ Arquitectura y diseño detallado</text>
+
+  <!-- Flecha 2 -->
+  <path d="M 400 240 L 400 270" class="arrow"/>
+
+  <!-- Fase 3: Implementación -->
+  <rect x="250" y="270" width="300" height="60" class="phase-box" rx="5"/>
+  <text x="400" y="295" class="label" text-anchor="middle">3. Implementación</text>
+  <text x="400" y="312" class="description" text-anchor="middle">💻 Desarrollo del código</text>
+
+  <!-- Flecha 3 -->
+  <path d="M 400 330 L 400 360" class="arrow"/>
+
+  <!-- Fase 4: Pruebas -->
+  <rect x="250" y="360" width="300" height="60" class="phase-box" rx="5"/>
+  <text x="400" y="385" class="label" text-anchor="middle">4. Pruebas (Testing)</text>
+  <text x="400" y="402" class="description" text-anchor="middle">🧪 Verificación y validación</text>
+
+  <!-- Flecha 4 -->
+  <path d="M 400 420 L 400 450" class="arrow"/>
+
+  <!-- Fase 5: Despliegue -->
+  <rect x="250" y="450" width="300" height="60" class="phase-box" rx="5"/>
+  <text x="400" y="475" class="label" text-anchor="middle">5. Despliegue y Mantenimiento</text>
+  <text x="400" y="492" class="description" text-anchor="middle">🚀 Entrega y soporte</text>
+
+  <!-- Timeline lateral -->
+  <line x1="650" y1="90" x2="650" y2="510" stroke="#555" stroke-width="2"/>
+  <text x="680" y="120" class="timeline-text">Semanas 1-4</text>
+  <text x="680" y="210" class="timeline-text">Semanas 5-8</text>
+  <text x="680" y="300" class="timeline-text">Semanas 9-20</text>
+  <text x="680" y="390" class="timeline-text">Semanas 21-24</text>
+  <text x="680" y="480" class="timeline-text">Semana 25+</text>
+
+  <!-- Características clave -->
+  <text x="50" y="120" class="timeline-text">✅ Planificación exhaustiva</text>
+  <text x="50" y="210" class="timeline-text">✅ Documentación completa</text>
+  <text x="50" y="300" class="timeline-text">⚠️ Cambios costosos aquí</text>
+  <text x="50" y="390" class="timeline-text">❌ Difícil volver atrás</text>
+  <text x="50" y="480" class="timeline-text">🎯 Entrega única al final</text>
+
+  <!-- Nota importante -->
+  <rect x="150" y="530" width="500" height="50" fill="#2d2d2d" stroke="#ff6b6b" stroke-width="2" rx="5"/>
+  <text x="400" y="550" class="note" text-anchor="middle">⚠️ Problema: El cliente ve el producto funcionando solo al FINAL</text>
+  <text x="400" y="568" class="note" text-anchor="middle">Si los requisitos cambian, el costo de ajustar es MUY ALTO</text>
+</svg>

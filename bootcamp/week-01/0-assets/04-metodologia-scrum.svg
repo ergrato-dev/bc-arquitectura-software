@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs>
+    <style>
+      .title { font: bold 20px sans-serif; fill: #e0e0e0; }
+      .subtitle { font: 14px sans-serif; fill: #b0b0b0; }
+      .label { font: bold 13px sans-serif; fill: #e0e0e0; }
+      .description { font: 11px sans-serif; fill: #b0b0b0; }
+      .role-box { fill: #2d2d2d; stroke: #d4a017; stroke-width: 2; rx: 8; }
+      .event-circle { fill: #4a9eff; stroke: #d4a017; stroke-width: 2; }
+      .artifact-box { fill: #4ecdc4; stroke: #d4a017; stroke-width: 2; rx: 5; }
+      .arrow { fill: none; stroke: #d4a017; stroke-width: 2; marker-end: url(#arrowhead); }
+      .sprint-cycle { fill: none; stroke: #d4a017; stroke-width: 3; stroke-dasharray: 5,5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d4a017" />
+    </marker>
+  </defs>
+
+  <!-- Título -->
+  <text x="450" y="30" class="title" text-anchor="middle">Metodología Scrum</text>
+  <text x="450" y="50" class="subtitle" text-anchor="middle">Framework ágil con iteraciones cortas (Sprints)</text>
+
+  <!-- Roles (arriba) -->
+  <text x="450" y="80" class="label" text-anchor="middle">🎭 Roles de Scrum</text>
+  
+  <rect x="80" y="90" width="150" height="60" class="role-box"/>
+  <text x="155" y="115" class="label" text-anchor="middle">Product Owner</text>
+  <text x="155" y="135" class="description" text-anchor="middle">Qué construir</text>
+
+  <rect x="280" y="90" width="150" height="60" class="role-box"/>
+  <text x="355" y="115" class="label" text-anchor="middle">Scrum Master</text>
+  <text x="355" y="135" class="description" text-anchor="middle">Facilita proceso</text>
+
+  <rect x="480" y="90" width="150" height="60" class="role-box"/>
+  <text x="555" y="115" class="label" text-anchor="middle">Dev Team</text>
+  <text x="555" y="135" class="description" text-anchor="middle">Construye producto</text>
+
+  <!-- Ciclo Sprint (centro) -->
+  <ellipse cx="450" cy="370" rx="320" ry="200" class="sprint-cycle"/>
+  <text x="450" y="190" class="title" text-anchor="middle" style="fill: #d4a017;">Sprint (1-4 semanas)</text>
+
+  <!-- Evento 1: Sprint Planning -->
+  <circle cx="150" cy="300" r="50" class="event-circle"/>
+  <text x="150" y="295" class="label" text-anchor="middle">Sprint</text>
+  <text x="150" y="310" class="label" text-anchor="middle">Planning</text>
+  <text x="150" y="370" class="description" text-anchor="middle">📋 Planificar</text>
+  <text x="150" y="385" class="description" text-anchor="middle">qué hacer</text>
+
+  <!-- Evento 2: Daily Scrum -->
+  <circle cx="450" cy="250" r="45" class="event-circle"/>
+  <text x="450" y="245" class="label" text-anchor="middle">Daily</text>
+  <text x="450" y="260" class="label" text-anchor="middle">Scrum</text>
+  <text x="450" y="210" class="description" text-anchor="middle">⏰ Sincronización</text>
+  <text x="450" y="225" class="description" text-anchor="middle">diaria (15 min)</text>
+
+  <!-- Evento 3: Sprint Review -->
+  <circle cx="750" cy="300" r="50" class="event-circle"/>
+  <text x="750" y="295" class="label" text-anchor="middle">Sprint</text>
+  <text x="750" y="310" class="label" text-anchor="middle">Review</text>
+  <text x="750" y="370" class="description" text-anchor="middle">🎯 Demostrar</text>
+  <text x="750" y="385" class="description" text-anchor="middle">incremento</text>
+
+  <!-- Evento 4: Retrospective -->
+  <circle cx="450" cy="500" r="45" class="event-circle"/>
+  <text x="450" y="495" class="label" text-anchor="middle">Sprint</text>
+  <text x="450" y="510" class="label" text-anchor="middle">Retrospective</text>
+  <text x="450" y="560" class="description" text-anchor="middle">🔄 Mejorar</text>
+  <text x="450" y="575" class="description" text-anchor="middle">proceso</text>
+
+  <!-- Flechas del ciclo -->
+  <path d="M 200 300 L 400 270" class="arrow"/>
+  <path d="M 700 300 L 470 480" class="arrow"/>
+  <path d="M 430 540 L 180 330" class="arrow"/>
+
+  <!-- Artefactos (derecha) -->
+  <text x="450" y="615" class="label" text-anchor="middle">📦 Artefactos</text>
+
+  <rect x="50" y="620" width="150" height="25" class="artifact-box"/>
+  <text x="125" y="638" class="label" text-anchor="middle" style="fill: #2d2d2d;">Product Backlog</text>
+
+  <rect x="220" y="620" width="150" height="25" class="artifact-box"/>
+  <text x="295" y="638" class="label" text-anchor="middle" style="fill: #2d2d2d;">Sprint Backlog</text>
+
+  <rect x="390" y="620" width="150" height="25" class="artifact-box"/>
+  <text x="465" y="638" class="label" text-anchor="middle" style="fill: #2d2d2d;">Increment</text>
+
+  <!-- Beneficio clave -->
+  <text x="750" y="630" class="description" style="fill: #4ecdc4;">✅ Feedback cada Sprint</text>
+  <text x="750" y="645" class="description" style="fill: #4ecdc4;">✅ Adaptación continua</text>
+</svg>

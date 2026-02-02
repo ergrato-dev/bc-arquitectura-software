@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-label="Arquitectura vs Diseño de Software">
+  <defs>
+    <style>
+      .bg { fill: #1a1a2e; }
+      .box-arch { fill: #2a2a3e; stroke: #d4a017; stroke-width: 2; }
+      .box-design { fill: #2a2a3e; stroke: #4a9eff; stroke-width: 2; }
+      .text-title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 28px; font-weight: 700; }
+      .text-subtitle { fill: #d4a017; font-family: Arial, sans-serif; font-size: 20px; font-weight: 600; }
+      .text-content { fill: #e8e8e8; font-family: Arial, sans-serif; font-size: 16px; }
+      .text-small { fill: #c8c8c8; font-family: Arial, sans-serif; font-size: 14px; }
+      .arrow { fill: none; stroke: #d4a017; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d4a017"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="1000" height="600"/>
+  
+  <!-- Title -->
+  <text class="text-title" x="500" y="40" text-anchor="middle">ARQUITECTURA vs DISEÑO DE SOFTWARE</text>
+  
+  <!-- Left Box: ARQUITECTURA -->
+  <rect class="box-arch" x="50" y="80" width="400" height="480" rx="8"/>
+  <text class="text-subtitle" x="250" y="120" text-anchor="middle">🏗️ ARQUITECTURA</text>
+  
+  <!-- Arquitectura - Nivel -->
+  <text class="text-content" x="70" y="160" font-weight="600">Nivel:</text>
+  <text class="text-content" x="70" y="185">• Alto nivel (visión panorámica)</text>
+  
+  <!-- Arquitectura - Alcance -->
+  <text class="text-content" x="70" y="225" font-weight="600">Alcance:</text>
+  <text class="text-content" x="70" y="250">• Sistema completo</text>
+  <text class="text-content" x="70" y="275">• Múltiples componentes</text>
+  
+  <!-- Arquitectura - Decisiones -->
+  <text class="text-content" x="70" y="315" font-weight="600">Decisiones:</text>
+  <text class="text-small" x="70" y="340">✓ Patrón arquitectónico</text>
+  <text class="text-small" x="70" y="360">✓ Tecnologías principales</text>
+  <text class="text-small" x="70" y="380">✓ Estructura de componentes</text>
+  <text class="text-small" x="70" y="400">✓ Comunicación entre partes</text>
+  
+  <!-- Arquitectura - Quién -->
+  <text class="text-content" x="70" y="435" font-weight="600">Quién:</text>
+  <text class="text-content" x="70" y="460">• Arquitecto de Software</text>
+  <text class="text-content" x="70" y="485">• Tech Lead</text>
+  
+  <!-- Arquitectura - Cuándo -->
+  <text class="text-content" x="70" y="520" font-weight="600">Cuándo:</text>
+  <text class="text-content" x="70" y="545">• Inicio del proyecto</text>
+  
+  <!-- Right Box: DISEÑO -->
+  <rect class="box-design" x="550" y="80" width="400" height="480" rx="8"/>
+  <text class="text-subtitle" x="750" y="120" text-anchor="middle" fill="#4a9eff">💻 DISEÑO</text>
+  
+  <!-- Diseño - Nivel -->
+  <text class="text-content" x="570" y="160" font-weight="600">Nivel:</text>
+  <text class="text-content" x="570" y="185">• Bajo nivel (detalle)</text>
+  
+  <!-- Diseño - Alcance -->
+  <text class="text-content" x="570" y="225" font-weight="600">Alcance:</text>
+  <text class="text-content" x="570" y="250">• Componente individual</text>
+  <text class="text-content" x="570" y="275">• Clases y métodos</text>
+  
+  <!-- Diseño - Decisiones -->
+  <text class="text-content" x="570" y="315" font-weight="600">Decisiones:</text>
+  <text class="text-small" x="570" y="340">✓ Nombres de clases</text>
+  <text class="text-small" x="570" y="360">✓ Algoritmos específicos</text>
+  <text class="text-small" x="570" y="380">✓ Estructuras de datos</text>
+  <text class="text-small" x="570" y="400">✓ Patrones de diseño</text>
+  
+  <!-- Diseño - Quién -->
+  <text class="text-content" x="570" y="435" font-weight="600">Quién:</text>
+  <text class="text-content" x="570" y="460">• Desarrollador</text>
+  <text class="text-content" x="570" y="485">• Diseñador de software</text>
+  
+  <!-- Diseño - Cuándo -->
+  <text class="text-content" x="570" y="520" font-weight="600">Cuándo:</text>
+  <text class="text-content" x="570" y="545">• Durante el desarrollo</text>
+  
+  <!-- Arrow connecting both -->
+  <path class="arrow" d="M 460 320 L 540 320"/>
+  <text class="text-small" x="500" y="310" text-anchor="middle" fill="#d4a017">complementan</text>
+  
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .title { font: bold 20px sans-serif; fill: #e0e0e0; }
+      .subtitle { font: 14px sans-serif; fill: #b0b0b0; }
+      .label { font: 14px sans-serif; fill: #e0e0e0; }
+      .small-text { font: 11px sans-serif; fill: #a0a0a0; }
+      .arrow { fill: none; stroke: #d4a017; stroke-width: 2; marker-end: url(#arrowhead); }
+      .phase-box { fill: #2d2d2d; stroke: #d4a017; stroke-width: 2; rx: 8; }
+      .impact-bad { fill: #ff6b6b; opacity: 0.2; }
+      .impact-worse { fill: #ff6b6b; opacity: 0.5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d4a017" />
+    </marker>
+  </defs>
+
+  <!-- Título -->
+  <text x="400" y="30" class="title" text-anchor="middle">Ciclo de la Deuda Técnica</text>
+  <text x="400" y="50" class="subtitle" text-anchor="middle">El costo de los atajos crece exponencialmente</text>
+
+  <!-- Fase 1: Decisión Rápida -->
+  <rect x="50" y="100" width="180" height="80" class="phase-box"/>
+  <text x="140" y="125" class="label" text-anchor="middle">Fase 1: Atajo Rápido</text>
+  <text x="140" y="145" class="small-text" text-anchor="middle">⏱️ "No hay tiempo"</text>
+  <text x="140" y="160" class="small-text" text-anchor="middle">💸 Costo: Bajo</text>
+  <text x="140" y="175" class="small-text" text-anchor="middle">⚡ Velocidad: Alta</text>
+
+  <!-- Fase 2: Acumulación -->
+  <rect x="310" y="100" width="180" height="80" class="phase-box"/>
+  <rect x="310" y="100" width="180" height="80" class="impact-bad"/>
+  <text x="400" y="125" class="label" text-anchor="middle">Fase 2: Acumulación</text>
+  <text x="400" y="145" class="small-text" text-anchor="middle">📊 Más atajos</text>
+  <text x="400" y="160" class="small-text" text-anchor="middle">💸 Costo: Medio</text>
+  <text x="400" y="175" class="small-text" text-anchor="middle">⚡ Velocidad: Baja</text>
+
+  <!-- Fase 3: Crisis -->
+  <rect x="570" y="100" width="180" height="80" class="phase-box"/>
+  <rect x="570" y="100" width="180" height="80" class="impact-worse"/>
+  <text x="660" y="125" class="label" text-anchor="middle">Fase 3: Crisis</text>
+  <text x="660" y="145" class="small-text" text-anchor="middle">🔥 Sistema frágil</text>
+  <text x="660" y="160" class="small-text" text-anchor="middle">💸 Costo: Muy Alto</text>
+  <text x="660" y="175" class="small-text" text-anchor="middle">⚡ Velocidad: Muy Baja</text>
+
+  <!-- Flechas entre fases -->
+  <path d="M 230 140 L 310 140" class="arrow"/>
+  <path d="M 490 140 L 570 140" class="arrow"/>
+
+  <!-- Gráfico exponencial debajo -->
+  <text x="400" y="230" class="label" text-anchor="middle">Costo de Pago de la Deuda</text>
+  
+  <!-- Eje de costo (curva exponencial) -->
+  <path d="M 100 420 Q 250 400, 400 300 T 700 140" 
+        fill="none" stroke="#ff6b6b" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Eje de velocidad (curva descendente) -->
+  <path d="M 100 260 Q 250 300, 400 360 T 700 440" 
+        fill="none" stroke="#4ecdc4" stroke-width="3" opacity="0.8"/>
+
+  <!-- Leyenda -->
+  <rect x="550" y="250" width="15" height="3" fill="#ff6b6b" opacity="0.8"/>
+  <text x="570" y="255" class="small-text">Costo de mantenimiento</text>
+  
+  <rect x="550" y="270" width="15" height="3" fill="#4ecdc4" opacity="0.8"/>
+  <text x="570" y="275" class="small-text">Velocidad de desarrollo</text>
+
+  <!-- Ejes -->
+  <line x1="100" y1="450" x2="720" y2="450" stroke="#555" stroke-width="1"/>
+  <line x1="100" y1="240" x2="100" y2="450" stroke="#555" stroke-width="1"/>
+  
+  <text x="400" y="475" class="small-text" text-anchor="middle">Tiempo →</text>
+  <text x="70" y="350" class="small-text" text-anchor="middle" transform="rotate(-90 70 350)">Impacto →</text>
+
+  <!-- Puntos críticos -->
+  <circle cx="400" cy="300" r="5" fill="#d4a017"/>
+  <text x="410" y="295" class="small-text">Punto de inflexión</text>
+  <text x="410" y="310" class="small-text">Aquí el costo supera el beneficio</text>
+
+  <!-- Mensaje final -->
+  <text x="400" y="498" class="subtitle" text-anchor="middle" style="fill: #d4a017;">
+    💡 Pagar deuda técnica temprano = menor costo total
+  </text>
+</svg>

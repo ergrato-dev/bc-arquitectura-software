@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce-monolito",
+  "version": "1.0.0",
+  "description": "Sistema monolítico de e-commerce para práctica de refactorización",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "monolito",
+    "ecommerce",
+    "arquitectura"
+  ],
+  "author": "SENA Bootcamp",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
