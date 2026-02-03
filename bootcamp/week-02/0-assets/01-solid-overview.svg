@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fondo -->
+  <rect width="1200" height="800" fill="#1e1e1e"/>
+  
+  <!-- Título -->
+  <text x="600" y="50" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
+    Principios SOLID - Visión General
+  </text>
+  
+  <!-- S - Single Responsibility -->
+  <g transform="translate(100, 120)">
+    <rect width="180" height="120" rx="10" fill="#2a2a2a" stroke="#3498db" stroke-width="3"/>
+    <text x="90" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#3498db">S</text>
+    <text x="90" y="60" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Single</text>
+    <text x="90" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Responsibility</text>
+    <text x="90" y="100" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle" fill="#999">Una razón para cambiar</text>
+  </g>
+  
+  <!-- O - Open/Closed -->
+  <g transform="translate(320, 120)">
+    <rect width="180" height="120" rx="10" fill="#2a2a2a" stroke="#2ecc71" stroke-width="3"/>
+    <text x="90" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#2ecc71">O</text>
+    <text x="90" y="60" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Open/Closed</text>
+    <text x="90" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Principle</text>
+    <text x="90" y="100" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle" fill="#999">Abierto para extensión</text>
+  </g>
+  
+  <!-- L - Liskov Substitution -->
+  <g transform="translate(540, 120)">
+    <rect width="180" height="120" rx="10" fill="#2a2a2a" stroke="#e74c3c" stroke-width="3"/>
+    <text x="90" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#e74c3c">L</text>
+    <text x="90" y="60" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Liskov</text>
+    <text x="90" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Substitution</text>
+    <text x="90" y="100" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle" fill="#999">Sustituible sin alterar</text>
+  </g>
+  
+  <!-- I - Interface Segregation -->
+  <g transform="translate(760, 120)">
+    <rect width="180" height="120" rx="10" fill="#2a2a2a" stroke="#f39c12" stroke-width="3"/>
+    <text x="90" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#f39c12">I</text>
+    <text x="90" y="60" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Interface</text>
+    <text x="90" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Segregation</text>
+    <text x="90" y="100" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle" fill="#999">Interfaces específicas</text>
+  </g>
+  
+  <!-- D - Dependency Inversion -->
+  <g transform="translate(980, 120)">
+    <rect width="180" height="120" rx="10" fill="#2a2a2a" stroke="#9b59b6" stroke-width="3"/>
+    <text x="90" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#9b59b6">D</text>
+    <text x="90" y="60" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Dependency</text>
+    <text x="90" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Inversion</text>
+    <text x="90" y="100" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" text-anchor="middle" fill="#999">Depende de abstracción</text>
+  </g>
+  
+  <!-- Beneficios -->
+  <g transform="translate(100, 290)">
+    <text x="0" y="0" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" fill="#e0e0e0">✅ Beneficios de SOLID</text>
+    
+    <rect x="0" y="20" width="1000" height="80" rx="10" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
+    <text x="20" y="50" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" fill="#e0e0e0">🔧 <tspan font-weight="bold">Mantenibilidad:</tspan> Código más fácil de modificar y extender</text>
+    <text x="20" y="75" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" fill="#e0e0e0">🧪 <tspan font-weight="bold">Testeabilidad:</tspan> Componentes desacoplados facilitan pruebas unitarias</text>
+  </g>
+  
+  <g transform="translate(100, 390)">
+    <rect x="0" y="0" width="1000" height="80" rx="10" fill="#2a2a2a" stroke="#444" stroke-width="2"/>
+    <text x="20" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" fill="#e0e0e0">♻️ <tspan font-weight="bold">Reutilización:</tspan> Componentes cohesivos se reutilizan en diferentes contextos</text>
+    <text x="20" y="55" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" fill="#e0e0e0">📈 <tspan font-weight="bold">Escalabilidad:</tspan> Arquitectura flexible que crece sin colapsar</text>
+  </g>
+  
+  <!-- Relaciones entre principios -->
+  <g transform="translate(100, 510)">
+    <text x="0" y="0" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" fill="#e0e0e0">🔗 Cómo se Relacionan</text>
+    
+    <line x1="190" y1="30" x2="410" y2="30" stroke="#3498db" stroke-width="2" marker-end="url(#arrowblue)"/>
+    <text x="250" y="25" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#999">SRP facilita OCP</text>
+    
+    <line x1="410" y1="50" x2="630" y2="50" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowgreen)"/>
+    <text x="470" y="45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#999">OCP usa LSP</text>
+    
+    <line x1="630" y1="70" x2="850" y2="70" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowred)"/>
+    <text x="690" y="65" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#999">LSP requiere ISP</text>
+    
+    <line x1="850" y1="90" x2="1070" y2="90" stroke="#f39c12" stroke-width="2" marker-end="url(#arroworange)"/>
+    <text x="900" y="85" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#999">ISP + DIP = Desacoplamiento</text>
+  </g>
+  
+  <!-- Contexto de aplicación -->
+  <g transform="translate(100, 630)">
+    <text x="0" y="0" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold" fill="#e0e0e0">📌 Cuándo Aplicar SOLID</text>
+    
+    <rect x="0" y="20" width="480" height="100" rx="10" fill="#1a3a2a" stroke="#27ae60" stroke-width="2"/>
+    <text x="20" y="45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#27ae60">✅ SÍ aplicar cuando:</text>
+    <text x="30" y="65" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">• Sistema con >1000 líneas</text>
+    <text x="30" y="83" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">• Equipo de >2 desarrolladores</text>
+    <text x="30" y="101" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">• Requisitos cambiantes</text>
+    
+    <rect x="520" y="20" width="480" height="100" rx="10" fill="#3a1a1a" stroke="#c0392b" stroke-width="2"/>
+    <text x="540" y="45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#e74c3c">⚠️ NO aplicar cuando:</text>
+    <text x="550" y="65" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">• Script de menos de 100 líneas</text>
+    <text x="550" y="83" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">• Prototipo desechable</text>
+    <text x="550" y="101" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">• Proyecto personal simple</text>
+  </g>
+  
+  <!-- Marcadores de flecha -->
+  <defs>
+    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3498db"/>
+    </marker>
+    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e74c3c"/>
+    </marker>
+    <marker id="arroworange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f39c12"/>
+    </marker>
+  </defs>
+</svg>

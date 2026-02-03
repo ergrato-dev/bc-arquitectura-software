@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  
+  <rect width="1200" height="800" fill="#1e1e1e"/>
+  
+  
+  <text x="600" y="40" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
+    Cohesión y Acoplamiento: Métricas de Calidad
+  </text>
+  
+  
+  <g transform="translate(50, 90)">
+    <text x="250" y="10" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2ecc71">
+      Alta Cohesión ✅
+    </text>
+    
+    <rect x="50" y="35" width="400" height="230" rx="10" fill="#1a2e1a" stroke="#27ae60" stroke-width="3"/>
+    
+    <text x="250" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
+      Módulo con Alta Cohesión
+    </text>
+    
+    <g transform="translate(70, 90)">
+      
+      <circle cx="60" cy="35" r="25" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="60" y="42" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M1</text>
+      
+      <circle cx="180" cy="35" r="25" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="180" y="42" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M2</text>
+      
+      <circle cx="300" cy="35" r="25" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="300" y="42" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M3</text>
+      
+      <circle cx="120" cy="110" r="25" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="120" y="117" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M4</text>
+      
+      <circle cx="240" cy="110" r="25" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="240" y="117" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M5</text>
+      
+      
+      <line x1="85" y1="35" x2="155" y2="35" stroke="#2ecc71" stroke-width="3"/>
+      <line x1="205" y1="35" x2="275" y2="35" stroke="#2ecc71" stroke-width="3"/>
+      <line x1="72" y1="58" x2="108" y2="88" stroke="#2ecc71" stroke-width="3"/>
+      <line x1="132" y1="88" x2="168" y2="58" stroke="#2ecc71" stroke-width="3"/>
+      <line x1="192" y1="58" x2="228" y2="88" stroke="#2ecc71" stroke-width="3"/>
+      <line x1="252" y1="88" x2="288" y2="58" stroke="#2ecc71" stroke-width="3"/>
+      <line x1="145" y1="110" x2="215" y2="110" stroke="#2ecc71" stroke-width="3"/>
+    </g>
+    
+    <text x="250" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+      Elementos fuertemente relacionados
+    </text>
+    <text x="250" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#2ecc71" font-weight="bold">
+      Propósito único y claro
+    </text>
+  </g>
+  
+  
+  <g transform="translate(50, 410)">
+    <text x="250" y="10" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#e74c3c">
+      Baja Cohesión ❌
+    </text>
+    
+    <rect x="50" y="35" width="400" height="230" rx="10" fill="#2d1a1a" stroke="#c0392b" stroke-width="3"/>
+    
+    <text x="250" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
+      Módulo con Baja Cohesión
+    </text>
+    
+    <g transform="translate(70, 90)">
+      
+      <circle cx="60" cy="35" r="25" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="60" y="42" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M1</text>
+      
+      <circle cx="180" cy="35" r="25" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="180" y="42" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M2</text>
+      
+      <circle cx="300" cy="35" r="25" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="300" y="42" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M3</text>
+      
+      <circle cx="120" cy="110" r="25" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="120" y="117" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M4</text>
+      
+      <circle cx="240" cy="110" r="25" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="240" y="117" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#fff" font-weight="bold">M5</text>
+      
+      
+      <line x1="85" y1="35" x2="155" y2="35" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+    </g>
+    
+    <text x="250" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+      Elementos no relacionados
+    </text>
+    <text x="250" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#e74c3c" font-weight="bold">
+      "God Class" o "Junk Drawer"
+    </text>
+  </g>
+  
+  
+  <g transform="translate(570, 90)">
+    <text x="265" y="10" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#2ecc71">
+      Bajo Acoplamiento ✅
+    </text>
+    
+    <rect x="65" y="35" width="400" height="230" rx="10" fill="#1a2e1a" stroke="#27ae60" stroke-width="3"/>
+    
+    <text x="265" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
+      Módulos Independientes
+    </text>
+    
+    <g transform="translate(90, 90)">
+      
+      <rect x="5" y="5" width="100" height="50" rx="8" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="55" y="35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo A</text>
+      
+      <rect x="130" y="5" width="100" height="50" rx="8" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="180" y="35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo B</text>
+      
+      <rect x="255" y="5" width="100" height="50" rx="8" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="305" y="35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo C</text>
+      
+      <rect x="45" y="90" width="100" height="50" rx="8" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="95" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo D</text>
+      
+      <rect x="170" y="90" width="100" height="50" rx="8" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="220" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo E</text>
+      
+      
+      <path d="M 105,30 L 130,30" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+      <path d="M 230,30 L 255,30" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
+    </g>
+    
+    <text x="265" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+      Cambios localizados
+    </text>
+    <text x="265" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#2ecc71" font-weight="bold">
+      Módulos reutilizables
+    </text>
+  </g>
+  
+  
+  <g transform="translate(570, 410)">
+    <text x="265" y="10" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#e74c3c">
+      Alto Acoplamiento ❌
+    </text>
+    
+    <rect x="65" y="35" width="400" height="230" rx="10" fill="#2d1a1a" stroke="#c0392b" stroke-width="3"/>
+    
+    <text x="265" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
+      Módulos Entrelazados
+    </text>
+    
+    <g transform="translate(90, 90)">
+      
+      <rect x="5" y="5" width="100" height="50" rx="8" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="55" y="35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo A</text>
+      
+      <rect x="130" y="5" width="100" height="50" rx="8" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="180" y="35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo B</text>
+      
+      <rect x="255" y="5" width="100" height="50" rx="8" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="305" y="35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo C</text>
+      
+      <rect x="45" y="90" width="100" height="50" rx="8" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="95" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo D</text>
+      
+      <rect x="170" y="90" width="100" height="50" rx="8" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+      <text x="220" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">Módulo E</text>
+      
+      
+      <path d="M 105,30 L 130,30" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRed)"/>
+      <path d="M 230,30 L 255,30" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRed)"/>
+      <path d="M 55,55 L 95,90" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRed)"/>
+      <path d="M 180,55 L 95,90" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRed)"/>
+      <path d="M 305,55 L 220,90" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRed)"/>
+      <path d="M 145,115 L 170,115" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRed)"/>
+      <path d="M 180,5 L 180,55" stroke="#e74c3c" stroke-width="2" stroke-dasharray="3,3"/>
+      <path d="M 220,90 L 305,55" stroke="#e74c3c" stroke-width="2" stroke-dasharray="3,3"/>
+    </g>
+    
+    <text x="265" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+      Cambios en cascada (efecto dominó)
+    </text>
+    <text x="265" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#e74c3c" font-weight="bold">
+      Sistema frágil y rígido
+    </text>
+  </g>
+  
+  
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e74c3c"/>
+    </marker>
+  </defs>
+</svg>

@@ -7,8 +7,8 @@ Seleccionar un caso de estudio personal que desarrollarás durante las 9 semanas
 ## ⏱️ Duración
 
 - Trabajo en clase: 30 minutos
-- Trabajo autónomo: 90 minutos
-- **Total**: 2 horas
+- Trabajo autónomo: 60 minutos
+- **Total**: 1.5 horas
 
 ---
 
@@ -28,330 +28,321 @@ Este proyecto evolucionará semanalmente:
 
 ---
 
-## 🎨 Casos de Estudio Sugeridos
+## � Tu Dominio Asignado
 
-Elige **UNO** de los siguientes (o propón el tuyo):
+### 📢 Política de Asignación Individual
 
-### Opción 1: E-commerce de Productos Artesanales 🛍️
+**En la primera sesión presencial** se te asignará mediante **sorteo aleatorio** un dominio de negocio específico que será **exclusivo para ti durante todo el bootcamp (9 semanas)**.
 
-**Descripción**: Plataforma para conectar artesanos colombianos con compradores.
+**Objetivo**: Garantizar originalidad, evitar plagio y profundizar en un sector específico.
 
-**Funcionalidades principales**:
+### ✅ Ventajas del Sistema
 
-- Catálogo de productos con búsqueda y filtros
-- Carrito de compras
-- Pasarela de pago (PSE, tarjetas)
-- Panel de vendedor (gestión de inventario, órdenes)
-- Sistema de mensajería vendedor-comprador
-- Reseñas y calificaciones
+- ✅ **Trabajo 100% original**: Nadie más tendrá tu mismo dominio
+- ✅ **Expertise sectorial**: Te convertirás en experto de ese dominio
+- ✅ **Portfolio real**: Proyecto demostrable para tu futuro profesional
+- ✅ **Aprendizaje profundo**: Análisis detallado de un sector completo
 
-**Complejidad**: Media
+### 📋 Características de tu Dominio
 
-**Tecnologías sugeridas**: Node.js, PostgreSQL, React
+Tu dominio asignado incluirá:
 
----
+- **Descripción del sector**: Contexto y problemática a resolver
+- **Actores principales**: Usuarios y roles del sistema
+- **Funcionalidades esperadas**: Operaciones críticas del negocio
+- **Complejidad apropiada**: Ajustada para aplicar todos los conceptos del bootcamp
 
-### Opción 2: Plataforma de Reservas de Consultorios Médicos 🏥
+### 🔒 Compromiso de Exclusividad
 
-**Descripción**: Sistema de agendamiento de citas médicas para clínicas.
+- **Tu dominio es único**: Ningún otro compañero trabajará el mismo caso
+- **Responsabilidad individual**: El trabajo debe ser 100% tuyo
+- **Consistencia semanal**: Todas las semanas desarrollarás el mismo dominio
+- **Trazabilidad**: Tu repositorio GitHub documentará todo el proceso
 
-**Funcionalidades principales**:
+### 🎲 Proceso de Asignación
 
-- Registro de pacientes y médicos
-- Calendario de disponibilidad
-- Reserva de citas en tiempo real
-- Notificaciones por email/SMS
-- Historia clínica básica
-- Dashboard administrativo
+**Semana 1 - Primera sesión presencial**:
 
-**Complejidad**: Media-Alta
+1. Sorteo aleatorio de dominios
+2. Asignación registrada oficialmente
+3. Comunicación individual del dominio
+4. Inicio del análisis arquitectónico
 
-**Tecnologías sugeridas**: Node.js, MongoDB, React/Vue
+**⚠️ Importante**: Una vez asignado, tu dominio **NO podrá cambiarse** durante el trimestre.
 
----
+### 📝 Qué Hacer con tu Dominio
 
-### Opción 3: Red Social para Estudiantes del SENA 🎓
+Una vez recibas tu asignación, deberás:
 
-**Descripción**: Plataforma para compartir proyectos y colaborar.
+1. **Investigar el sector**: Entender la problemática real
+2. **Identificar actores**: ¿Quiénes usarán el sistema?
+3. **Definir funcionalidades**: ¿Qué operaciones críticas necesita?
+4. **Analizar restricciones**: Regulaciones, escalabilidad, seguridad
+5. **Seleccionar metodología**: ¿Cuál se adapta mejor al dominio?
+6. **Diseñar arquitectura inicial**: Decisiones fundamentadas
 
-**Funcionalidades principales**:
+### 🎯 Requisitos Mínimos (Todos los Dominios)
 
-- Perfiles de usuario
-- Publicación de proyectos (con código, imágenes)
-- Sistema de likes y comentarios
-- Búsqueda de colaboradores por habilidades
-- Mensajería privada
-- Feed de actividades
+Independientemente del dominio asignado, tu proyecto debe incluir:
 
-**Complejidad**: Alta
+- ✅ Mínimo **3-4 entidades principales** (Ej: Usuario, Producto, Pedido)
+- ✅ Al menos **2 tipos de usuarios** (Ej: Cliente, Administrador)
+- ✅ Funcionalidades básicas de gestión (crear, ver, actualizar)
+- ✅ Potencial de crecimiento futuro
 
-**Tecnologías sugeridas**: Node.js, PostgreSQL, React, Socket.io
+**Para esta semana NO necesitas**:
 
----
-
-### Opción 4: Sistema de Gestión de Biblioteca 📚
-
-**Descripción**: Software para administrar préstamos de libros.
-
-**Funcionalidades principales**:
-
-- Catálogo de libros (CRUD)
-- Gestión de usuarios (estudiantes, bibliotecarios)
-- Préstamos y devoluciones
-- Multas por retraso
-- Reservas de libros
-- Reportes estadísticos
-
-**Complejidad**: Baja-Media
-
-**Tecnologías sugeridas**: Node.js, SQLite/PostgreSQL, React
-
----
-
-### Opción 5: Propón tu Propio Caso ✨
-
-**Requisitos mínimos**:
-
-- Mínimo 5 entidades de dominio
-- Al menos 3 actores/roles diferentes
-- Operaciones CRUD + lógica de negocio
-- Interacción en tiempo real (opcional pero valorado)
-- Potencial para aplicar patrones arquitectónicos
+- ❌ Código funcionando (solo diseño)
+- ❌ Diagramas complejos
+- ❌ Análisis exhaustivo de seguridad
 
 ---
 
 ## 📝 Entregables de la Semana 01
 
-### 1. Documento de Decisión Arquitectónica (ADR)
+### 1. Documento de Análisis Inicial (Versión Simplificada)
 
-Crea un archivo `ADR-001-metodologia-y-arquitectura-inicial.md` con la siguiente estructura:
+Crea un archivo `README.md` en tu proyecto con estas 4 secciones:
 
 ```markdown
-# ADR-001: Metodología y Arquitectura Inicial
+# [Nombre de tu Dominio] - Proyecto Bootcamp
 
-## Estado
+## 1️⃣ ¿Qué Problema Resuelve?
 
-Propuesto / Aceptado / Rechazado / Deprecado
+Describe en 2-3 párrafos:
 
-## Contexto
+- ¿Qué necesidad cubre tu sistema?
+- ¿Quiénes lo usarán?
+- ¿Por qué es importante?
 
-Describe tu caso de estudio:
+**Ejemplo**: "Este sistema ayuda a pequeños restaurantes a gestionar sus pedidos
+de delivery. Los dueños de restaurantes podrán recibir pedidos online y
+los clientes podrán ordenar desde sus casas. Es importante porque muchos
+negocios pequeños no pueden pagar apps costosas como Rappi."
 
-- ¿Qué problema resuelve?
-- ¿Quiénes son los usuarios?
-- ¿Cuáles son los requisitos principales?
-- ¿Cuáles son las restricciones (tiempo, presupuesto, equipo)?
+---
 
-## Decisión
+## 2️⃣ Usuarios Principales
 
-### Metodología Elegida
+Lista los tipos de usuarios (mínimo 2):
 
-- ¿Cascada, Scrum, Kanban, XP, Híbrido?
-- Justifica tu elección basándote en el contexto
+1. **[Tipo de Usuario 1]**: Qué hace en el sistema
+2. **[Tipo de Usuario 2]**: Qué hace en el sistema
+
+**Ejemplo**:
+
+1. **Cliente**: Busca restaurantes, hace pedidos, paga online
+2. **Restaurante**: Recibe pedidos, actualiza menú, confirma entregas
+
+---
+
+## 3️⃣ Funcionalidades Principales
+
+Lista 5-7 funcionalidades clave:
+
+- [ ] Funcionalidad 1
+- [ ] Funcionalidad 2
+- [ ] Funcionalidad 3
+- [ ] Funcionalidad 4
+- [ ] Funcionalidad 5
+
+**Ejemplo**:
+
+- [ ] Registro e inicio de sesión
+- [ ] Catálogo de productos
+- [ ] Carrito de compras
+- [ ] Proceso de pago
+- [ ] Seguimiento de pedido
+
+---
+
+## 4️⃣ Decisiones Iniciales
+
+### Metodología de Desarrollo
+
+**Elegí**: [Scrum / Kanban / Cascada]
+
+**¿Por qué?**: Explica en 2-3 líneas tu elección
 
 ### Arquitectura Inicial
 
-- ¿Monolito, microservicios, N-capas?
-- ¿Por qué esta arquitectura es apropiada?
-- ¿Cómo evolucionará a medida que el proyecto crezca?
+**Elegí**: [Monolito / N-Capas]
 
-### Stack Tecnológico
+**¿Por qué?**: Explica en 2-3 líneas (para empezar, lo simple es mejor)
 
-- Backend: Node.js / Python / Java
-- Base de datos: PostgreSQL / MongoDB / MySQL
-- Frontend: React / Vue / Angular
-- Justifica cada elección
+### Tecnologías
 
-## Consecuencias
+- **Backend**: Node.js (porque ya lo conocemos)
+- **Base de datos**: PostgreSQL (porque es gratis y potente)
+- **Frontend**: React (porque tiene mucha documentación)
 
-### Positivas
+_Nota: Puedes elegir otras, pero justifica brevemente_
 
-- ¿Qué beneficios trae esta decisión?
+---
 
-### Negativas
-
-- ¿Qué trade-offs estás aceptando?
-
-### Riesgos
-
-- ¿Qué podría salir mal?
-- ¿Cómo mitigarás esos riesgos?
-
-## Alternativas Consideradas
-
-- ¿Qué otras opciones evaluaste?
-- ¿Por qué las descartaste?
-
-## Fecha
-
-2026-02-01
-
-## Autor
-
-Tu nombre
+**Autor**: Tu nombre
+**Fecha**: Febrero 2026
+**Bootcamp**: Arquitectura de Software - SENA
 ```
 
 ---
 
-### 2. Diagrama de Contexto (C4 Model - Nivel 1)
+### 2. Diagrama Simple del Sistema (OPCIONAL pero valorado)
 
-Crea un diagrama que muestre:
+**Si tienes tiempo**, crea un diagrama básico a mano o con herramientas simples:
 
-- **Sistema principal** (tu aplicación)
-- **Actores** (usuarios que interactúan)
-- **Sistemas externos** (servicios de terceros)
+**Opción A - A mano**:
 
-**Herramientas sugeridas**:
+- Dibuja con lápiz y papel
+- Toma foto con tu celular
+- Incluye en tu entrega
 
-- Draw.io
-- PlantUML
-- Mermaid
-- Excalidraw
+**Opción B - Draw.io** (recomendado):
 
-**Ejemplo en Mermaid**:
+- Entra a https://app.diagrams.net/
+- Crea diagrama simple
+- Exporta como imagen PNG
 
-```mermaid
-C4Context
-    title Diagrama de Contexto - E-commerce Artesanal
+**¿Qué debe tener tu diagrama?**
 
-    Person(cliente, "Cliente", "Comprador de productos")
-    Person(artesano, "Artesano", "Vendedor de productos")
-    Person(admin, "Administrador", "Gestiona la plataforma")
+1. **Una caja central**: Tu sistema
+2. **Personitas**: Los usuarios (mínimo 2)
+3. **Flechas**: Qué hace cada usuario
 
-    System(ecommerce, "E-commerce Artesanal", "Plataforma de compra/venta")
+**Ejemplo sencillo**:
 
-    System_Ext(pse, "PSE", "Pasarela de pagos")
-    System_Ext(email, "SendGrid", "Envío de emails")
-    System_Ext(storage, "AWS S3", "Almacenamiento de imágenes")
-
-    Rel(cliente, ecommerce, "Busca y compra productos")
-    Rel(artesano, ecommerce, "Publica productos")
-    Rel(admin, ecommerce, "Administra")
-
-    Rel(ecommerce, pse, "Procesa pagos")
-    Rel(ecommerce, email, "Envía notificaciones")
-    Rel(ecommerce, storage, "Guarda imágenes")
+```
+┌─────────────┐
+│   Cliente   │────► "Busca productos"
+└─────────────┘      │
+                     ▼
+               ┌──────────────┐
+               │  MI SISTEMA  │
+               │  (Tienda)    │
+               └──────────────┘
+                     ▲
+                     │
+┌─────────────┐      │
+│    Admin    │────► "Gestiona inventario"
+└─────────────┘
 ```
 
----
-
-### 3. Atributos de Calidad Priorizados
-
-Completa la siguiente tabla (escala 1-5):
-
-| Atributo de Calidad | Prioridad | Justificación                   |
-| ------------------- | --------- | ------------------------------- |
-| **Rendimiento**     | 1-5       | ¿Por qué?                       |
-| **Escalabilidad**   | 1-5       | ¿Cuántos usuarios esperas?      |
-| **Disponibilidad**  | 1-5       | ¿Cuánto downtime es aceptable?  |
-| **Seguridad**       | 1-5       | ¿Datos sensibles?               |
-| **Mantenibilidad**  | 1-5       | ¿Evolucionará mucho?            |
-| **Usabilidad**      | 1-5       | ¿Qué tan crítica es la UX?      |
-| **Costo**           | 1-5       | ¿Restricciones presupuestarias? |
-
-**Prioridades**:
-
-- 5 = Crítico (no negociable)
-- 4 = Muy importante
-- 3 = Importante
-- 2 = Deseable
-- 1 = No prioritario
+**⚠️ No te compliques**: Un dibujo simple y claro es mejor que uno complejo y confuso.
 
 ---
 
-### 4. Plan de Evolución Arquitectónica
+### 3. Repositorio GitHub
 
-Describe cómo evolucionará tu arquitectura en 3 fases:
+Crea un repositorio en GitHub para tu proyecto:
 
-**Fase 1: MVP (Semanas 1-3)**
+**Pasos**:
 
-- Arquitectura inicial
-- Funcionalidades mínimas
-- Stack tecnológico básico
+1. Ve a https://github.com
+2. Click en "New repository"
+3. Nombre: `bootcamp-arquitectura-[tu-dominio]`
+4. Descripción: Breve descripción de tu proyecto
+5. Público ✅
+6. Inicializa con README ✅
 
-**Fase 2: Crecimiento (Semanas 4-6)**
+**Sube tu contenido**:
 
-- ¿Qué mejorarías?
-- ¿Qué componentes refactorizarías?
-- ¿Qué patrones aplicarías?
+```
+mi-repositorio/
+├── README.md          # Tu documento de análisis inicial
+├── diagrama.png       # (Opcional) Tu diagrama simple
+└── docs/              # Carpeta para futuras semanas
+```
 
-**Fase 3: Escala (Semanas 7-9)**
-
-- ¿Migrarías a microservicios?
-- ¿Añadirías caché (Redis)?
-- ¿Containerizarías con Docker?
+**Link de entrega**: Copia el URL de tu repositorio para entregar
 
 ---
 
 ## ✅ Criterios de Evaluación
 
-| Criterio                      | Peso | Descripción                                    |
-| ----------------------------- | ---- | ---------------------------------------------- |
-| **ADR Completo**              | 30%  | Todas las secciones con justificación sólida   |
-| **Diagrama de Contexto**      | 20%  | Actores, sistema, dependencias externas claras |
-| **Priorización de Atributos** | 20%  | Coherencia entre prioridades y decisiones      |
-| **Plan de Evolución**         | 20%  | Visión realista de crecimiento                 |
-| **Justificación Técnica**     | 10%  | Decisiones fundamentadas en teoría             |
+### Evidencia de Conocimiento 🧠 (30%)
 
-**Mínimo aprobatorio**: 70%
+- Comprende qué problema resuelve su dominio
+- Identifica usuarios y funcionalidades clave
+- Explica decisiones con sus propias palabras
 
----
+### Evidencia de Desempeño 💪 (40%)
 
-## 📚 Plantillas y Recursos
+- README.md completo con las 4 secciones
+- Decisiones de metodología y arquitectura justificadas
+- Repositorio GitHub creado y organizado
 
-### Plantilla de ADR
+### Evidencia de Producto 📦 (30%)
 
-Descarga: `3-proyecto/templates/ADR-template.md`
+- Proyecto claro y bien documentado
+- Demuestra investigación del dominio
+- Diagrama simple (si lo incluye, suma puntos extra)
 
-### Ejemplos de Diagramas C4
+**Mínimo aprobatorio**: 70% (3.5/5.0)
 
-Descarga: `3-proyecto/ejemplos/`
+**✨ Puntos Extra**:
 
-### Checklist de Entrega
-
-- [ ] ADR-001 completado con todas las secciones
-- [ ] Diagrama de contexto (imagen SVG/PNG)
-- [ ] Tabla de atributos de calidad priorizada
-- [ ] Plan de evolución en 3 fases
-- [ ] Justificaciones técnicas basadas en material de la semana
-- [ ] Archivo README.md en carpeta del proyecto
+- +5% por diagrama claro y bien hecho
+- +5% por investigar casos reales del sector
 
 ---
 
-## 🚀 Estructura de Carpetas Sugerida
+## ✅ Checklist de Entrega (¡Revisa antes de enviar!)
+
+### Obligatorio:
+
+- [ ] Repositorio GitHub público creado
+- [ ] README.md con las 4 secciones completas
+- [ ] Sección 1: Problema y usuarios identificados
+- [ ] Sección 2: Mínimo 2 tipos de usuarios listados
+- [ ] Sección 3: 5-7 funcionalidades principales
+- [ ] Sección 4: Metodología y arquitectura elegidas (con justificación)
+- [ ] Link del repositorio copiado para entregar
+
+### Opcional (pero suma puntos):
+
+- [ ] Diagrama simple del sistema incluido
+- [ ] Ejemplos o referencias de sistemas similares
+- [ ] Carpeta `docs/` creada para futuras semanas
+
+---
+
+## 🚀 Estructura Mínima de tu Repositorio
 
 ```
-mi-proyecto/
-├── README.md                          # Descripción general
-├── docs/
-│   ├── architecture/
-│   │   ├── ADR-001-metodologia.md
-│   │   ├── context-diagram.svg
-│   │   └── quality-attributes.md
-│   └── requirements/
-│       └── functional-requirements.md
-└── src/                               # (Código en semanas futuras)
+mi-proyecto-bootcamp/
+├── README.md          # ← Tu documento principal (OBLIGATORIO)
+├── diagrama.png       # ← Tu diagrama simple (OPCIONAL)
+└── docs/              # ← Para futuras semanas (OPCIONAL)
 ```
+
+**Eso es todo para la semana 1.** Simple y enfocado. 🎯
 
 ---
 
-## 💡 Consejos para el Éxito
+## 💡 Consejos para esta Primera Semana
 
-### ✅ DO (Haz)
+### ✅ Hazlo Bien
 
-- **Empieza simple**: No sobre-ingenierices desde el inicio
-- **Justifica cada decisión**: Basándote en el material del bootcamp
-- **Sé realista**: Considera tu nivel de experiencia
-- **Piensa en evolución**: ¿Cómo crecerá tu proyecto?
-- **Documenta desde ya**: Los ADRs son para tu yo futuro
+- **Relájate**: Esta semana es solo análisis, no código
+- **Investiga ejemplos**: Busca en Google apps similares a tu dominio
+- **Escribe con tus palabras**: No copies definiciones de internet
+- **Empieza simple**: Es mejor poco y claro que mucho y confuso
+- **Pregunta sin pena**: Todos estamos aprendiendo
+- **Usa el tiempo de clase**: Aprovecha para resolver dudas
 
-### ❌ DON'T (No hagas)
+### ❌ Evita Estos Errores
 
-- **No copies proyectos de FAANG**: Netflix maneja 200M usuarios, tú no
-- **No elijas tecnologías porque "están de moda"**: Justifica técnicamente
-- **No ignores las restricciones**: Tiempo, presupuesto, equipo son reales
-- **No sobre-documentes**: Suficiente, no exhaustivo
-- **No cambies de proyecto**: Este será tu caso de estudio las 9 semanas
+- **No te compliques**: Para esta semana, lo simple es perfecto
+- **No copies de compañeros**: Tu dominio es único
+- **No dejes para última hora**: 1.5 horas es suficiente si empiezas a tiempo
+- **No inventes tecnologías**: Usa las que conoces o las sugeridas
+- **No te frustres**: Es normal sentirse perdido al inicio
+
+### 🌟 Recuerda
+
+> "El mejor proyecto es el que terminas, no el que empiezas perfecto."
+
+Esta semana es solo el inicio. Iremos paso a paso. 💪
 
 ---
 
@@ -373,54 +364,74 @@ Para prepararte:
 
 ## 📞 Soporte
 
-**¿Dudas sobre tu proyecto?**
+**¿Dudas sobre tu dominio asignado?**
 
 - Consulta en la sesión presencial
+- Investiga casos reales del sector
+- Pide orientación al instructor (no cambio de dominio)
+
+**¿No entiendes tu dominio?**
+
+- Investiga empresas reales del sector
+- Analiza competidores y sus soluciones
+- Consulta normativas y regulaciones del sector
+- Discute con el instructor las particularidades
+
+**¿Dudas técnicas sobre arquitectura?**
+
 - Crea un issue en GitHub
 - Discute en el foro del curso
-
-**¿No sabes qué caso elegir?**
-
-- Piensa en un problema real que quieras resolver
-- Consulta con compañeros
-- Pide feedback al instructor
+- Revisa material de la semana
 
 ---
 
 ## 🏆 Ejemplos de Proyectos Anteriores
 
-### Ejemplo 1: Sistema de Adopción de Mascotas
+**Nota**: Estos son ejemplos de cómo otros estudiantes han abordado sus dominios asignados. **Tu dominio será diferente**.
+
+### Ejemplo 1: Sistema de Gestión de Residuos Reciclables
 
 - **Metodología**: Scrum (sprints de 1 semana)
 - **Arquitectura**: Monolito modular → Microservicios (semana 6)
 - **Stack**: Node.js + PostgreSQL + React
-- **Destacado**: Excelente justificación de trade-offs
+- **Destacado**: Excelente justificación de trade-offs entre simplicidad inicial y escalabilidad futura
 
-### Ejemplo 2: Plataforma de Carpooling
+### Ejemplo 2: Plataforma de Control de Calidad Industrial
 
 - **Metodología**: Kanban (flujo continuo)
-- **Arquitectura**: Microservicios desde el inicio
+- **Arquitectura**: Arquitectura hexagonal desde el inicio
 - **Stack**: Python + MongoDB + Vue
-- **Destacado**: Diagrama de contexto muy claro
+- **Destacado**: Diagrama de contexto extremadamente claro con todas las integraciones
 
-### Ejemplo 3: Sistema de Gestión de Gym
+### Ejemplo 3: Sistema de Gestión de Torneos Deportivos Amateur
 
 - **Metodología**: Híbrido (planificación inicial + Scrum)
-- **Arquitectura**: N-capas tradicional
+- **Arquitectura**: N-capas tradicional con separación clara
 - **Stack**: Java + MySQL + Angular
-- **Destacado**: Priorización de atributos de calidad
+- **Destacado**: Priorización excepcional de atributos de calidad basada en análisis real
 
 ---
 
-## 📅 Fecha de Entrega
+## 📅 Fecha y Formato de Entrega
 
-**Semana 01 - Domingo 23:59**
+**📆 Fecha límite**: Domingo 23:59
 
-**Formato de entrega**:
+**📤 Cómo entregar**:
 
-- Carpeta comprimida (.zip) con tu proyecto
-- Subir a plataforma del SENA
-- Nombre: `apellido-nombre-proyecto-week01.zip`
+1. **Link de GitHub**: Copia el URL de tu repositorio
+2. **Sube a la plataforma del SENA**: El link en el campo de entrega
+
+**Ejemplo de link a entregar**:
+
+```
+https://github.com/tu-usuario/bootcamp-arquitectura-tu-dominio
+```
+
+**⚠️ Importante**:
+
+- Verifica que tu repositorio sea **público**
+- Revisa que el README.md se vea bien en GitHub
+- Entrega aunque sientas que "falta algo" - es mejor entregar algo que nada
 
 ---
 

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#1e1e1e"/>
+  <text x="600" y="50" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Open/Closed Principle (OCP) - Extensión sin Modificación</text>
+  <g transform="translate(50, 100)">
+    <text x="250" y="0" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#e74c3c">❌ Violación OCP: Código Rígido</text>
+    <rect x="50" y="20" width="400" height="230" rx="10" fill="#2d1a1a" stroke="#e74c3c" stroke-width="3"/>
+    <rect x="50" y="20" width="400" height="40" rx="10" fill="#e74c3c"/>
+    <text x="250" y="45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">DiscountCalculator</text>
+    <g transform="translate(70, 80)">
+      <text x="0" y="0" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#e74c3c" font-weight="bold">calculate(price, type, value) {</text>
+      <text x="20" y="22" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#bbb">if (type === 'percentage') {</text>
+      <text x="40" y="40" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#bbb">return price * (1 - value);</text>
+      <text x="20" y="58" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#bbb">} else if (type === 'fixed') {</text>
+      <text x="40" y="76" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#bbb">return price - value;</text>
+      <text x="20" y="94" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#bbb">} else if (type === 'seasonal') {</text>
+      <text x="40" y="112" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#bbb">return price * 0.85;</text>
+      <text x="20" y="130" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#bbb">}</text>
+      <text x="0" y="148" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#e74c3c" font-weight="bold">}</text>
+    </g>
+    <rect x="50" y="265" width="400" height="100" rx="10" fill="#2a1a1a" stroke="#e74c3c" stroke-width="2"/>
+    <text x="250" y="288" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e74c3c">⚠️ Problemas</text>
+    <text x="70" y="310" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#c0c0c0">• Agregar descuento = MODIFICAR clase</text>
+    <text x="70" y="330" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#c0c0c0">• Cadena de if/else crece infinitamente</text>
+    <text x="70" y="350" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" fill="#c0c0c0">• Riesgo de romper código existente</text>
+  </g>
+  <g transform="translate(500, 300)">
+    <path d="M 0,0 L 150,0" stroke="#27ae60" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+    <text x="75" y="-10" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#27ae60">Aplicar OCP</text>
+    <text x="75" y="25" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#bbb">Strategy Pattern</text>
+  </g>
+  <g transform="translate(700, 100)">
+    <text x="225" y="0" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#27ae60">✅ Aplicando OCP: Extensible</text>
+    <rect x="125" y="30" width="200" height="80" rx="8" fill="#2a2a2a" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="225" y="55" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#f39c12">&lt;&lt;interface&gt;&gt;</text>
+    <text x="225" y="75" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#e0e0e0">DiscountStrategy</text>
+    <line x1="135" y1="85" x2="315" y2="85" stroke="#666" stroke-width="1"/>
+    <text x="135" y="102" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">calculate(price)</text>
+    <rect x="20" y="160" width="170" height="90" rx="8" fill="#1a3a2a" stroke="#27ae60" stroke-width="2"/>
+    <rect x="20" y="160" width="170" height="30" rx="8" fill="#27ae60"/>
+    <text x="105" y="180" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">PercentageDiscount</text>
+    <text x="30" y="210" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">calculate(price) {</text>
+    <text x="40" y="228" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">price * 0.90</text>
+    <text x="30" y="243" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">}</text>
+    <rect x="210" y="160" width="170" height="90" rx="8" fill="#1a3a2a" stroke="#27ae60" stroke-width="2"/>
+    <rect x="210" y="160" width="170" height="30" rx="8" fill="#27ae60"/>
+    <text x="295" y="180" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">FixedDiscount</text>
+    <text x="220" y="210" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">calculate(price) {</text>
+    <text x="230" y="228" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">price - 100</text>
+    <text x="220" y="243" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">}</text>
+    <rect x="115" y="280" width="170" height="90" rx="8" fill="#1a4a1a" stroke="#4caf50" stroke-width="3" stroke-dasharray="10,5"/>
+    <rect x="115" y="280" width="170" height="30" rx="8" fill="#4caf50"/>
+    <text x="200" y="300" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">BlackFridayDiscount</text>
+    <text x="125" y="330" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">calculate(price) {</text>
+    <text x="135" y="348" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">price * 0.50</text>
+    <text x="125" y="363" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" fill="#bbb">}</text>
+    <rect x="295" y="285" width="60" height="25" rx="5" fill="#4caf50"/>
+    <text x="325" y="302" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">NUEVO</text>
+    <path d="M 105,160 L 205,110" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrowInherit)"/>
+    <path d="M 295,160 L 245,110" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrowInherit)"/>
+    <path d="M 200,280 L 225,110" stroke="#4caf50" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowInherit)"/>
+    <text x="330" y="340" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#4caf50" font-weight="bold">✨ Extensión</text>
+    <text x="330" y="356" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#4caf50" font-weight="bold">sin modificar</text>
+  </g>
+  <g transform="translate(800, 460)">
+    <rect x="0" y="0" width="300" height="100" rx="8" fill="#1a2a3a" stroke="#2196f3" stroke-width="2"/>
+    <rect x="0" y="0" width="300" height="30" rx="8" fill="#2196f3"/>
+    <text x="150" y="20" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">PriceCalculator</text>
+    <text x="10" y="50" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">calculate(price, strategy) {</text>
+    <text x="20" y="68" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">return strategy.calculate(price);</text>
+    <text x="10" y="86" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">}</text>
+  </g>
+  <g transform="translate(100, 610)">
+    <rect width="1000" height="140" rx="10" fill="#1a3a2a" stroke="#27ae60" stroke-width="2"/>
+    <text x="20" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#27ae60">✅ Beneficios de OCP:</text>
+    <text x="30" y="55" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">🔓 <tspan font-weight="bold">Abierto para extensión:</tspan> Agregar nuevas estrategias sin tocar código existente</text>
+    <text x="30" y="80" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">🔒 <tspan font-weight="bold">Cerrado para modificación:</tspan> Código existente permanece intacto y estable</text>
+    <text x="30" y="105" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">🎯 <tspan font-weight="bold">Menor riesgo:</tspan> Nuevas funcionalidades no rompen código probado</text>
+    <text x="30" y="130" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">♻️ <tspan font-weight="bold">Reutilización:</tspan> Estrategias intercambiables y combinables</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#27ae60"/>
+    </marker>
+    <marker id="arrowInherit" markerWidth="15" markerHeight="15" refX="0" refY="5" orient="auto">
+      <path d="M15,5 L0,0 L0,10 Z" fill="#1e1e1e" stroke="#27ae60" stroke-width="2"/>
+    </marker>
+  </defs>
+</svg>
