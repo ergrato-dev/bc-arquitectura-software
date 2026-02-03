@@ -274,16 +274,78 @@ Cada semana debe incluir:
 
 ---
 
+## 🔄 Orden de Generación de Contenido por Semana
+
+**IMPORTANTE**: Seguir estrictamente este orden para mantener consistencia y calidad pedagógica.
+
+### 📋 Proceso Secuencial (OBLIGATORIO)
+
+1. **📖 README de la semana**
+   - Introducción y objetivos
+   - Navegación del contenido
+   - Resumen de actividades
+
+2. **📊 Rúbrica de evaluación**
+   - 3 evidencias (Conocimiento 30%, Desempeño 40%, Producto 30%)
+   - Criterios específicos y medibles
+   - Formato SENA
+
+3. **🎯 Reto de la semana**
+   - Inspirado en: https://github.com/ergrato-dev/bc-javascript-es2023
+   - Problema motivador del mundo real
+   - Conexión con los objetivos semanales
+
+4. **📚 Teoría**
+   - Estructura QUÉ-PARA-IMPACTO
+   - Conceptos fundamentales
+   - Ejemplos del mundo real
+
+5. **🖼️ Assets y vinculación**
+   - Crear diagramas SVG/PlantUML/Mermaid
+   - Guardar en `0-assets/`
+   - Vincular en archivos de teoría
+
+6. **💪 Prácticas guiadas**
+   - Ejercicios paso a paso
+   - Código completo funcional
+   - Casos de estudio aplicados
+
+7. **🚀 Proyecto integrador**
+   - Aplicación práctica de la semana
+   - Documentación arquitectónica
+   - Entregables específicos
+
+8. **📦 Recursos completos**
+   - Ebooks (4-recursos/ebooks-free/)
+   - Videos YouTube (4-recursos/videografia/)
+   - Referencias web (4-recursos/webgrafia/)
+
+9. **📖 Glosario**
+   - Términos técnicos A-Z
+   - Definiciones claras
+   - Ejemplos de uso
+
+### ⚠️ Reglas Importantes
+
+- ✅ **SIEMPRE revisar semanas anteriores** para identificar patrones
+- ✅ **Mantener coherencia** en estructura y estilo
+- ✅ **No saltar pasos** en el proceso secuencial
+- ✅ **Validar completitud** antes de pasar al siguiente elemento
+
+---
+
 ## ✅ Checklist para Nuevas Semanas
 
 - [ ] Estructura de carpetas completa
 - [ ] README.md con objetivos y navegación
-- [ ] Teoría con estructura QUÉ-PARA-IMPACTO
-- [ ] Ejercicios con casos de estudio
-- [ ] Proyecto integrador con documentación
-- [ ] Recursos (ebooks, videos, webgrafía)
-- [ ] Glosario de términos
 - [ ] Rúbrica con 3 evidencias (30%-40%-30%)
+- [ ] Reto de la semana vinculado
+- [ ] Teoría con estructura QUÉ-PARA-IMPACTO
+- [ ] Assets creados y vinculados en teoría
+- [ ] Prácticas guiadas con código funcional
+- [ ] Proyecto integrador con documentación
+- [ ] Recursos completos (ebooks, videos, webgrafía)
+- [ ] Glosario de términos
 - [ ] Diagramas en SVG/PlantUML/Mermaid
 - [ ] Código en JavaScript ES2023
 - [ ] Uso de pnpm (no npm)

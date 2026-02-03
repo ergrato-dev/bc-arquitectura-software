@@ -13,6 +13,8 @@ Al finalizar esta sección, serás capaz de:
 
 ## 📖 Cohesión: El Pegamento del Buen Diseño
 
+![Cohesión y Acoplamiento](../0-assets/04-cohesion-acoplamiento.svg)
+
 ### 🎯 ¿Qué es la Cohesión?
 
 La **cohesión** es el grado en que los elementos dentro de un módulo (clase, función, archivo) están relacionados entre sí.

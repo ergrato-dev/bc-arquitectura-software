@@ -21,6 +21,8 @@ El término fue acuñado por **Michael Feathers** en el año 2000, basándose en
 
 ### Los 5 Principios:
 
+![Diagrama General SOLID](../0-assets/01-solid-overview.svg)
+
 | Letra | Principio                 | Nombre en Inglés      | Propósito                                   |
 | ----- | ------------------------- | --------------------- | ------------------------------------------- |
 | **S** | Responsabilidad Única     | Single Responsibility | Una clase = una razón para cambiar          |

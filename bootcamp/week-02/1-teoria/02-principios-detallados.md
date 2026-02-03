@@ -41,6 +41,10 @@ Una **responsabilidad** es una razón para cambiar. Si una clase tiene múltiple
 - ❌ Cambios tienen **efectos secundarios inesperados**
 - ❌ Tests **complicados con muchos mocks**
 
+### 📊 Visualización del Concepto
+
+![Ejemplo SRP](../0-assets/02-srp-ejemplo.svg)
+
 ### ❌ Ejemplo de Violación (JavaScript)
 
 ```javascript
@@ -226,7 +230,11 @@ class CreateUserUseCase {
 
 **Cerrado para modificación**: Sin cambiar el código existente
 
-### 🚀 ¿Para qué sirve?
+### � Visualización del Concepto
+
+![Extensión OCP](../0-assets/03-ocp-extension.svg)
+
+### �🚀 ¿Para qué sirve?
 
 - Agregar funcionalidades sin riesgo de romper lo existente
 - Código más estable y predecible
@@ -736,7 +744,11 @@ manageBreak(human, human); // ✅ Solo para humanos
 **Alto nivel**: Lógica de negocio
 **Bajo nivel**: Detalles de implementación (BD, APIs, frameworks)
 
-### 🚀 ¿Para qué sirve?
+### � Visualización del Concepto
+
+![Inversión de Dependencias](../0-assets/05-dependency-inversion.svg)
+
+### �🚀 ¿Para qué sirve?
 
 - Desacoplar lógica de negocio de detalles técnicos
 - Facilitar testing (inyectar mocks)
