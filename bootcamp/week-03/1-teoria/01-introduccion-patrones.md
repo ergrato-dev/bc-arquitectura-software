@@ -106,6 +106,8 @@ Cada patrón favorece ciertos atributos:
 
 ## 🆚 Patrón Arquitectónico vs Patrón de Diseño
 
+![Patrón Arquitectónico vs Patrón de Diseño](../0-assets/01-patron-vs-diseno.svg)
+
 ### Diferencias Clave
 
 | Aspecto          | Patrón Arquitectónico           | Patrón de Diseño                |

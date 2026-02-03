@@ -5,6 +5,7 @@
 ### ¿Qué es MVC?
 
 **MVC** (Model-View-Controller) es un patrón arquitectónico que separa una aplicación en tres componentes interconectados:
+
 - **Model (Modelo)**: Datos y lógica de negocio
 - **View (Vista)**: Presentación visual
 - **Controller (Controlador)**: Intermediario que maneja inputs y actualiza Model/View
@@ -14,7 +15,7 @@
 ### Definición Formal
 
 > "El patrón MVC divide una aplicación interactiva en tres componentes. El modelo contiene la funcionalidad y datos core. Las vistas muestran información al usuario. Los controladores manejan la entrada del usuario."
-> — Gamma et al., *Design Patterns*
+> — Gamma et al., _Design Patterns_
 
 ---
 
@@ -45,6 +46,7 @@ La lógica de negocio (Model) está completamente desacoplada de cómo se muestr
 ```
 
 **Ejemplo real: Ruby on Rails (MVC clásico)**
+
 - **Model**: `User`, `Product`, `Order` (ActiveRecord)
 - **View**: Templates HTML/ERB
 - **Controller**: `UsersController`, `ProductsController`
@@ -60,7 +62,7 @@ class Product {
     this.name = name;
     this.price = price;
   }
-  
+
   applyDiscount(percentage) {
     this.price -= this.price * (percentage / 100);
   }
@@ -131,6 +133,7 @@ test('Product debe aplicar descuento correctamente', () => {
    - Testear Controller con mocks
 
 **Caso real: GitHub**
+
 - **Model**: Repositorios, Issues, Pull Requests (lógica de Git)
 - **View**: Interfaz web, API REST, GraphQL, GitHub CLI
 - **Controller**: Rutas que conectan acciones de usuario con operaciones de Git
@@ -146,14 +149,15 @@ test('Product debe aplicar descuento correctamente', () => {
 <script>
   function saveUser() {
     const name = document.getElementById('name').value;
-    if (name === '') { // Validación mezclada con UI
+    if (name === '') {
+      // Validación mezclada con UI
       alert('Nombre requerido'); // Presentación mezclada
       return;
     }
-    
+
     const user = { id: Date.now(), name }; // Lógica mezclada
     localStorage.setItem('user', JSON.stringify(user)); // Persistencia mezclada
-    
+
     document.getElementById('result').innerHTML = 'Usuario guardado'; // UI mezclada
   }
 </script>
@@ -202,9 +206,15 @@ export class Product {
   }
 
   // Getters
-  get name() { return this.#name; }
-  get price() { return this.#price; }
-  get stock() { return this.#stock; }
+  get name() {
+    return this.#name;
+  }
+  get price() {
+    return this.#price;
+  }
+  get stock() {
+    return this.#stock;
+  }
 }
 ```
 
@@ -251,14 +261,14 @@ export class ProductController {
   constructor(model, view) {
     this.#model = model;
     this.#view = view;
-    
+
     this.#init();
   }
 
   #init() {
     // Renderizar vista inicial
     this.#view.render(this.#model);
-    
+
     // Conectar eventos
     document.getElementById('apply-discount').addEventListener('click', () => {
       this.applyDiscount();
@@ -288,6 +298,7 @@ const controller = new ProductController(product, view);
 ### ¿Qué es MVVM?
 
 **MVVM** es una variante de MVC donde:
+
 - **Model**: Datos y lógica (igual que MVC)
 - **View**: Presentación visual (igual que MVC)
 - **ViewModel**: Intermediario que expone datos del Model en formato "bindeable" para la View
@@ -320,16 +331,16 @@ export default {
     return {
       product: {
         name: 'Laptop',
-        price: 1000
-      }
+        price: 1000,
+      },
     };
   },
   methods: {
     applyDiscount() {
       this.product.price *= 0.9; // ViewModel actualizado
       // Vista se actualiza AUTOMÁTICAMENTE
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -391,6 +402,7 @@ test('ViewModel debe calcular total correctamente', () => {
    - UIs más fluidas
 
 **Caso real: Gmail (interfaz moderna)**
+
 - **Model**: Emails, contactos (backend)
 - **ViewModel**: Estado de bandeja de entrada, emails seleccionados, filtros activos
 - **View**: Interfaz web reactiva (cambios instantáneos sin recargar página)
@@ -433,7 +445,7 @@ export class ProductViewModel {
     this.state = reactive({
       product: productModel,
       discount: 0,
-      finalPrice: productModel.price
+      finalPrice: productModel.price,
     });
   }
 
@@ -464,15 +476,15 @@ export class ProductViewModel {
 </template>
 
 <script>
-import { ProductViewModel } from './viewmodel/product-viewmodel.js';
+  import { ProductViewModel } from './viewmodel/product-viewmodel.js';
 
-export default {
-  setup() {
-    const product = { id: 1, name: 'Laptop', price: 1000 };
-    const vm = new ProductViewModel(product);
-    return vm;
-  }
-};
+  export default {
+    setup() {
+      const product = { id: 1, name: 'Laptop', price: 1000 };
+      const vm = new ProductViewModel(product);
+      return vm;
+    },
+  };
 </script>
 ```
 
@@ -480,14 +492,14 @@ export default {
 
 ## 🆚 MVC vs MVVM
 
-| Aspecto | MVC | MVVM |
-|---------|-----|------|
-| **Actualización de View** | Manual (controller actualiza view) | Automática (data binding) |
-| **Complejidad** | Media | Baja (framework maneja binding) |
-| **Testing** | Controller difícil de testear | ViewModel fácil de testear |
-| **Código boilerplate** | Más (manipulación DOM manual) | Menos (framework maneja) |
-| **Frameworks** | Ruby on Rails, Django, Laravel | React, Vue, Angular, Svelte |
-| **Mejor para** | Apps tradicionales server-side | SPAs (Single Page Apps) |
+| Aspecto                   | MVC                                | MVVM                            |
+| ------------------------- | ---------------------------------- | ------------------------------- |
+| **Actualización de View** | Manual (controller actualiza view) | Automática (data binding)       |
+| **Complejidad**           | Media                              | Baja (framework maneja binding) |
+| **Testing**               | Controller difícil de testear      | ViewModel fácil de testear      |
+| **Código boilerplate**    | Más (manipulación DOM manual)      | Menos (framework maneja)        |
+| **Frameworks**            | Ruby on Rails, Django, Laravel     | React, Vue, Angular, Svelte     |
+| **Mejor para**            | Apps tradicionales server-side     | SPAs (Single Page Apps)         |
 
 ---
 
@@ -554,7 +566,7 @@ import { Component, Input } from '@angular/core';
       <p>\${{ price }}</p>
       <button (click)="applyDiscount()">10% OFF</button>
     </div>
-  `
+  `,
 })
 export class ProductCardComponent {
   @Input() product: any;
@@ -601,12 +613,14 @@ export class ProductCardComponent {
 ## 💡 Mejores Prácticas
 
 ### MVC:
+
 1. ✅ **Model nunca conoce View**: Solo datos y lógica
 2. ✅ **Controller delgado**: Solo conecta, no lógica de negocio
 3. ✅ **View sin lógica**: Solo presentación
 4. ✅ **Un Controller por recurso**: `UsersController`, `ProductsController`
 
 ### MVVM:
+
 1. ✅ **ViewModel sin lógica de View**: No manipular DOM
 2. ✅ **Estado inmutable cuando sea posible**: Evitar mutaciones directas
 3. ✅ **Computed properties para cálculos**: No en template
