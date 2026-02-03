@@ -537,7 +537,7 @@ Crear prueba de concepto (1-2 días) con el patrón elegido:
 
 ## 🚀 Próximos Pasos
 
-- **[Práctica: Matriz de Selección](../2-practicas/practica-03-seleccion.md)** - Ejercicio guiado
+- **[Práctica: Matriz de Selección](../2-practicas/03-practica-seleccion.md)** - Ejercicio guiado
 - **[Proyecto Semana 03](../3-proyecto/proyecto-semana-03.md)** - Aplicar selección a tu dominio
 
 ---

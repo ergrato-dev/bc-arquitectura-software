@@ -60,16 +60,16 @@ Los siguientes diagramas están vinculados en los archivos de teoría:
 
 ## 💻 Prácticas (2 horas)
 
-1. **[Análisis de Arquitecturas Reales](2-practicas/practica-01-analisis-arquitecturas.md)** (45 min)
+1. **[Análisis de Arquitecturas Reales](2-practicas/01-practica-analisis-arquitecturas.md)** (45 min)
    - Netflix: Arquitectura en capas + microservicios
    - Slack: Event-Driven
    - Identificar patrones en sistemas conocidos
 
-2. **[Implementación de Layered Architecture](2-practicas/practica-02-layered.md)** (45 min)
+2. **[Implementación de Layered Architecture](2-practicas/02-practica-layered.md)** (45 min)
    - Crear aplicación de 3 capas en JavaScript ES2023
    - Separación clara de responsabilidades
 
-3. **[Matriz de Selección de Patrones](2-practicas/practica-03-seleccion.md)** (30 min)
+3. **[Matriz de Selección de Patrones](2-practicas/03-practica-seleccion.md)** (30 min)
    - Ejercicio guiado para seleccionar patrón
    - Justificación técnica de decisiones
 

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3498db"/>
+    </marker>
+  </defs>
+  
+  <!-- Título -->
+  <text x="450" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#3498db" text-anchor="middle">Matriz de Selección de Patrón Arquitectónico</text>
+  
+  <!-- ===== ENCABEZADOS DE TABLA ===== -->
+  <rect x="30" y="60" width="170" height="45" rx="6" fill="#34495e" stroke="#5d6d7e" stroke-width="2"/>
+  <text x="115" y="88" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">CRITERIO</text>
+  
+  <rect x="205" y="60" width="130" height="45" rx="6" fill="#34495e" stroke="#5d6d7e" stroke-width="2"/>
+  <text x="270" y="88" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">LAYERED</text>
+  
+  <rect x="340" y="60" width="130" height="45" rx="6" fill="#34495e" stroke="#5d6d7e" stroke-width="2"/>
+  <text x="405" y="80" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">CLIENTE-</text>
+  <text x="405" y="95" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">SERVIDOR</text>
+  
+  <rect x="475" y="60" width="130" height="45" rx="6" fill="#34495e" stroke="#5d6d7e" stroke-width="2"/>
+  <text x="540" y="80" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">EVENT-</text>
+  <text x="540" y="95" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">DRIVEN</text>
+  
+  <rect x="610" y="60" width="130" height="45" rx="6" fill="#34495e" stroke="#5d6d7e" stroke-width="2"/>
+  <text x="675" y="88" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">MVC/MVVM</text>
+  
+  <!-- ===== LÍNEAS DE GRILLA ===== -->
+  <line x1="30" y1="105" x2="740" y2="105" stroke="#5d6d7e" stroke-width="1"/>
+  <line x1="30" y1="150" x2="740" y2="150" stroke="#5d6d7e" stroke-width="1"/>
+  <line x1="30" y1="195" x2="740" y2="195" stroke="#5d6d7e" stroke-width="1"/>
+  <line x1="30" y1="240" x2="740" y2="240" stroke="#5d6d7e" stroke-width="1"/>
+  <line x1="30" y1="285" x2="740" y2="285" stroke="#5d6d7e" stroke-width="1"/>
+  <line x1="30" y1="330" x2="740" y2="330" stroke="#5d6d7e" stroke-width="1"/>
+  <line x1="30" y1="375" x2="740" y2="375" stroke="#5d6d7e" stroke-width="1"/>
+  
+  <!-- ===== FILA 1: Performance ===== -->
+  <rect x="30" y="105" width="170" height="45" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+  <text x="115" y="133" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Performance</text>
+  <text x="270" y="133" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐</text>
+  <text x="405" y="133" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐⭐</text>
+  <text x="540" y="133" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+  <text x="675" y="133" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐</text>
+  
+  <!-- ===== FILA 2: Escalabilidad ===== -->
+  <rect x="30" y="150" width="170" height="45" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+  <text x="115" y="178" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Escalabilidad</text>
+  <text x="270" y="178" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐</text>
+  <text x="405" y="178" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐</text>
+  <text x="540" y="178" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+  <text x="675" y="178" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐</text>
+  
+  <!-- ===== FILA 3: Mantenibilidad ===== -->
+  <rect x="30" y="195" width="170" height="45" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+  <text x="115" y="223" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Mantenibilidad</text>
+  <text x="270" y="223" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐⭐</text>
+  <text x="405" y="223" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐</text>
+  <text x="540" y="223" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐</text>
+  <text x="675" y="223" font-family="Arial, sans-serif" font-size="14" fill="#f39c12" text-anchor="middle">⭐⭐⭐⭐</text>
+  
+  <!-- ===== FILA 4: Complejidad ===== -->
+  <rect x="30" y="240" width="170" height="45" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+  <text x="115" y="268" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Complejidad</text>
+  <text x="270" y="268" font-family="Arial, sans-serif" font-size="12" fill="#2ecc71" text-anchor="middle">Baja ✅</text>
+  <text x="405" y="268" font-family="Arial, sans-serif" font-size="12" fill="#f39c12" text-anchor="middle">Media</text>
+  <text x="540" y="268" font-family="Arial, sans-serif" font-size="12" fill="#e74c3c" text-anchor="middle">Alta ⚠️</text>
+  <text x="675" y="268" font-family="Arial, sans-serif" font-size="12" fill="#f39c12" text-anchor="middle">Media</text>
+  
+  <!-- ===== FILA 5: Aprendizaje ===== -->
+  <rect x="30" y="285" width="170" height="45" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+  <text x="115" y="313" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Aprendizaje</text>
+  <text x="270" y="313" font-family="Arial, sans-serif" font-size="12" fill="#2ecc71" text-anchor="middle">Fácil</text>
+  <text x="405" y="313" font-family="Arial, sans-serif" font-size="12" fill="#f39c12" text-anchor="middle">Medio</text>
+  <text x="540" y="313" font-family="Arial, sans-serif" font-size="12" fill="#e74c3c" text-anchor="middle">Difícil</text>
+  <text x="675" y="313" font-family="Arial, sans-serif" font-size="12" fill="#f39c12" text-anchor="middle">Medio</text>
+  
+  <!-- ===== FILA 6: Testing ===== -->
+  <rect x="30" y="330" width="170" height="45" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+  <text x="115" y="358" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Testing</text>
+  <text x="270" y="358" font-family="Arial, sans-serif" font-size="12" fill="#2ecc71" text-anchor="middle">Fácil ✅</text>
+  <text x="405" y="358" font-family="Arial, sans-serif" font-size="12" fill="#f39c12" text-anchor="middle">Medio</text>
+  <text x="540" y="358" font-family="Arial, sans-serif" font-size="12" fill="#e74c3c" text-anchor="middle">Difícil</text>
+  <text x="675" y="358" font-family="Arial, sans-serif" font-size="12" fill="#2ecc71" text-anchor="middle">Fácil ✅</text>
+  
+  <!-- ===== SECCIÓN: Mejor Para ===== -->
+  <rect x="30" y="400" width="840" height="115" rx="8" fill="#1abc9c" fill-opacity="0.15" stroke="#1abc9c" stroke-width="2"/>
+  <text x="450" y="425" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1abc9c" text-anchor="middle">Mejor Para:</text>
+  
+  <text x="50" y="455" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Layered:</text>
+  <text x="115" y="455" font-family="Arial, sans-serif" font-size="12" fill="#bdc3c7">Apps tradicionales, CRUDs, sistemas medianos</text>
+  
+  <text x="50" y="478" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e67e22">Cliente-Servidor:</text>
+  <text x="165" y="478" font-family="Arial, sans-serif" font-size="12" fill="#bdc3c7">APIs REST, apps web/móvil, servicios centralizados</text>
+  
+  <text x="50" y="501" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9b59b6">Event-Driven:</text>
+  <text x="145" y="501" font-family="Arial, sans-serif" font-size="12" fill="#bdc3c7">Microservicios, IoT, streaming, tiempo real</text>
+  
+  <text x="480" y="455" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">MVC/MVVM:</text>
+  <text x="565" y="455" font-family="Arial, sans-serif" font-size="12" fill="#bdc3c7">Interfaces de usuario, aplicaciones interactivas</text>
+  
+  <!-- ===== SECCIÓN: Proceso de Decisión ===== -->
+  <rect x="30" y="535" width="840" height="130" rx="8" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="2"/>
+  <text x="450" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f39c12" text-anchor="middle">Proceso de Decisión</text>
+  
+  <text x="50" y="590" font-family="Arial, sans-serif" font-size="12" fill="#2ecc71">1️⃣</text>
+  <text x="75" y="590" font-family="Arial, sans-serif" font-size="12" fill="#bdc3c7">Identificar requerimientos críticos (performance, escalabilidad)</text>
+  
+  <text x="50" y="615" font-family="Arial, sans-serif" font-size="12" fill="#3498db">2️⃣</text>
+  <text x="75" y="615" font-family="Arial, sans-serif" font-size="12" fill="#bdc3c7">Evaluar restricciones (tiempo, presupuesto, experiencia)</text>
+  
+  <text x="50" y="640" font-family="Arial, sans-serif" font-size="12" fill="#9b59b6">3️⃣</text>
+  <text x="75" y="640" font-family="Arial, sans-serif" font-size="12" fill="#bdc3c7">Usar matriz con pesos según prioridades del proyecto</text>
+  
+  <!-- ===== LEYENDA ===== -->
+  <rect x="500" y="580" width="350" height="70" rx="6" fill="#34495e" fill-opacity="0.9" stroke="#5d6d7e" stroke-width="2"/>
+  <text x="520" y="600" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ecf0f1">Leyenda:</text>
+  <text x="520" y="620" font-family="Arial, sans-serif" font-size="11" fill="#2ecc71">Verde = Favorable</text>
+  <text x="630" y="620" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">Amarillo = Moderado</text>
+  <text x="520" y="640" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">Rojo = Desafiante</text>
+  <text x="630" y="640" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">⭐ = Puntuación</text>
+</svg>

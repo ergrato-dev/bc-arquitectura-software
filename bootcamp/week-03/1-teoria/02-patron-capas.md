@@ -633,7 +633,7 @@ export class BookRepository {
 ## 🔗 Próximos Pasos
 
 - **[Cliente-Servidor y Event-Driven](03-cliente-servidor-eventos.md)** - Arquitecturas distribuidas
-- **[Práctica: Implementar Layered Architecture](../2-practicas/practica-02-layered.md)** - Ejercicio guiado
+- **[Práctica: Implementar Layered Architecture](../2-practicas/02-practica-layered.md)** - Ejercicio guiado
 
 ---
 

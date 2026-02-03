@@ -55,17 +55,17 @@ Los siguientes diagramas están vinculados en los archivos de teoría:
 
 ## 💻 Prácticas (2 horas)
 
-1. **[Identificar Violaciones SOLID](2-practicas/practica-01-identificar-violaciones.md)** (45 min)
+1. **[Identificar Violaciones SOLID](2-practicas/01-practica-srp.md)** (45 min)
    - Análisis de código con problemas
    - Identificar qué principio se viola
    - Proponer soluciones
 
-2. **[Refactorización Guiada](2-practicas/practica-02-refactorizacion-solid.md)** (45 min)
+2. **[Refactorización Guiada](2-practicas/02-practica-ocp.md)** (45 min)
    - Código inicial con múltiples violaciones
    - Paso a paso aplicando SOLID
    - Comparación antes/después
 
-3. **[Diseño desde Cero con SOLID](2-practicas/practica-03-diseno-solid/)** (30 min)
+3. **[Diseño desde Cero con SOLID](2-practicas/03-practica-dip.md)** (30 min)
    - Sistema de notificaciones
    - Aplicar todos los principios
    - Código funcional en JavaScript ES2023

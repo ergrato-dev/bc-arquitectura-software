@@ -415,7 +415,7 @@ cli.displayProduct(product);
 ## 📚 Recursos de Apoyo
 
 - **Teoría**: [Patrón en Capas](../1-teoria/02-patron-capas.md)
-- **Ejemplo práctico**: [Implementación Layered](../2-practicas/practica-02-layered.md)
+- **Ejemplo práctico**: [Implementación Layered](../2-practicas/02-practica-layered.md)
 - **Videos**: [Serie Arquitectura en Capas](../4-recursos/videografia/README.md)
 
 ---

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .title { font: bold 24px sans-serif; fill: #2c3e50; }
+      .subtitle { font: bold 18px sans-serif; fill: #34495e; }
+      .text { font: 14px sans-serif; fill: #555; }
+      .label { font: bold 14px sans-serif; fill: #fff; }
+      .architectural { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .design { fill: #e67e22; stroke: #d35400; stroke-width: 2; }
+      .arrow { fill: none; stroke: #7f8c8d; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7f8c8d" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title" text-anchor="middle">Patrón Arquitectónico vs Patrón de Diseño</text>
+  
+  <!-- Architectural Pattern Box -->
+  <g id="architectural">
+    <rect x="50" y="80" width="300" height="350" class="architectural" rx="10"/>
+    <text x="200" y="110" class="label" text-anchor="middle">PATRÓN ARQUITECTÓNICO</text>
+    
+    <text x="70" y="150" class="text" font-weight="bold">Alcance:</text>
+    <text x="70" y="170" class="text">• Sistema completo</text>
+    
+    <text x="70" y="200" class="text" font-weight="bold">Nivel:</text>
+    <text x="70" y="220" class="text">• Alto nivel (estructura general)</text>
+    
+    <text x="70" y="250" class="text" font-weight="bold">Ejemplos:</text>
+    <text x="70" y="270" class="text">• Layered (En Capas)</text>
+    <text x="70" y="290" class="text">• Event-Driven (Eventos)</text>
+    <text x="70" y="310" class="text">• Cliente-Servidor</text>
+    <text x="70" y="330" class="text">• MVC/MVVM</text>
+    
+    <text x="70" y="360" class="text" font-weight="bold">Impacto:</text>
+    <text x="70" y="380" class="text">• Afecta toda la aplicación</text>
+    <text x="70" y="400" class="text">• Difícil de cambiar después</text>
+  </g>
+  
+  <!-- Design Pattern Box -->
+  <g id="design">
+    <rect x="450" y="80" width="300" height="350" class="design" rx="10"/>
+    <text x="600" y="110" class="label" text-anchor="middle">PATRÓN DE DISEÑO</text>
+    
+    <text x="470" y="150" class="text" font-weight="bold">Alcance:</text>
+    <text x="470" y="170" class="text">• Componentes específicos</text>
+    
+    <text x="470" y="200" class="text" font-weight="bold">Nivel:</text>
+    <text x="470" y="220" class="text">• Bajo nivel (implementación)</text>
+    
+    <text x="470" y="250" class="text" font-weight="bold">Ejemplos:</text>
+    <text x="470" y="270" class="text">• Factory (Creacional)</text>
+    <text x="470" y="290" class="text">• Singleton (Creacional)</text>
+    <text x="470" y="310" class="text">• Adapter (Estructural)</text>
+    <text x="470" y="330" class="text">• Observer (Comportamiento)</text>
+    
+    <text x="470" y="360" class="text" font-weight="bold">Impacto:</text>
+    <text x="470" y="380" class="text">• Afecta módulos específicos</text>
+    <text x="470" y="400" class="text">• Puede refactorizarse fácilmente</text>
+  </g>
+  
+  <!-- Arrow with relationship -->
+  <path d="M 350 250 L 450 250" class="arrow"/>
+  <text x="400" y="240" class="text" text-anchor="middle" font-style="italic">contiene</text>
+  
+  <!-- Footer -->
+  <text x="400" y="475" class="text" text-anchor="middle" font-size="12">
+    Un patrón arquitectónico define la estructura completa del sistema, mientras que patrones de diseño resuelven problemas específicos de implementación
+  </text>
+</svg>

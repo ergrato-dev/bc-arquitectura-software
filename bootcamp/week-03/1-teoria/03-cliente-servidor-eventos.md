@@ -586,7 +586,7 @@ Muchos sistemas modernos combinan Cliente-Servidor + Event-Driven:
 ## 🚀 Próximos Pasos
 
 - **[MVC/MVVM](04-mvc-mvvm.md)** - Patrones para interfaces de usuario
-- **[Práctica: Análisis de Arquitecturas](../2-practicas/practica-01-analisis-arquitecturas.md)**
+- **[Práctica: Análisis de Arquitecturas](../2-practicas/01-practica-analisis-arquitecturas.md)**
 
 ---
 

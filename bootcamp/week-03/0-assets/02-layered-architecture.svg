@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .title { font: bold 24px sans-serif; fill: #2c3e50; }
+      .layer-title { font: bold 16px sans-serif; fill: #fff; }
+      .text { font: 13px sans-serif; fill: #555; }
+      .layer-presentation { fill: #27ae60; stroke: #229954; stroke-width: 2; }
+      .layer-business { fill: #e67e22; stroke: #d35400; stroke-width: 2; }
+      .layer-data { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .arrow { fill: none; stroke: #34495e; stroke-width: 3; marker-end: url(#arrowhead); }
+      .note { font: italic 12px sans-serif; fill: #7f8c8d; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495e" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title" text-anchor="middle">Arquitectura en Capas (Layered Architecture)</text>
+  
+  <!-- User/Client -->
+  <g id="user">
+    <circle cx="400" cy="90" r="25" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="400" y="95" class="layer-title" text-anchor="middle" font-size="14">👤</text>
+    <text x="400" y="130" class="text" text-anchor="middle">Usuario / Cliente</text>
+  </g>
+  
+  <!-- Arrow to Presentation -->
+  <path d="M 400 115 L 400 165" class="arrow"/>
+  <text x="420" y="145" class="note">interactúa</text>
+  
+  <!-- Presentation Layer -->
+  <g id="presentation-layer">
+    <rect x="150" y="165" width="500" height="100" class="layer-presentation" rx="8"/>
+    <text x="400" y="195" class="layer-title" text-anchor="middle">CAPA DE PRESENTACIÓN</text>
+    <text x="170" y="220" class="text">• Interfaz de Usuario (UI)</text>
+    <text x="170" y="240" class="text">• API REST / GraphQL</text>
+    <text x="400" y="220" class="text">• CLI (Command Line)</text>
+    <text x="400" y="240" class="text">• Formateo de respuestas</text>
+  </g>
+  
+  <!-- Arrow to Business -->
+  <path d="M 400 265 L 400 290" class="arrow"/>
+  <text x="420" y="282" class="note">llama servicios</text>
+  
+  <!-- Business Layer -->
+  <g id="business-layer">
+    <rect x="150" y="290" width="500" height="100" class="layer-business" rx="8"/>
+    <text x="400" y="320" class="layer-title" text-anchor="middle">CAPA DE LÓGICA DE NEGOCIO</text>
+    <text x="170" y="345" class="text">• Validaciones</text>
+    <text x="170" y="365" class="text">• Cálculos y reglas</text>
+    <text x="400" y="345" class="text">• Lógica de dominio</text>
+    <text x="400" y="365" class="text">• Coordinación de operaciones</text>
+  </g>
+  
+  <!-- Arrow to Data -->
+  <path d="M 400 390 L 400 415" class="arrow"/>
+  <text x="420" y="407" class="note">accede datos</text>
+  
+  <!-- Data Layer -->
+  <g id="data-layer">
+    <rect x="150" y="415" width="500" height="100" class="layer-data" rx="8"/>
+    <text x="400" y="445" class="layer-title" text-anchor="middle">CAPA DE PERSISTENCIA / DATOS</text>
+    <text x="170" y="470" class="text">• Repositorios</text>
+    <text x="170" y="490" class="text">• Queries SQL</text>
+    <text x="400" y="470" class="text">• Acceso a Base de Datos</text>
+    <text x="400" y="490" class="text">• Cache y almacenamiento</text>
+  </g>
+  
+  <!-- Database -->
+  <g id="database">
+    <ellipse cx="400" cy="555" rx="80" ry="30" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
+    <text x="400" y="560" class="layer-title" text-anchor="middle" font-size="14">Base de Datos</text>
+  </g>
+  
+  <!-- Arrow to Database -->
+  <path d="M 400 515 L 400 525" class="arrow"/>
+  
+  <!-- Side note -->
+  <text x="50" y="350" class="note" transform="rotate(-90 50 350)">Flujo unidireccional →</text>
+</svg>

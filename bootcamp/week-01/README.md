@@ -29,9 +29,9 @@ Los siguientes diagramas están vinculados en los archivos de teoría:
 
 ## 💻 Prácticas (2 horas)
 
-1. **[Análisis de Casos Reales](2-practicas/practica-01-analisis-casos.md)** (60 min)
-2. **[Comparación de Metodologías](2-practicas/practica-02-metodologias.md)** (30 min)
-3. **[Código: Monolito vs Microservicios](2-practicas/practica-03-refactorizacion/)** (30 min)
+1. **[Análisis de Casos Reales](2-practicas/01-practica-analisis-casos.md)** (60 min)
+2. **[Comparación de Metodologías](2-practicas/02-practica-metodologias.md)** (30 min)
+3. **[Código: Monolito vs Microservicios](2-practicas/03-practica-refactorizacion/)** (30 min)
 
 ## 🚀 Proyecto Integrador
 

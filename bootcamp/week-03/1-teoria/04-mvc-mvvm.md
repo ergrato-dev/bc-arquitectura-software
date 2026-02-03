@@ -631,7 +631,7 @@ export class ProductCardComponent {
 ## 🚀 Próximos Pasos
 
 - **[Selección de Patrón Arquitectónico](05-seleccion-patron.md)** - Cómo elegir el apropiado
-- **[Práctica: Layered Architecture](../2-practicas/practica-02-layered.md)**
+- **[Práctica: Layered Architecture](../2-practicas/02-practica-layered.md)**
 
 ---
 
