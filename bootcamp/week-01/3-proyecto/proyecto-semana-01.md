@@ -6,9 +6,7 @@ Seleccionar un caso de estudio personal que desarrollarás durante las 9 semanas
 
 ## ⏱️ Duración
 
-- Trabajo en clase: 30 minutos
-- Trabajo autónomo: 60 minutos
-- **Total**: 1.5 horas
+**1.5 horas** (30 min clase + 60 min autónomo)
 
 ---
 
@@ -81,20 +79,16 @@ Una vez recibas tu asignación, deberás:
 5. **Seleccionar metodología**: ¿Cuál se adapta mejor al dominio?
 6. **Diseñar arquitectura inicial**: Decisiones fundamentadas
 
-### 🎯 Requisitos Mínimos (Todos los Dominios)
+### 🎯 Requisitos Mínimos
 
-Independientemente del dominio asignado, tu proyecto debe incluir:
+**Tu dominio debe tener**:
 
-- ✅ Mínimo **3-4 entidades principales** (Ej: Usuario, Producto, Pedido)
-- ✅ Al menos **2 tipos de usuarios** (Ej: Cliente, Administrador)
-- ✅ Funcionalidades básicas de gestión (crear, ver, actualizar)
-- ✅ Potencial de crecimiento futuro
+- 3-4 entidades principales
+- 2+ tipos de usuarios/roles
+- Operaciones CRUD básicas
+- Complejidad suficiente para evolucionar 9 semanas
 
-**Para esta semana NO necesitas**:
-
-- ❌ Código funcionando (solo diseño)
-- ❌ Diagramas complejos
-- ❌ Análisis exhaustivo de seguridad
+**Esta semana**: Solo diseño conceptual, sin código.
 
 ---
 
