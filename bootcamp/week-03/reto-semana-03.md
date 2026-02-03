@@ -41,23 +41,23 @@ function addProduct(name, price, stock) {
     price,
     stock,
     active: true,
-    createdAt: new Date()
+    createdAt: new Date(),
   };
 
   // Persistencia mezclada
   products.push(product);
-  
+
   // Presentación mezclada
   console.log(`✅ Producto ${product.name} agregado con ID ${product.id}`);
-  
+
   return product;
 }
 
 // ❌ VIOLACIÓN: Lógica de descuento mezclada con acceso a datos
 function applyDiscount(productId, discountPercentage) {
   // Buscar en "base de datos"
-  const product = products.find(p => p.id === productId);
-  
+  const product = products.find((p) => p.id === productId);
+
   if (!product) {
     throw new Error('Producto no encontrado');
   }
@@ -69,43 +69,47 @@ function applyDiscount(productId, discountPercentage) {
   // Cálculo de descuento (lógica de negocio)
   const discountAmount = product.price * (discountPercentage / 100);
   product.price = product.price - discountAmount;
-  
+
   // Presentación mezclada
-  console.log(`💰 Descuento del ${discountPercentage}% aplicado. Nuevo precio: $${product.price}`);
-  
+  console.log(
+    `💰 Descuento del ${discountPercentage}% aplicado. Nuevo precio: $${product.price}`,
+  );
+
   return product;
 }
 
 // ❌ VIOLACIÓN: Búsqueda con formato de presentación mezclado
 function searchProducts(query) {
-  const results = products.filter(p => 
-    p.name.toLowerCase().includes(query.toLowerCase()) && p.active
+  const results = products.filter(
+    (p) => p.name.toLowerCase().includes(query.toLowerCase()) && p.active,
   );
-  
+
   // Formateo mezclado con lógica
   console.log(`🔍 Búsqueda: "${query}"`);
-  results.forEach(p => {
+  results.forEach((p) => {
     console.log(`  - ${p.name} ($${p.price}) - Stock: ${p.stock}`);
   });
-  
+
   return results;
 }
 
 // ❌ VIOLACIÓN: Lógica de inventario mezclada con notificaciones
 function updateStock(productId, quantity) {
-  const product = products.find(p => p.id === productId);
-  
+  const product = products.find((p) => p.id === productId);
+
   if (!product) {
     throw new Error('Producto no encontrado');
   }
 
   product.stock += quantity;
-  
+
   // Notificación mezclada
   if (product.stock < 10) {
-    console.log(`⚠️ ALERTA: Stock bajo para ${product.name} (${product.stock} unidades)`);
+    console.log(
+      `⚠️ ALERTA: Stock bajo para ${product.name} (${product.stock} unidades)`,
+    );
   }
-  
+
   return product;
 }
 
@@ -260,16 +264,19 @@ bootcamp/week-03/reto-shopnow/
 ## ✅ Criterios de Éxito
 
 ### Separación de Capas (40%)
+
 - [ ] Repositorio maneja SOLO persistencia (sin validaciones ni cálculos)
 - [ ] Servicio maneja SOLO lógica de negocio (sin console.log)
 - [ ] Interfaz maneja SOLO presentación (sin cálculos)
 
 ### Bajo Acoplamiento (30%)
+
 - [ ] Capas se comunican mediante interfaces claras
 - [ ] Cambiar repositorio (in-memory → PostgreSQL) no afecta lógica de negocio
 - [ ] Cambiar presentación (CLI → API) no afecta servicios
 
 ### Funcionalidad Completa (20%)
+
 - [ ] Crear productos
 - [ ] Aplicar descuentos
 - [ ] Buscar productos
@@ -277,6 +284,7 @@ bootcamp/week-03/reto-shopnow/
 - [ ] Notificaciones de stock bajo
 
 ### Código Limpio (10%)
+
 - [ ] JavaScript ES2023 (clases, campos privados #, const/let)
 - [ ] Nombres descriptivos
 - [ ] Comentarios explicativos en cada capa
@@ -303,7 +311,7 @@ class EventEmitter {
 
   emit(event, data) {
     const listeners = this.#listeners.get(event) || [];
-    listeners.forEach(callback => callback(data));
+    listeners.forEach((callback) => callback(data));
   }
 }
 
@@ -331,13 +339,13 @@ Crear `FileRepository` y `MemoryRepository` con misma interfaz.
 
 ## 📊 Evaluación
 
-| Criterio | Peso | Descripción |
-|----------|------|-------------|
-| **Separación correcta** | 40% | Cada capa tiene una sola responsabilidad |
-| **Bajo acoplamiento** | 30% | Capas intercambiables sin romper código |
-| **Funcionalidad** | 20% | Todas las operaciones funcionan |
-| **Código limpio** | 10% | ES2023, nombres claros, comentarios |
-| **Bonus** | +15% | Event-Driven, tests, múltiples repos |
+| Criterio                | Peso | Descripción                              |
+| ----------------------- | ---- | ---------------------------------------- |
+| **Separación correcta** | 40%  | Cada capa tiene una sola responsabilidad |
+| **Bajo acoplamiento**   | 30%  | Capas intercambiables sin romper código  |
+| **Funcionalidad**       | 20%  | Todas las operaciones funcionan          |
+| **Código limpio**       | 10%  | ES2023, nombres claros, comentarios      |
+| **Bonus**               | +15% | Event-Driven, tests, múltiples repos     |
 
 **Total posible**: 115% (100% + 15% bonus)
 
@@ -346,6 +354,7 @@ Crear `FileRepository` y `MemoryRepository` con misma interfaz.
 ## 🚀 Cómo Empezar
 
 ### Paso 1: Crear estructura de carpetas
+
 ```bash
 mkdir -p bootcamp/week-03/reto-shopnow/src/{data,business,presentation,domain}
 mkdir -p bootcamp/week-03/reto-shopnow/tests
@@ -356,6 +365,7 @@ pnpm init
 ### Paso 2: Identificar responsabilidades
 
 Revisa el código monolítico y anota:
+
 - ¿Qué líneas corresponden a PERSISTENCIA?
 - ¿Qué líneas corresponden a LÓGICA DE NEGOCIO?
 - ¿Qué líneas corresponden a PRESENTACIÓN?
@@ -413,6 +423,7 @@ cli.displayProduct(product);
 ## 📅 Entrega
 
 **Archivos a entregar:**
+
 - Código refactorizado en carpetas por capa
 - `README.md` explicando la estructura
 - Diagrama de las 3 capas (opcional pero recomendado)

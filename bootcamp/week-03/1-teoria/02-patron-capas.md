@@ -9,11 +9,12 @@ La **Arquitectura en Capas** (Layered Architecture) es un patrón que organiza e
 ### Definición Formal
 
 > "El patrón en capas divide el sistema en grupos de subtareas, donde cada grupo está en un nivel particular de abstracción. Cada capa proporciona servicios a la capa superior y actúa como cliente de la capa inferior."
-> — Frank Buschmann, *Pattern-Oriented Software Architecture*
+> — Frank Buschmann, _Pattern-Oriented Software Architecture_
 
 ### Principio Fundamental
 
 **Separación de Responsabilidades** (Separation of Concerns):
+
 - Cada capa maneja UNA responsabilidad específica
 - Los cambios en una capa no afectan a otras capas
 - La dependencia fluye en una sola dirección: de arriba hacia abajo
@@ -47,6 +48,7 @@ Cada capa tiene un propósito único y no mezcla responsabilidades:
 ```
 
 **Ejemplo real: Netflix**
+
 - **Capa de Presentación**: Apps móviles, web, smart TVs
 - **Capa de Negocio**: Algoritmo de recomendación, gestión de suscripciones
 - **Capa de Datos**: Base de datos de usuarios, catálogo de contenido
@@ -56,6 +58,7 @@ Cada capa tiene un propósito único y no mezcla responsabilidades:
 Si cambias la UI, no necesitas tocar la lógica de negocio ni la base de datos.
 
 **Caso real:**
+
 - Amazon cambió su interfaz móvil 15 veces en 2023
 - La lógica de negocio (cálculo de precios, inventario) no se modificó
 - Resultado: Actualizaciones rápidas sin riesgo de romper pagos
@@ -115,6 +118,7 @@ assert(product.price === 1200);
    - Misma capa de datos para múltiples servicios
 
 **Caso real: Spotify**
+
 - Misma lógica de negocio (playlists, recomendaciones)
 - Múltiples UIs: Web, iOS, Android, Desktop, Smart TVs, Consolas
 - Cambios en algoritmo de recomendación → afectan todas las plataformas automáticamente
@@ -129,16 +133,16 @@ assert(product.price === 1200);
 function createUser(req, res) {
   // Presentación mezclada
   const name = req.body.name;
-  
+
   // Validación mezclada
   if (!name) return res.status(400).send('Nombre requerido');
-  
+
   // Lógica de negocio mezclada
   const user = { id: Date.now(), name, createdAt: new Date() };
-  
+
   // Persistencia mezclada
   db.users.push(user);
-  
+
   // Presentación mezclada
   res.json(user);
 }
@@ -155,6 +159,7 @@ function createUser(req, res) {
    - Lógica de negocio repetida en app móvil y web
 
 **Caso real: Twitter (2010)**
+
 - Monolito Ruby on Rails sin capas claras
 - Resultado: "Fail Whale" (caídas constantes)
 - Solución: Migración a arquitectura en capas + microservicios
@@ -171,17 +176,20 @@ function createUser(req, res) {
 **Responsabilidad**: Interactuar con el usuario o sistemas externos
 
 **Qué hace:**
+
 - Mostrar información (HTML, JSON, CLI)
 - Recibir inputs del usuario
 - Formatear respuestas
 - Manejar rutas/endpoints (en APIs)
 
 **Qué NO hace:**
+
 - Validar reglas de negocio
 - Calcular precios, descuentos, impuestos
 - Acceder directamente a la base de datos
 
 **Tecnologías:**
+
 - Web: React, Vue, Angular
 - Móvil: React Native, Flutter
 - API: Express.js, FastAPI
@@ -201,20 +209,24 @@ export class ProductController {
   async createProduct(req, res) {
     try {
       const { name, price, stock } = req.body;
-      
+
       // Delega a capa de negocio
-      const product = await this.productService.createProduct(name, price, stock);
-      
+      const product = await this.productService.createProduct(
+        name,
+        price,
+        stock,
+      );
+
       // Formatea respuesta
       res.status(201).json({
         success: true,
         data: product,
-        message: 'Producto creado exitosamente'
+        message: 'Producto creado exitosamente',
       });
     } catch (error) {
       res.status(400).json({
         success: false,
-        error: error.message
+        error: error.message,
       });
     }
   }
@@ -228,12 +240,14 @@ export class ProductController {
 **Responsabilidad**: Implementar reglas de negocio y lógica de dominio
 
 **Qué hace:**
+
 - Validar datos según reglas de negocio
 - Ejecutar cálculos (precios, descuentos, impuestos)
 - Coordinar operaciones entre múltiples entidades
 - Aplicar políticas de negocio
 
 **Qué NO hace:**
+
 - Renderizar HTML o JSON
 - Ejecutar queries SQL directamente
 - Manejar requests HTTP
@@ -255,7 +269,7 @@ export class ProductService {
   async createProduct(name, price, stock) {
     // 1. VALIDACIÓN DE NEGOCIO
     this.#validateProductData(name, price, stock);
-    
+
     // 2. LÓGICA DE DOMINIO
     const product = {
       id: crypto.randomUUID(),
@@ -263,17 +277,17 @@ export class ProductService {
       price: this.#calculateFinalPrice(price),
       stock,
       active: true,
-      createdAt: new Date()
+      createdAt: new Date(),
     };
-    
+
     // 3. PERSISTENCIA (delega a capa de datos)
     const savedProduct = await this.#productRepository.save(product);
-    
+
     // 4. NOTIFICACIONES (regla de negocio)
     if (stock < 10) {
       await this.#notificationService.notifyLowStock(savedProduct);
     }
-    
+
     return savedProduct;
   }
 
@@ -303,12 +317,14 @@ export class ProductService {
 **Responsabilidad**: Gestionar acceso a datos (BD, archivos, APIs externas)
 
 **Qué hace:**
+
 - Ejecutar queries SQL
 - Guardar/recuperar entidades
 - Cachear datos
 - Manejar transacciones de BD
 
 **Qué NO hace:**
+
 - Validar reglas de negocio
 - Calcular precios o descuentos
 - Formatear respuestas HTTP
@@ -337,9 +353,9 @@ export class ProductRepository {
       product.price,
       product.stock,
       product.active,
-      product.createdAt
+      product.createdAt,
     ];
-    
+
     const result = await this.#db.query(query, values);
     return result.rows[0];
   }
@@ -403,26 +419,26 @@ export class ProductRepository {
 
 ## ✅ Ventajas de la Arquitectura en Capas
 
-| Ventaja | Descripción | Ejemplo |
-|---------|-------------|---------|
-| **Fácil de entender** | Estructura intuitiva, ideal para equipos nuevos | Desarrollador junior identifica rápidamente dónde va el código |
-| **Separación clara** | Cada capa tiene responsabilidad única | Cambio de UI no afecta BD |
-| **Reusabilidad** | Capas inferiores sirven a múltiples capas superiores | Misma lógica de negocio para web y móvil |
-| **Testing aislado** | Se testea cada capa independientemente | Test de servicios sin levantar BD real |
-| **Escalabilidad del equipo** | Equipos trabajan en capas diferentes sin conflictos | Equipo de frontend + equipo de backend |
-| **Tecnología desacoplada** | Cambiar tecnología en una capa no afecta otras | Migrar de MySQL a PostgreSQL solo afecta capa de datos |
+| Ventaja                      | Descripción                                          | Ejemplo                                                        |
+| ---------------------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
+| **Fácil de entender**        | Estructura intuitiva, ideal para equipos nuevos      | Desarrollador junior identifica rápidamente dónde va el código |
+| **Separación clara**         | Cada capa tiene responsabilidad única                | Cambio de UI no afecta BD                                      |
+| **Reusabilidad**             | Capas inferiores sirven a múltiples capas superiores | Misma lógica de negocio para web y móvil                       |
+| **Testing aislado**          | Se testea cada capa independientemente               | Test de servicios sin levantar BD real                         |
+| **Escalabilidad del equipo** | Equipos trabajan en capas diferentes sin conflictos  | Equipo de frontend + equipo de backend                         |
+| **Tecnología desacoplada**   | Cambiar tecnología en una capa no afecta otras       | Migrar de MySQL a PostgreSQL solo afecta capa de datos         |
 
 ---
 
 ## ❌ Desventajas y Limitaciones
 
-| Desventaja | Descripción | Mitigación |
-|------------|-------------|------------|
-| **Performance** | Llamadas atraviesan múltiples capas (latencia) | Cacheo en capas intermedias |
-| **Overhead** | Cada capa agrega complejidad | Usar solo 3 capas para proyectos medianos |
-| **Dependencia descendente rígida** | Capas superiores dependen de inferiores | Aplicar Dependency Inversion Principle |
-| **No ideal para tiempo real** | Latencia acumulada en cada capa | Preferir Event-Driven para tiempo real |
-| **Escalabilidad horizontal limitada** | Difícil escalar capas independientemente | Migrar a microservicios si escala es crítica |
+| Desventaja                            | Descripción                                    | Mitigación                                   |
+| ------------------------------------- | ---------------------------------------------- | -------------------------------------------- |
+| **Performance**                       | Llamadas atraviesan múltiples capas (latencia) | Cacheo en capas intermedias                  |
+| **Overhead**                          | Cada capa agrega complejidad                   | Usar solo 3 capas para proyectos medianos    |
+| **Dependencia descendente rígida**    | Capas superiores dependen de inferiores        | Aplicar Dependency Inversion Principle       |
+| **No ideal para tiempo real**         | Latencia acumulada en cada capa                | Preferir Event-Driven para tiempo real       |
+| **Escalabilidad horizontal limitada** | Difícil escalar capas independientemente       | Migrar a microservicios si escala es crítica |
 
 ---
 
@@ -468,11 +484,13 @@ export class ProductRepository {
 ### Regla 1: Dependencia Unidireccional
 
 **Flujo permitido:**
+
 ```
 Presentación → Negocio → Persistencia ✅
 ```
 
 **Flujo prohibido:**
+
 ```
 Persistencia → Negocio ❌
 Negocio → Presentación ❌
@@ -481,12 +499,14 @@ Negocio → Presentación ❌
 ### Regla 2: Comunicación con Capa Inmediata
 
 **Permitido:**
+
 ```
 Presentación → Negocio ✅
 Negocio → Persistencia ✅
 ```
 
 **Evitar:**
+
 ```
 Presentación → Persistencia (saltarse capa de negocio) ⚠️
 ```
@@ -519,6 +539,7 @@ library-system/
 ### Implementación
 
 **Capa de Presentación:**
+
 ```javascript
 // src/presentation/book-controller.js
 export class BookController {
@@ -535,6 +556,7 @@ export class BookController {
 ```
 
 **Capa de Negocio:**
+
 ```javascript
 // src/business/book-service.js
 export class BookService {
@@ -557,7 +579,7 @@ export class BookService {
       userId,
       loanDate: new Date(),
       dueDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000), // 14 días
-      status: 'ACTIVE'
+      status: 'ACTIVE',
     };
 
     // Persistencia
@@ -570,6 +592,7 @@ export class BookService {
 ```
 
 **Capa de Datos:**
+
 ```javascript
 // src/data/book-repository.js
 export class BookRepository {
@@ -578,12 +601,17 @@ export class BookRepository {
   }
 
   async findById(id) {
-    const result = await this.db.query('SELECT * FROM books WHERE id = $1', [id]);
+    const result = await this.db.query('SELECT * FROM books WHERE id = $1', [
+      id,
+    ]);
     return result.rows[0];
   }
 
   async updateAvailability(id, available) {
-    await this.db.query('UPDATE books SET available = $1 WHERE id = $2', [available, id]);
+    await this.db.query('UPDATE books SET available = $1 WHERE id = $2', [
+      available,
+      id,
+    ]);
   }
 }
 ```

@@ -7,7 +7,7 @@ Un **patrón arquitectónico** es una solución reutilizable y probada para un p
 ### Definición Formal
 
 > "Un patrón arquitectónico expresa un esquema de organización estructural fundamental para sistemas de software. Proporciona un conjunto de subsistemas predefinidos, especifica sus responsabilidades e incluye reglas y guías para organizar las relaciones entre ellos."  
-> — Bass, Clements & Kazman, *Software Architecture in Practice*
+> — Bass, Clements & Kazman, _Software Architecture in Practice_
 
 ---
 
@@ -18,6 +18,7 @@ Un **patrón arquitectónico** es una solución reutilizable y probada para un p
 Los patrones arquitectónicos son soluciones que han sido validadas en miles de proyectos reales. Utilizar un patrón probado reduce el riesgo de error y acelera el diseño.
 
 **Ejemplo real:**
+
 - **Netflix** usa arquitectura en capas + microservicios para escalar a 200+ millones de usuarios
 - **Spotify** usa event-driven para sincronizar playlists en tiempo real entre dispositivos
 - **Amazon** usa cliente-servidor distribuido para gestionar millones de transacciones concurrentes
@@ -25,6 +26,7 @@ Los patrones arquitectónicos son soluciones que han sido validadas en miles de 
 ### 2. **Facilitar la Comunicación en Equipos**
 
 Cuando dices "usaremos arquitectura en capas", todo el equipo entiende inmediatamente:
+
 - Habrá separación entre presentación, lógica de negocio y datos
 - Cada capa solo puede comunicarse con la capa inmediatamente inferior
 - Los cambios en UI no afectarán la base de datos
@@ -32,6 +34,7 @@ Cuando dices "usaremos arquitectura en capas", todo el equipo entiende inmediata
 ### 3. **Guiar Decisiones de Diseño**
 
 Los patrones vienen con **trade-offs** (ventajas/desventajas) conocidos:
+
 - **Layered**: Fácil de entender, pero puede ser lento si hay muchas capas
 - **Event-Driven**: Altamente escalable, pero difícil de debuggear
 - **Cliente-Servidor**: Centralizado y fácil de controlar, pero punto único de falla
@@ -39,6 +42,7 @@ Los patrones vienen con **trade-offs** (ventajas/desventajas) conocidos:
 ### 4. **Mejorar Atributos de Calidad**
 
 Cada patrón favorece ciertos atributos:
+
 - **Mantenibilidad**: Layered, MVC
 - **Escalabilidad**: Event-Driven, Microservicios
 - **Performance**: Cliente-Servidor, Pipe-and-Filter
@@ -66,6 +70,7 @@ Cada patrón favorece ciertos atributos:
    - Decir "arquitectura en capas" es más claro que 100 páginas de diagramas
 
 **Caso real: Spotify**
+
 - Pasó de monolito a microservicios (patrón arquitectónico)
 - Resultado: 100+ equipos trabajando en paralelo sin conflictos
 - Despliegues independientes: 10,000+ deploys por semana
@@ -91,6 +96,7 @@ Cada patrón favorece ciertos atributos:
    - Eventualmente, reescribir es más barato que mantener
 
 **Caso real: Twitter (inicio)**
+
 - Monolito sin patrón claro
 - Resultado: "Fail Whale" constante (caídas del servicio)
 - Solución: Migración a arquitectura de microservicios
@@ -102,14 +108,14 @@ Cada patrón favorece ciertos atributos:
 
 ### Diferencias Clave
 
-| Aspecto | Patrón Arquitectónico | Patrón de Diseño |
-|---------|----------------------|------------------|
-| **Alcance** | Sistema completo | Componentes específicos |
-| **Nivel** | Alto nivel (estructura general) | Bajo nivel (implementación) |
-| **Ejemplo** | Layered, Event-Driven, MVC | Factory, Singleton, Observer |
-| **Impacto** | Afecta toda la aplicación | Afecta módulos específicos |
-| **Decisión** | Difícil de cambiar después | Puede refactorizarse fácilmente |
-| **Quién decide** | Arquitecto de software | Desarrolladores |
+| Aspecto          | Patrón Arquitectónico           | Patrón de Diseño                |
+| ---------------- | ------------------------------- | ------------------------------- |
+| **Alcance**      | Sistema completo                | Componentes específicos         |
+| **Nivel**        | Alto nivel (estructura general) | Bajo nivel (implementación)     |
+| **Ejemplo**      | Layered, Event-Driven, MVC      | Factory, Singleton, Observer    |
+| **Impacto**      | Afecta toda la aplicación       | Afecta módulos específicos      |
+| **Decisión**     | Difícil de cambiar después      | Puede refactorizarse fácilmente |
+| **Quién decide** | Arquitecto de software          | Desarrolladores                 |
 
 ### Ejemplo Visual
 
@@ -144,12 +150,14 @@ Cada patrón favorece ciertos atributos:
 ### Origen: Arquitectura Física (Christopher Alexander, 1977)
 
 Los patrones en software se inspiraron en **Christopher Alexander**, quien creó catálogos de patrones para arquitectura física de edificios:
+
 - "A Pattern Language" (1977)
 - Problema recurrente → Solución probada
 
 ### Gang of Four (1994)
 
 **Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides**
+
 - Publicaron "Design Patterns: Elements of Reusable Object-Oriented Software"
 - 23 patrones de diseño clásicos
 - Enfoque: Nivel de código (no arquitectura)
@@ -157,6 +165,7 @@ Los patrones en software se inspiraron en **Christopher Alexander**, quien creó
 ### Patrones Arquitectónicos (1996)
 
 **Frank Buschmann et al.**
+
 - "Pattern-Oriented Software Architecture, Volume 1"
 - Primer catálogo formal de patrones arquitectónicos:
   - Layered
@@ -235,24 +244,29 @@ Los patrones en software se inspiraron en **Christopher Alexander**, quien creó
 Al elegir un patrón, considera:
 
 ### 1. **Requerimientos No Funcionales**
+
 - ¿Performance es crítico? → Cliente-Servidor, Pipe-and-Filter
 - ¿Escalabilidad es crítica? → Event-Driven, Microservicios
 - ¿Mantenibilidad es clave? → Layered, Hexagonal
 
 ### 2. **Tamaño y Complejidad del Sistema**
+
 - Pequeño/mediano → Layered, MVC
 - Grande/complejo → Microservicios, Event-Driven
 
 ### 3. **Experiencia del Equipo**
+
 - Equipo junior → Layered (más simple)
 - Equipo senior → Microservicios (más complejo)
 
 ### 4. **Restricciones Tecnológicas**
+
 - Backend tradicional → Layered, Cliente-Servidor
 - Cloud-native → Serverless, Microservicios
 - Tiempo real → Event-Driven
 
 ### 5. **Contexto de Negocio**
+
 - E-commerce → Layered + Event-Driven
 - Streaming → Event-Driven + Microservicios
 - Sistemas bancarios → Hexagonal + Layered
@@ -261,12 +275,12 @@ Al elegir un patrón, considera:
 
 ## 📊 Matriz de Decisión (Vista Previa)
 
-| Patrón | Mantenibilidad | Escalabilidad | Performance | Complejidad | Mejor Para |
-|--------|---------------|---------------|-------------|-------------|------------|
-| **Layered** | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐ | Apps tradicionales |
-| **Cliente-Servidor** | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | Apps web/móvil |
-| **Event-Driven** | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Tiempo real |
-| **MVC/MVVM** | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | UIs complejas |
+| Patrón               | Mantenibilidad | Escalabilidad | Performance | Complejidad | Mejor Para         |
+| -------------------- | -------------- | ------------- | ----------- | ----------- | ------------------ |
+| **Layered**          | ⭐⭐⭐⭐       | ⭐⭐          | ⭐⭐⭐      | ⭐          | Apps tradicionales |
+| **Cliente-Servidor** | ⭐⭐⭐         | ⭐⭐⭐        | ⭐⭐⭐⭐    | ⭐⭐        | Apps web/móvil     |
+| **Event-Driven**     | ⭐⭐           | ⭐⭐⭐⭐⭐    | ⭐⭐⭐⭐    | ⭐⭐⭐⭐    | Tiempo real        |
+| **MVC/MVVM**         | ⭐⭐⭐⭐       | ⭐⭐          | ⭐⭐⭐      | ⭐⭐        | UIs complejas      |
 
 ---
 
@@ -317,10 +331,10 @@ Ahora que entiendes QUÉ son los patrones arquitectónicos, continuaremos con:
 
 ## 📚 Referencias
 
-- Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.)
-- Buschmann, F., et al. (1996). *Pattern-Oriented Software Architecture, Volume 1*
-- Fowler, M. (2002). *Patterns of Enterprise Application Architecture*
-- Alexander, C. (1977). *A Pattern Language*
+- Bass, L., Clements, P., & Kazman, R. (2021). _Software Architecture in Practice_ (4th ed.)
+- Buschmann, F., et al. (1996). _Pattern-Oriented Software Architecture, Volume 1_
+- Fowler, M. (2002). _Patterns of Enterprise Application Architecture_
+- Alexander, C. (1977). _A Pattern Language_
 
 ---
 
