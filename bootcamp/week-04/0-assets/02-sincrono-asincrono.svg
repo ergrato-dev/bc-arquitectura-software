@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <!-- Background transparent for dark/light mode -->
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#3498db">Comunicación Síncrona vs Asíncrona</text>
+  
+  <!-- SYNCHRONOUS SIDE -->
+  <rect x="30" y="50" width="400" height="380" rx="15" fill="none" stroke="#2980b9" stroke-width="2"/>
+  <text x="230" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2980b9">SÍNCRONO (Request-Response)</text>
+  
+  <!-- Client box -->
+  <rect x="60" y="100" width="100" height="50" rx="8" fill="#3498db"/>
+  <text x="110" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Cliente</text>
+  
+  <!-- Server box -->
+  <rect x="300" y="100" width="100" height="50" rx="8" fill="#e67e22"/>
+  <text x="350" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Servidor</text>
+  
+  <!-- Sync timeline -->
+  <line x1="110" y1="160" x2="110" y2="400" stroke="#3498db" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="350" y1="160" x2="350" y2="400" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Request arrow -->
+  <path d="M115 180 L345 200" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreenSync)"/>
+  <text x="230" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2ecc71">Request</text>
+  
+  <!-- Waiting indicator -->
+  <rect x="75" y="210" width="70" height="80" rx="5" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-dasharray="3,3"/>
+  <text x="110" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">⏳</text>
+  <text x="110" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">BLOQUEADO</text>
+  <text x="110" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">esperando...</text>
+  
+  <!-- Processing indicator -->
+  <rect x="315" y="210" width="70" height="80" rx="5" fill="#9b59b6" fill-opacity="0.3" stroke="#9b59b6"/>
+  <text x="350" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#9b59b6">Procesando</text>
+  
+  <!-- Response arrow -->
+  <path d="M345 300 L115 320" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowPurpleSync)"/>
+  <text x="230" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#9b59b6">Response</text>
+  
+  <!-- Continue -->
+  <text x="110" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2ecc71">▼ Continúa</text>
+  
+  <!-- Sync characteristics -->
+  <text x="230" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ecf0f1">✓ Simple  ✓ Predecible  ✗ Bloquea</text>
+  
+  <!-- ASYNCHRONOUS SIDE -->
+  <rect x="470" y="50" width="400" height="380" rx="15" fill="none" stroke="#27ae60" stroke-width="2"/>
+  <text x="670" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#27ae60">ASÍNCRONO (Event-Driven)</text>
+  
+  <!-- Producer box -->
+  <rect x="500" y="100" width="100" height="50" rx="8" fill="#2ecc71"/>
+  <text x="550" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Productor</text>
+  
+  <!-- Queue box -->
+  <rect x="620" y="100" width="80" height="50" rx="8" fill="#9b59b6"/>
+  <text x="660" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Queue</text>
+  <text x="660" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">📬</text>
+  
+  <!-- Consumer box -->
+  <rect x="740" y="100" width="100" height="50" rx="8" fill="#e74c3c"/>
+  <text x="790" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Consumidor</text>
+  
+  <!-- Async timeline -->
+  <line x1="550" y1="160" x2="550" y2="400" stroke="#2ecc71" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="660" y1="160" x2="660" y2="400" stroke="#9b59b6" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="790" y1="160" x2="790" y2="400" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Message to queue -->
+  <path d="M555 180 L655 190" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreenAsync)"/>
+  <text x="605" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2ecc71">Mensaje</text>
+  
+  <!-- Producer continues immediately -->
+  <rect x="515" y="200" width="70" height="40" rx="5" fill="#2ecc71" fill-opacity="0.3" stroke="#2ecc71"/>
+  <text x="550" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2ecc71">▼ Continúa</text>
+  <text x="550" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2ecc71">(no espera)</text>
+  
+  <!-- Queue holds message -->
+  <rect x="635" y="200" width="50" height="30" rx="3" fill="#9b59b6" fill-opacity="0.5"/>
+  <text x="660" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">📨</text>
+  
+  <!-- Consumer polls -->
+  <path d="M785 260 L665 250" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowRedAsync)"/>
+  <text x="725" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Poll</text>
+  
+  <!-- Message to consumer -->
+  <path d="M665 280 L785 290" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowPurpleAsync)"/>
+  <text x="725" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">Mensaje</text>
+  
+  <!-- Consumer processes -->
+  <rect x="755" y="310" width="70" height="40" rx="5" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c"/>
+  <text x="790" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Procesa</text>
+  
+  <!-- Async characteristics -->
+  <text x="670" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ecf0f1">✓ No bloquea  ✓ Escalable  ✓ Resiliente</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGreenSync" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowPurpleSync" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowGreenAsync" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowPurpleAsync" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowRedAsync" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e74c3c"/>
+    </marker>
+  </defs>
+</svg>

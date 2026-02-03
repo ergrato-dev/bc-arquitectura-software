@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background transparent for dark/light mode -->
+  
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#3498db">Anatomía de un Componente</text>
+  
+  <!-- Main Component Box -->
+  <rect x="150" y="60" width="500" height="400" rx="15" fill="none" stroke="#3498db" stroke-width="3"/>
+  <text x="400" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3498db">COMPONENTE</text>
+  
+  <!-- Interface Section -->
+  <rect x="180" y="110" width="440" height="90" rx="10" fill="#2980b9" fill-opacity="0.9"/>
+  <text x="400" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">INTERFAZ PÚBLICA</text>
+  
+  <!-- Interface methods -->
+  <rect x="200" y="150" width="100" height="35" rx="5" fill="#1abc9c"/>
+  <text x="250" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">getAll()</text>
+  
+  <rect x="320" y="150" width="100" height="35" rx="5" fill="#1abc9c"/>
+  <text x="370" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">create(data)</text>
+  
+  <rect x="440" y="150" width="100" height="35" rx="5" fill="#1abc9c"/>
+  <text x="490" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">delete(id)</text>
+  
+  <!-- Arrow down -->
+  <path d="M400 200 L400 220" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  
+  <!-- Implementation Section -->
+  <rect x="180" y="230" width="440" height="120" rx="10" fill="#8e44ad" fill-opacity="0.9"/>
+  <text x="400" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">IMPLEMENTACIÓN INTERNA</text>
+  
+  <!-- Implementation details -->
+  <text x="210" y="285" font-family="Arial, sans-serif" font-size="12" fill="white">• Lógica de negocio privada</text>
+  <text x="210" y="305" font-family="Arial, sans-serif" font-size="12" fill="white">• Estado interno (variables)</text>
+  <text x="210" y="325" font-family="Arial, sans-serif" font-size="12" fill="white">• Helpers y utilidades</text>
+  <text x="430" y="285" font-family="Arial, sans-serif" font-size="12" fill="white">• Validaciones</text>
+  <text x="430" y="305" font-family="Arial, sans-serif" font-size="12" fill="white">• Transformaciones</text>
+  <text x="430" y="325" font-family="Arial, sans-serif" font-size="12" fill="white">• Caché interno</text>
+  
+  <!-- Arrow down -->
+  <path d="M400 350 L400 370" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  
+  <!-- Dependencies Section -->
+  <rect x="180" y="380" width="440" height="60" rx="10" fill="#e67e22" fill-opacity="0.9"/>
+  <text x="400" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">DEPENDENCIAS REQUERIDAS</text>
+  
+  <rect x="220" y="415" width="90" height="20" rx="3" fill="#d35400"/>
+  <text x="265" y="429" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Repository</text>
+  
+  <rect x="330" y="415" width="90" height="20" rx="3" fill="#d35400"/>
+  <text x="375" y="429" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Logger</text>
+  
+  <rect x="440" y="415" width="90" height="20" rx="3" fill="#d35400"/>
+  <text x="485" y="429" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Config</text>
+  
+  <!-- External arrows (inputs/outputs) -->
+  <!-- Input arrow -->
+  <path d="M80 160 L150 160" stroke="#2ecc71" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  <text x="60" y="145" font-family="Arial, sans-serif" font-size="11" fill="#2ecc71" text-anchor="end">Request</text>
+  <text x="60" y="175" font-family="Arial, sans-serif" font-size="11" fill="#2ecc71" text-anchor="end">(Input)</text>
+  
+  <!-- Output arrow -->
+  <path d="M650 160 L720 160" stroke="#9b59b6" stroke-width="3" marker-end="url(#arrowOut)"/>
+  <text x="740" y="145" font-family="Arial, sans-serif" font-size="11" fill="#9b59b6">Response</text>
+  <text x="740" y="175" font-family="Arial, sans-serif" font-size="11" fill="#9b59b6">(Output)</text>
+  
+  <!-- Principles on the right -->
+  <rect x="680" y="280" width="110" height="140" rx="8" fill="#34495e" fill-opacity="0.9"/>
+  <text x="735" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">PRINCIPIOS</text>
+  <text x="695" y="330" font-family="Arial, sans-serif" font-size="10" fill="white">✓ Encapsulado</text>
+  <text x="695" y="350" font-family="Arial, sans-serif" font-size="10" fill="white">✓ Reemplazable</text>
+  <text x="695" y="370" font-family="Arial, sans-serif" font-size="10" fill="white">✓ Reutilizable</text>
+  <text x="695" y="390" font-family="Arial, sans-serif" font-size="10" fill="white">✓ Desplegable</text>
+  <text x="695" y="410" font-family="Arial, sans-serif" font-size="10" fill="white">✓ Testeable</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrowOut" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9b59b6"/>
+    </marker>
+  </defs>
+</svg>

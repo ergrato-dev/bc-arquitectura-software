@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480">
+  <!-- Background transparent for dark/light mode -->
+  
+  <!-- Title -->
+  <text x="425" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#3498db">OpenAPI / Swagger Workflow</text>
+  
+  <!-- Central OpenAPI Spec -->
+  <rect x="325" y="60" width="200" height="80" rx="15" fill="#27ae60"/>
+  <text x="425" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">📄 openapi.yaml</text>
+  <text x="425" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Especificación OpenAPI 3.x</text>
+  <text x="425" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c8f7c5">Fuente de verdad</text>
+  
+  <!-- Input: Design First -->
+  <rect x="30" y="70" width="150" height="60" rx="10" fill="#3498db"/>
+  <text x="105" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">🎨 Design-First</text>
+  <text x="105" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Escribir spec primero</text>
+  <path d="M180 100 L320 100" stroke="#3498db" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Input: Code First -->
+  <rect x="670" y="70" width="150" height="60" rx="10" fill="#9b59b6"/>
+  <text x="745" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">💻 Code-First</text>
+  <text x="745" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Generar desde código</text>
+  <path d="M670 100 L530 100" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  
+  <!-- Tools Section -->
+  <text x="425" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f39c12">HERRAMIENTAS</text>
+  
+  <!-- Arrows from spec to tools -->
+  <path d="M375 145 L180 200" stroke="#2ecc71" stroke-width="2"/>
+  <path d="M425 145 L425 200" stroke="#2ecc71" stroke-width="2"/>
+  <path d="M475 145 L670 200" stroke="#2ecc71" stroke-width="2"/>
+  
+  <!-- Tool 1: Swagger UI -->
+  <rect x="50" y="200" width="160" height="100" rx="10" fill="#2980b9"/>
+  <text x="130" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">📚 Swagger UI</text>
+  <text x="130" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Documentación</text>
+  <text x="130" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">interactiva</text>
+  <text x="130" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#aed6f1">Try it out!</text>
+  
+  <!-- Tool 2: Validator -->
+  <rect x="240" y="200" width="160" height="100" rx="10" fill="#e67e22"/>
+  <text x="320" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">✅ Validator</text>
+  <text x="320" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Valida requests</text>
+  <text x="320" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">y responses</text>
+  <text x="320" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#fad7a0">express-openapi-validator</text>
+  
+  <!-- Tool 3: Code Generator -->
+  <rect x="430" y="200" width="160" height="100" rx="10" fill="#16a085"/>
+  <text x="510" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">⚙️ Codegen</text>
+  <text x="510" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Genera código</text>
+  <text x="510" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">clientes/servidores</text>
+  <text x="510" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#a3e4d7">openapi-generator</text>
+  
+  <!-- Tool 4: Mock Server -->
+  <rect x="620" y="200" width="160" height="100" rx="10" fill="#8e44ad"/>
+  <text x="700" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">🎭 Mock Server</text>
+  <text x="700" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Servidor de prueba</text>
+  <text x="700" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">para frontend</text>
+  <text x="700" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#d7bde2">Prism, Stoplight</text>
+  
+  <!-- Outputs Section -->
+  <text x="425" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f39c12">OUTPUTS</text>
+  
+  <!-- Arrows from tools to outputs -->
+  <path d="M130 305 L130 360" stroke="#2980b9" stroke-width="2" marker-end="url(#arrowBlueOut)"/>
+  <path d="M320 305 L320 360" stroke="#e67e22" stroke-width="2" marker-end="url(#arrowOrangeOut)"/>
+  <path d="M510 305 L510 360" stroke="#16a085" stroke-width="2" marker-end="url(#arrowTealOut)"/>
+  <path d="M700 305 L700 360" stroke="#8e44ad" stroke-width="2" marker-end="url(#arrowPurpleOut)"/>
+  
+  <!-- Output 1: Documentation -->
+  <rect x="50" y="365" width="160" height="80" rx="10" fill="#34495e"/>
+  <text x="130" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">📖 Docs</text>
+  <text x="130" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">HTML interactivo</text>
+  <text x="130" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#95a5a6">/api-docs</text>
+  
+  <!-- Output 2: Validation -->
+  <rect x="240" y="365" width="160" height="80" rx="10" fill="#34495e"/>
+  <text x="320" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e67e22">🛡️ Validación</text>
+  <text x="320" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">400 Bad Request</text>
+  <text x="320" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#95a5a6">automático</text>
+  
+  <!-- Output 3: SDK -->
+  <rect x="430" y="365" width="160" height="80" rx="10" fill="#34495e"/>
+  <text x="510" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1abc9c">📦 SDK</text>
+  <text x="510" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Cliente TypeScript</text>
+  <text x="510" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#95a5a6">Java, Python, Go...</text>
+  
+  <!-- Output 4: Mock Data -->
+  <rect x="620" y="365" width="160" height="80" rx="10" fill="#34495e"/>
+  <text x="700" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">🧪 Mock API</text>
+  <text x="700" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Desarrollo paralelo</text>
+  <text x="700" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#95a5a6">Frontend ↔ Backend</text>
+  
+  <!-- Benefits banner -->
+  <rect x="150" y="460" width="550" height="25" rx="5" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60"/>
+  <text x="425" y="477" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">✓ Contrato claro  •  ✓ Validación automática  •  ✓ Docs siempre actualizadas  •  ✓ Desarrollo paralelo</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3498db"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M9,0 L9,6 L0,3 z" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowBlueOut" markerWidth="10" markerHeight="10" refX="5" refY="10" orient="auto">
+      <path d="M0,0 L10,0 L5,10 z" fill="#2980b9"/>
+    </marker>
+    <marker id="arrowOrangeOut" markerWidth="10" markerHeight="10" refX="5" refY="10" orient="auto">
+      <path d="M0,0 L10,0 L5,10 z" fill="#e67e22"/>
+    </marker>
+    <marker id="arrowTealOut" markerWidth="10" markerHeight="10" refX="5" refY="10" orient="auto">
+      <path d="M0,0 L10,0 L5,10 z" fill="#16a085"/>
+    </marker>
+    <marker id="arrowPurpleOut" markerWidth="10" markerHeight="10" refX="5" refY="10" orient="auto">
+      <path d="M0,0 L10,0 L5,10 z" fill="#8e44ad"/>
+    </marker>
+  </defs>
+</svg>
