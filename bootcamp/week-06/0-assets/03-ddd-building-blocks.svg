@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="Inter, system-ui, sans-serif">
+  <rect width="960" height="520" fill="#1e1e1e"/>
+
+  <!-- Title -->
+  <text x="480" y="35" text-anchor="middle" fill="#f0f0f0" font-size="20" font-weight="bold">DDD &#x2014; Bloques de Construcci&#xF3;n del Dominio</text>
+  <text x="480" y="54" text-anchor="middle" fill="#888888" font-size="12">Eric Evans &#x2014; Domain-Driven Design (2003)</text>
+
+  <!-- ===== ENTITY ===== -->
+  <rect x="30" y="90" width="205" height="190" rx="6" fill="#1a2535" stroke="#e74c3c" stroke-width="2"/>
+  <rect x="30" y="90" width="205" height="30" rx="6" fill="#c0392b"/>
+  <rect x="30" y="108" width="205" height="12" fill="#c0392b"/>
+  <text x="132" y="110" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Entidad (Entity)</text>
+  <text x="47" y="142" fill="#f1948a" font-size="11" font-weight="bold">Caracter&#xED;sticas:</text>
+  <text x="47" y="160" fill="#cccccc" font-size="10">&#x2713; Tiene identidad &#xFA;nica (id)</text>
+  <text x="47" y="177" fill="#cccccc" font-size="10">&#x2713; Mutable en el tiempo</text>
+  <text x="47" y="194" fill="#cccccc" font-size="10">&#x2717; NO se compara por valor</text>
+  <line x1="47" y1="207" x2="218" y2="207" stroke="#333333" stroke-width="1"/>
+  <text x="47" y="224" fill="#888888" font-size="10">Igualdad: a.id === b.id</text>
+  <line x1="47" y1="237" x2="218" y2="237" stroke="#333333" stroke-width="1"/>
+  <text x="47" y="255" fill="#aaaaaa" font-size="10" font-style="italic">Ejemplo: Customer, Order</text>
+  <text x="47" y="270" fill="#aaaaaa" font-size="10" font-style="italic">Product, User</text>
+
+  <!-- ===== VALUE OBJECT ===== -->
+  <rect x="263" y="90" width="205" height="190" rx="6" fill="#1a1a2a" stroke="#3498db" stroke-width="2"/>
+  <rect x="263" y="90" width="205" height="30" rx="6" fill="#2980b9"/>
+  <rect x="263" y="108" width="205" height="12" fill="#2980b9"/>
+  <text x="365" y="110" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Value Object (VO)</text>
+  <text x="280" y="142" fill="#5dade2" font-size="11" font-weight="bold">Caracter&#xED;sticas:</text>
+  <text x="280" y="160" fill="#cccccc" font-size="10">&#x2717; Sin identidad propia</text>
+  <text x="280" y="177" fill="#cccccc" font-size="10">&#x2713; Inmutable (Object.freeze)</text>
+  <text x="280" y="194" fill="#cccccc" font-size="10">&#x2713; Se compara por valor</text>
+  <line x1="280" y1="207" x2="451" y2="207" stroke="#333333" stroke-width="1"/>
+  <text x="280" y="224" fill="#888888" font-size="10">Igualdad: a.amount === b.amount</text>
+  <line x1="280" y1="237" x2="451" y2="237" stroke="#333333" stroke-width="1"/>
+  <text x="280" y="255" fill="#aaaaaa" font-size="10" font-style="italic">Ejemplo: Money, Email</text>
+  <text x="280" y="270" fill="#aaaaaa" font-size="10" font-style="italic">Address, Grade, ISBN</text>
+
+  <!-- ===== AGGREGATE ===== -->
+  <rect x="496" y="90" width="205" height="190" rx="6" fill="#1a2510" stroke="#27ae60" stroke-width="2"/>
+  <rect x="496" y="90" width="205" height="30" rx="6" fill="#1e8449"/>
+  <rect x="496" y="108" width="205" height="12" fill="#1e8449"/>
+  <text x="598" y="110" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Agregado (Aggregate)</text>
+  <text x="513" y="142" fill="#52be80" font-size="11" font-weight="bold">Caracter&#xED;sticas:</text>
+  <text x="513" y="160" fill="#cccccc" font-size="10">&#x2713; Agrupa Entity + VO</text>
+  <text x="513" y="177" fill="#cccccc" font-size="10">&#x2713; Unidad de consistencia</text>
+  <text x="513" y="194" fill="#cccccc" font-size="10">&#x2713; Tiene Aggregate Root</text>
+  <line x1="513" y1="207" x2="684" y2="207" stroke="#333333" stroke-width="1"/>
+  <text x="513" y="224" fill="#888888" font-size="10">Acceso: solo por la ra&#xED;z</text>
+  <line x1="513" y1="237" x2="684" y2="237" stroke="#333333" stroke-width="1"/>
+  <text x="513" y="255" fill="#aaaaaa" font-size="10" font-style="italic">Ejemplo: Order (ra&#xED;z)</text>
+  <text x="513" y="270" fill="#aaaaaa" font-size="10" font-style="italic">&#xA0;&#xA0;+ OrderItem[] (entidades)</text>
+
+  <!-- ===== REPOSITORY ===== -->
+  <rect x="729" y="90" width="205" height="190" rx="6" fill="#252010" stroke="#e67e22" stroke-width="2"/>
+  <rect x="729" y="90" width="205" height="30" rx="6" fill="#ca6f1e"/>
+  <rect x="729" y="108" width="205" height="12" fill="#ca6f1e"/>
+  <text x="831" y="110" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Repositorio (Repository)</text>
+  <text x="746" y="142" fill="#f5b041" font-size="11" font-weight="bold">Caracter&#xED;sticas:</text>
+  <text x="746" y="160" fill="#cccccc" font-size="10">&#x2713; Interfaz en el dominio</text>
+  <text x="746" y="177" fill="#cccccc" font-size="10">&#x2713; Colecci&#xF3;n en memoria</text>
+  <text x="746" y="194" fill="#cccccc" font-size="10">&#x2713; Impl. en infraestructura</text>
+  <line x1="746" y1="207" x2="917" y2="207" stroke="#333333" stroke-width="1"/>
+  <text x="746" y="224" fill="#888888" font-size="10">save(entity) / findById(id)</text>
+  <line x1="746" y1="237" x2="917" y2="237" stroke="#333333" stroke-width="1"/>
+  <text x="746" y="255" fill="#aaaaaa" font-size="10" font-style="italic">Ejemplo: IOrderRepository</text>
+  <text x="746" y="270" fill="#aaaaaa" font-size="10" font-style="italic">ICustomerRepository</text>
+
+  <!-- ===== DOMAIN SERVICE — bottom center ===== -->
+  <rect x="263" y="320" width="430" height="140" rx="6" fill="#25152a" stroke="#9b59b6" stroke-width="2"/>
+  <rect x="263" y="320" width="430" height="30" rx="6" fill="#7d3c98"/>
+  <rect x="263" y="338" width="430" height="12" fill="#7d3c98"/>
+  <text x="478" y="340" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Servicio de Dominio (Domain Service)</text>
+
+  <text x="290" y="374" fill="#c39bd3" font-size="11" font-weight="bold">Cu&#xE1;ndo usarlo:</text>
+  <text x="290" y="392" fill="#cccccc" font-size="10">&#x2713; L&#xF3;gica de negocio que involucra m&#xFA;ltiples agregados</text>
+  <text x="290" y="409" fill="#cccccc" font-size="10">&#x2713; Operaci&#xF3;n sin estado que no pertenece a ninguna entidad</text>
+  <text x="290" y="426" fill="#aaaaaa" font-size="10" font-style="italic">Ejemplo: LoanDomainService.canBorrow(borrower, activeLoans)</text>
+  <text x="290" y="443" fill="#aaaaaa" font-size="10" font-style="italic">Ejemplo: OrderPricingService.calculate(order, customer, promos)</text>
+  <text x="290" y="456" fill="#666666" font-size="9">Sin estado, sin acceso a infraestructura, 100% testeable</text>
+
+  <!-- Relations label -->
+  <text x="480" y="490" text-anchor="middle" fill="#555555" font-size="10">El Agregado contiene Entidades y VOs &#xB7; El Repositorio persiste Agregados &#xB7; El Servicio de Dominio los coordina</text>
+</svg>

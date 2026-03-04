@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="Inter, system-ui, sans-serif">
+  <rect width="900" height="540" fill="#1e1e1e"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f0f0f0" font-size="20" font-weight="bold">Clean Architecture &#x2014; Las 4 Capas</text>
+  <text x="450" y="54" text-anchor="middle" fill="#888888" font-size="12">Robert C. Martin (2012) &#x2014; La Regla de Dependencia</text>
+
+  <!-- Concentric circles drawn outside-in so inner ones overlay outer ones -->
+  <!-- Interfaces (outermost) -->
+  <circle cx="370" cy="295" r="222" fill="#0d2035"/>
+  <circle cx="370" cy="295" r="222" fill="none" stroke="#2980b9" stroke-width="2.5"/>
+
+  <!-- Infrastructure -->
+  <circle cx="370" cy="295" r="167" fill="#0d2010"/>
+  <circle cx="370" cy="295" r="167" fill="none" stroke="#27ae60" stroke-width="2.5"/>
+
+  <!-- Application -->
+  <circle cx="370" cy="295" r="112" fill="#2a1e08"/>
+  <circle cx="370" cy="295" r="112" fill="none" stroke="#d35400" stroke-width="2.5"/>
+
+  <!-- Domain (innermost) -->
+  <circle cx="370" cy="295" r="62" fill="#2a0d0d"/>
+  <circle cx="370" cy="295" r="62" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+
+  <!-- Labels: positioned at 12 o'clock of each ring midpoint -->
+  <!-- Interfaces midpoint r=194, 12 o'clock y=295-194=101 -->
+  <text x="370" y="99" text-anchor="middle" fill="#5dade2" font-size="13" font-weight="bold">INTERFACES</text>
+  <text x="370" y="116" text-anchor="middle" fill="#7fb3d3" font-size="11">Controladores &#xB7; CLI &#xB7; WebSockets</text>
+
+  <!-- Infrastructure midpoint r=139, 12 o'clock y=295-139=156 -->
+  <text x="370" y="153" text-anchor="middle" fill="#52be80" font-size="13" font-weight="bold">INFRAESTRUCTURA</text>
+  <text x="370" y="169" text-anchor="middle" fill="#7dcea0" font-size="11">BD &#xB7; APIs externas &#xB7; Email</text>
+
+  <!-- Application midpoint r=87, 12 o'clock y=295-87=208 -->
+  <text x="370" y="212" text-anchor="middle" fill="#f5b041" font-size="12" font-weight="bold">APLICACI&#xD3;N</text>
+  <text x="370" y="228" text-anchor="middle" fill="#f0c040" font-size="10">Casos de Uso</text>
+
+  <!-- Domain center y=295 -->
+  <text x="370" y="289" text-anchor="middle" fill="#f1948a" font-size="12" font-weight="bold">DOMINIO</text>
+  <text x="370" y="305" text-anchor="middle" fill="#ec7063" font-size="10">Entidades &#xB7; VOs</text>
+
+  <!-- Dependency rule arrow at bottom -->
+  <defs>
+    <marker id="arrowIn" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f39c12"/>
+    </marker>
+  </defs>
+  <line x1="162" y1="500" x2="342" y2="500" stroke="#f39c12" stroke-width="2" marker-end="url(#arrowIn)"/>
+  <text x="252" y="494" text-anchor="middle" fill="#f39c12" font-size="10">Regla de Dependencia</text>
+  <text x="162" y="516" fill="#888888" font-size="10">Externo</text>
+  <text x="310" y="516" fill="#888888" font-size="10">Interno</text>
+
+  <!-- Legend on right side -->
+  <text x="642" y="90" fill="#cccccc" font-size="13" font-weight="bold">Capas (exterior &#x2192; interior):</text>
+
+  <!-- Interfaces -->
+  <rect x="632" y="105" width="12" height="12" rx="2" fill="#2980b9"/>
+  <text x="652" y="116" fill="#5dade2" font-size="13" font-weight="bold">Interfaces</text>
+  <text x="652" y="132" fill="#888888" font-size="11">HTTP &#xB7; CLI &#xB7; WebSocket &#xB7; gRPC</text>
+
+  <!-- Infrastructure -->
+  <rect x="632" y="148" width="12" height="12" rx="2" fill="#27ae60"/>
+  <text x="652" y="159" fill="#52be80" font-size="13" font-weight="bold">Infraestructura</text>
+  <text x="652" y="175" fill="#888888" font-size="11">PostgreSQL &#xB7; Redis &#xB7; Email &#xB7; S3</text>
+
+  <!-- Application -->
+  <rect x="632" y="191" width="12" height="12" rx="2" fill="#d35400"/>
+  <text x="652" y="202" fill="#f5b041" font-size="13" font-weight="bold">Aplicaci&#xF3;n</text>
+  <text x="652" y="218" fill="#888888" font-size="11">PlaceOrderUseCase, CancelOrderUseCase</text>
+
+  <!-- Domain -->
+  <rect x="632" y="234" width="12" height="12" rx="2" fill="#c0392b"/>
+  <text x="652" y="245" fill="#f1948a" font-size="13" font-weight="bold">Dominio</text>
+  <text x="652" y="261" fill="#888888" font-size="11">Order &#xB7; Money &#xB7; Customer &#xB7; Email</text>
+
+  <!-- Separator -->
+  <line x1="622" y1="280" x2="890" y2="280" stroke="#333333" stroke-width="1"/>
+
+  <!-- Regla key -->
+  <text x="756" y="305" text-anchor="middle" fill="#f39c12" font-size="12" font-weight="bold">Regla de Dependencia:</text>
+  <rect x="624" y="314" width="260" height="44" rx="4" fill="#252525" stroke="#f39c12" stroke-width="1"/>
+  <text x="754" y="332" text-anchor="middle" fill="#e0e0e0" font-size="10">El c&#xF3;digo solo puede apuntar hacia</text>
+  <text x="754" y="348" text-anchor="middle" fill="#e0e0e0" font-size="10">adentro (hacia el Dominio).</text>
+
+  <!-- Valid/Invalid examples -->
+  <text x="642" y="380" fill="#52be80" font-size="10">&#x2713; infrastructure/ importa de domain/</text>
+  <text x="642" y="397" fill="#e74c3c" font-size="10">&#x2717; domain/ importa de infrastructure/</text>
+
+  <!-- Footer note -->
+  <text x="756" y="430" text-anchor="middle" fill="#555555" font-size="10">Fuente: Clean Architecture (Robert C. Martin)</text>
+</svg>

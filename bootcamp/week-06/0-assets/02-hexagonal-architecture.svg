@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Inter, system-ui, sans-serif">
+  <rect width="960" height="540" fill="#1e1e1e"/>
+
+  <!-- Title -->
+  <text x="480" y="35" text-anchor="middle" fill="#f0f0f0" font-size="20" font-weight="bold">Arquitectura Hexagonal (Ports &amp; Adapters)</text>
+  <text x="480" y="54" text-anchor="middle" fill="#888888" font-size="12">Alistair Cockburn (2005)</text>
+
+  <!-- Hexagon centered at (480, 295), flat-top, r=145 -->
+  <!-- Points at 0,60,120,180,240,300 degrees: -->
+  <!-- 0: (625, 295)  60:(552.5, 170.4)  120:(407.5, 170.4)  180:(335, 295)  240:(407.5, 419.6)  300:(552.5, 419.6) -->
+  <polygon points="625,295 553,170 407,170 335,295 407,420 553,420"
+           fill="#1a2a1a" stroke="#27ae60" stroke-width="3"/>
+
+  <!-- Inner hexagon label area -->
+  <text x="480" y="248" text-anchor="middle" fill="#52be80" font-size="13" font-weight="bold">DOMINIO</text>
+  <text x="480" y="267" text-anchor="middle" fill="#7dcea0" font-size="10">Entidades &#xB7; Value Objects</text>
+  <text x="480" y="283" text-anchor="middle" fill="#7dcea0" font-size="10">Agregados &#xB7; Servicios</text>
+
+  <!-- Separator line in hexagon -->
+  <line x1="380" y1="302" x2="580" y2="302" stroke="#333333" stroke-width="1"/>
+
+  <text x="480" y="322" text-anchor="middle" fill="#f5b041" font-size="12" font-weight="bold">APLICACI&#xD3;N</text>
+  <text x="480" y="339" text-anchor="middle" fill="#f0c040" font-size="10">Casos de Uso</text>
+  <text x="480" y="355" text-anchor="middle" fill="#aaaaaa" font-size="9">PlaceOrderUseCase</text>
+  <text x="480" y="369" text-anchor="middle" fill="#aaaaaa" font-size="9">NotifyUserUseCase</text>
+
+  <!-- ============ PRIMARY (DRIVING) ADAPTERS — LEFT SIDE ============ -->
+  <text x="168" y="75" text-anchor="middle" fill="#5dade2" font-size="12" font-weight="bold">Adaptadores Primarios</text>
+  <text x="168" y="91" text-anchor="middle" fill="#7fb3d3" font-size="10">(Driving Side)</text>
+
+  <!-- HTTP Controller box -->
+  <rect x="30" y="138" width="200" height="52" rx="6" fill="#1a2535" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="130" y="159" text-anchor="middle" fill="#5dade2" font-size="12" font-weight="bold">HTTP Controller</text>
+  <text x="130" y="176" text-anchor="middle" fill="#888888" font-size="10">POST /orders</text>
+
+  <!-- CLI Adapter box -->
+  <rect x="30" y="268" width="200" height="52" rx="6" fill="#1a2535" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="130" y="289" text-anchor="middle" fill="#5dade2" font-size="12" font-weight="bold">CLI Adapter</text>
+  <text x="130" y="306" text-anchor="middle" fill="#888888" font-size="10">node index.js --place-order</text>
+
+  <!-- Test Cases box -->
+  <rect x="30" y="398" width="200" height="52" rx="6" fill="#1a2535" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="130" y="419" text-anchor="middle" fill="#5dade2" font-size="12" font-weight="bold">Test Cases</text>
+  <text x="130" y="436" text-anchor="middle" fill="#888888" font-size="10">node --test tests/</text>
+
+  <!-- Arrows from primary adapters to left vertex (335, 295) -->
+  <defs>
+    <marker id="arrowRight" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2980b9"/>
+    </marker>
+    <marker id="arrowLeft" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#8e44ad"/>
+    </marker>
+  </defs>
+
+  <!-- HTTP to hexagon -->
+  <line x1="230" y1="164" x2="335" y2="295" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRight)"/>
+  <!-- CLI to hexagon -->
+  <line x1="230" y1="294" x2="335" y2="295" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRight)"/>
+  <!-- Tests to hexagon -->
+  <line x1="230" y1="424" x2="335" y2="295" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowRight)"/>
+
+  <!-- PRIMARY PORT label on left edge -->
+  <text x="282" y="275" text-anchor="middle" fill="#2ecc71" font-size="9" font-weight="bold">Puerto</text>
+  <text x="282" y="287" text-anchor="middle" fill="#2ecc71" font-size="9" font-weight="bold">Primario</text>
+  <text x="282" y="299" text-anchor="middle" fill="#2ecc71" font-size="9">(entrada)</text>
+
+  <!-- ============ SECONDARY (DRIVEN) ADAPTERS — RIGHT SIDE ============ -->
+  <text x="792" y="75" text-anchor="middle" fill="#9b59b6" font-size="12" font-weight="bold">Adaptadores Secundarios</text>
+  <text x="792" y="91" text-anchor="middle" fill="#b97fd3" font-size="10">(Driven Side)</text>
+
+  <!-- PostgreSQL Adapter box -->
+  <rect x="730" y="138" width="200" height="52" rx="6" fill="#25152a" stroke="#8e44ad" stroke-width="1.5"/>
+  <text x="830" y="159" text-anchor="middle" fill="#c39bd3" font-size="12" font-weight="bold">PostgreSQL Adapter</text>
+  <text x="830" y="176" text-anchor="middle" fill="#888888" font-size="10">PostgresOrderRepository</text>
+
+  <!-- Email Adapter box -->
+  <rect x="730" y="268" width="200" height="52" rx="6" fill="#25152a" stroke="#8e44ad" stroke-width="1.5"/>
+  <text x="830" y="289" text-anchor="middle" fill="#c39bd3" font-size="12" font-weight="bold">Email Adapter</text>
+  <text x="830" y="306" text-anchor="middle" fill="#888888" font-size="10">NodemailerAdapter</text>
+
+  <!-- InMemory Adapter box (for tests) -->
+  <rect x="730" y="398" width="200" height="52" rx="6" fill="#25152a" stroke="#8e44ad" stroke-width="1.5"/>
+  <text x="830" y="419" text-anchor="middle" fill="#c39bd3" font-size="12" font-weight="bold">InMemory Adapter</text>
+  <text x="830" y="436" text-anchor="middle" fill="#888888" font-size="10">InMemoryOrderRepository</text>
+
+  <!-- Arrows from right vertex (625, 295) to secondary adapters -->
+  <line x1="625" y1="295" x2="730" y2="164" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowLeft)"/>
+  <line x1="625" y1="295" x2="730" y2="294" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowLeft)"/>
+  <line x1="625" y1="295" x2="730" y2="424" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowLeft)"/>
+
+  <!-- SECONDARY PORT label on right edge -->
+  <text x="678" y="275" text-anchor="middle" fill="#8e44ad" font-size="9" font-weight="bold">Puerto</text>
+  <text x="678" y="287" text-anchor="middle" fill="#8e44ad" font-size="9" font-weight="bold">Secundario</text>
+  <text x="678" y="299" text-anchor="middle" fill="#8e44ad" font-size="9">(salida)</text>
+
+  <!-- Bottom legend -->
+  <rect x="280" y="470" width="400" height="56" rx="4" fill="#252525" stroke="#444444" stroke-width="1"/>
+  <text x="480" y="489" text-anchor="middle" fill="#f0f0f0" font-size="10" font-weight="bold">Principio clave: El Dominio nunca importa los Adaptadores</text>
+  <text x="480" y="505" text-anchor="middle" fill="#52be80" font-size="10">&#x2713; Cambiar PostgreSQL &#x2192; MongoDB = reescribir 1 archivo de infraestructura</text>
+  <text x="480" y="519" text-anchor="middle" fill="#52be80" font-size="10">&#x2713; Tests corren sin BD, sin red, sin servidor HTTP</text>
+</svg>

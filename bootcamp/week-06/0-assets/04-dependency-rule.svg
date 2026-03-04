@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" font-family="Inter, system-ui, sans-serif">
+  <rect width="920" height="540" fill="#1e1e1e"/>
+
+  <!-- Title -->
+  <text x="460" y="35" text-anchor="middle" fill="#f0f0f0" font-size="20" font-weight="bold">La Regla de Dependencia</text>
+  <text x="460" y="54" text-anchor="middle" fill="#888888" font-size="12">Las dependencias en el c&#xF3;digo fuente siempre deben apuntar hacia el Dominio</text>
+
+  <!-- ===== 4 LAYER BANDS ===== -->
+
+  <!-- Interfaces layer (outermost, top) -->
+  <rect x="30" y="80" width="580" height="76" rx="4" fill="#0d2035" stroke="#2980b9" stroke-width="2"/>
+  <text x="65" y="106" fill="#5dade2" font-size="13" font-weight="bold">INTERFACES</text>
+  <text x="65" y="124" fill="#888888" font-size="10">OrdersController.js &#xB7; students.router.js &#xB7; cli.js</text>
+  <text x="65" y="141" fill="#7fb3d3" font-size="10">import { PlaceOrderUseCase } from &apos;../../application/use-cases/place-order.use-case.js&apos;</text>
+
+  <!-- Infrastructure layer -->
+  <rect x="30" y="172" width="580" height="76" rx="4" fill="#0d2010" stroke="#27ae60" stroke-width="2"/>
+  <text x="65" y="198" fill="#52be80" font-size="13" font-weight="bold">INFRAESTRUCTURA</text>
+  <text x="65" y="216" fill="#888888" font-size="10">PostgresOrderRepository.js &#xB7; NodemailerAdapter.js &#xB7; RedisCache.js</text>
+  <text x="65" y="233" fill="#7dcea0" font-size="10">import { IOrderRepository } from &apos;../../domain/ports/order.repository.port.js&apos;</text>
+
+  <!-- Application layer -->
+  <rect x="30" y="264" width="580" height="76" rx="4" fill="#2a1e08" stroke="#d35400" stroke-width="2"/>
+  <text x="65" y="290" fill="#f5b041" font-size="13" font-weight="bold">APLICACI&#xD3;N (Casos de Uso)</text>
+  <text x="65" y="308" fill="#888888" font-size="10">PlaceOrderUseCase.js &#xB7; CancelOrderUseCase.js &#xB7; EnrollStudentUseCase.js</text>
+  <text x="65" y="325" fill="#f0c040" font-size="10">import { Order } from &apos;../../domain/entities/order.entity.js&apos;</text>
+
+  <!-- Domain layer (innermost, bottom) -->
+  <rect x="30" y="356" width="580" height="76" rx="4" fill="#2a0d0d" stroke="#c0392b" stroke-width="2"/>
+  <text x="65" y="382" fill="#f1948a" font-size="13" font-weight="bold">DOMINIO</text>
+  <text x="65" y="400" fill="#888888" font-size="10">Order.entity.js &#xB7; Money.vo.js &#xB7; Customer.entity.js &#xB7; IOrderRepository.port.js</text>
+  <text x="65" y="418" fill="#ec7063" font-size="10" font-style="italic">NO importa ninguna capa de las anteriores</text>
+
+  <!-- Arrows pointing DOWN (inward = toward Domain) -->
+  <defs>
+    <marker id="arrowDown" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
+      <polygon points="0 0, 8 0, 4 6" fill="#f39c12"/>
+    </marker>
+  </defs>
+
+  <!-- Arrow 1: Interfaces -> Infrastructure -->
+  <line x1="630" y1="118" x2="630" y2="162" stroke="#f39c12" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Arrow 2: Infrastructure -> Application -->
+  <line x1="630" y1="210" x2="630" y2="254" stroke="#f39c12" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Arrow 3: Application -> Domain -->
+  <line x1="630" y1="302" x2="630" y2="346" stroke="#f39c12" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+
+  <!-- Arrows label -->
+  <text x="660" y="145" fill="#f39c12" font-size="11">&#x2193;</text>
+  <text x="672" y="148" fill="#f39c12" font-size="10">depends on</text>
+  <text x="660" y="237" fill="#f39c12" font-size="11">&#x2193;</text>
+  <text x="672" y="240" fill="#f39c12" font-size="10">depends on</text>
+  <text x="660" y="330" fill="#f39c12" font-size="11">&#x2193;</text>
+  <text x="672" y="333" fill="#f39c12" font-size="10">depends on</text>
+
+  <!-- Forbidden arrow label (red X going upward) -->
+  <line x1="760" y1="410" x2="760" y2="100" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="770" y="260" fill="#e74c3c" font-size="10">&#x2717; PROHIBIDO</text>
+  <text x="770" y="275" fill="#e74c3c" font-size="10">domain/ no puede</text>
+  <text x="770" y="290" fill="#e74c3c" font-size="10">importar nada</text>
+  <text x="770" y="305" fill="#e74c3c" font-size="10">de las capas</text>
+  <text x="770" y="320" fill="#e74c3c" font-size="10">superiores</text>
+
+  <!-- Rule box at bottom right -->
+  <rect x="640" y="445" width="268" height="72" rx="4" fill="#252525" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="774" y="466" text-anchor="middle" fill="#f39c12" font-size="11" font-weight="bold">Regla de Dependencia</text>
+  <text x="774" y="483" text-anchor="middle" fill="#e0e0e0" font-size="10">El c&#xF3;digo solo puede importar</text>
+  <text x="774" y="498" text-anchor="middle" fill="#e0e0e0" font-size="10">desde capas m&#xE1;s internas.</text>
+  <text x="774" y="511" text-anchor="middle" fill="#888888" font-size="9">Nada del exterior puede contaminar el Dominio.</text>
+
+  <!-- Bottom note -->
+  <text x="320" y="475" text-anchor="middle" fill="#555555" font-size="10">Las capas externas pueden cambiar sin afectar el Dominio.</text>
+  <text x="320" y="492" text-anchor="middle" fill="#555555" font-size="10">Express puede reemplazarse por Fastify; PostgreSQL por MongoDB.</text>
+</svg>
