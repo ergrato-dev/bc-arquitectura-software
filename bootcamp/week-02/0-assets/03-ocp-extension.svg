@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#1e1e1e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820">
+  <rect width="1200" height="820" fill="#1e1e1e"/>
   <text x="600" y="50" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Open/Closed Principle (OCP) - Extensión sin Modificación</text>
   <g transform="translate(50, 100)">
     <text x="250" y="0" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#e74c3c">❌ Violación OCP: Código Rígido</text>
@@ -61,15 +61,15 @@
     <text x="330" y="340" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#4caf50" font-weight="bold">✨ Extensión</text>
     <text x="330" y="356" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#4caf50" font-weight="bold">sin modificar</text>
   </g>
-  <g transform="translate(800, 460)">
-    <rect x="0" y="0" width="300" height="100" rx="8" fill="#1a2a3a" stroke="#2196f3" stroke-width="2"/>
-    <rect x="0" y="0" width="300" height="30" rx="8" fill="#2196f3"/>
-    <text x="150" y="20" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">PriceCalculator</text>
+  <g transform="translate(715, 515)">
+    <rect x="0" y="0" width="350" height="80" rx="8" fill="#1a2a3a" stroke="#2196f3" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="30" rx="8" fill="#2196f3"/>
+    <text x="175" y="20" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="white">PriceCalculator</text>
     <text x="10" y="50" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">calculate(price, strategy) {</text>
-    <text x="20" y="68" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">return strategy.calculate(price);</text>
-    <text x="10" y="86" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">}</text>
+    <text x="20" y="66" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">return strategy.calculate(price);</text>
+    <text x="10" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11" fill="#bbb">}</text>
   </g>
-  <g transform="translate(100, 610)">
+  <g transform="translate(100, 630)">
     <rect width="1000" height="140" rx="10" fill="#1a3a2a" stroke="#27ae60" stroke-width="2"/>
     <text x="20" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="#27ae60">✅ Beneficios de OCP:</text>
     <text x="30" y="55" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" fill="#b0b0b0">🔓 <tspan font-weight="bold">Abierto para extensión:</tspan> Agregar nuevas estrategias sin tocar código existente</text>

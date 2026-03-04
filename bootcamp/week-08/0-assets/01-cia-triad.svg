@@ -9,12 +9,12 @@
   <!-- ═══════════════════════════════════ -->
 
   <!-- Triángulo fondo -->
-  <polygon points="480,80 200,450 760,450" fill="#2a2a2a" stroke="#475569" stroke-width="2"/>
+  <polygon points="480,115 200,450 760,450" fill="#2a2a2a" stroke="#475569" stroke-width="2"/>
 
   <!-- Vértice C — Confidencialidad (arriba) -->
-  <circle cx="480" cy="80" r="60" fill="#1d4ed8" opacity="0.9"/>
-  <text x="480" y="72" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" text-anchor="middle">C</text>
-  <text x="480" y="94" fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Confidencialidad</text>
+  <circle cx="480" cy="115" r="60" fill="#1d4ed8" opacity="0.9"/>
+  <text x="480" y="107" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" text-anchor="middle">C</text>
+  <text x="480" y="129" fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Confidencialidad</text>
 
   <!-- Vértice I — Integridad (abajo izquierda) -->
   <circle cx="200" cy="450" r="60" fill="#7c3aed" opacity="0.9"/>

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
   
-  <rect width="1200" height="800" fill="#1e1e1e"/>
+  <rect width="1200" height="720" fill="#1e1e1e"/>
   
   
   <text x="600" y="40" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
@@ -13,7 +13,7 @@
       Alta Cohesión ✅
     </text>
     
-    <rect x="50" y="35" width="400" height="230" rx="10" fill="#1a2e1a" stroke="#27ae60" stroke-width="3"/>
+    <rect x="50" y="35" width="400" height="260" rx="10" fill="#1a2e1a" stroke="#27ae60" stroke-width="3"/>
     
     <text x="250" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
       Módulo con Alta Cohesión
@@ -46,10 +46,10 @@
       <line x1="145" y1="110" x2="215" y2="110" stroke="#2ecc71" stroke-width="3"/>
     </g>
     
-    <text x="250" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+    <text x="250" y="252" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
       Elementos fuertemente relacionados
     </text>
-    <text x="250" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#2ecc71" font-weight="bold">
+    <text x="250" y="272" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#2ecc71" font-weight="bold">
       Propósito único y claro
     </text>
   </g>
@@ -60,7 +60,7 @@
       Baja Cohesión ❌
     </text>
     
-    <rect x="50" y="35" width="400" height="230" rx="10" fill="#2d1a1a" stroke="#c0392b" stroke-width="3"/>
+    <rect x="50" y="35" width="400" height="260" rx="10" fill="#2d1a1a" stroke="#c0392b" stroke-width="3"/>
     
     <text x="250" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
       Módulo con Baja Cohesión
@@ -87,10 +87,10 @@
       <line x1="85" y1="35" x2="155" y2="35" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
     </g>
     
-    <text x="250" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+    <text x="250" y="252" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
       Elementos no relacionados
     </text>
-    <text x="250" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#e74c3c" font-weight="bold">
+    <text x="250" y="272" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#e74c3c" font-weight="bold">
       "God Class" o "Junk Drawer"
     </text>
   </g>
@@ -101,7 +101,7 @@
       Bajo Acoplamiento ✅
     </text>
     
-    <rect x="65" y="35" width="400" height="230" rx="10" fill="#1a2e1a" stroke="#27ae60" stroke-width="3"/>
+    <rect x="65" y="35" width="400" height="260" rx="10" fill="#1a2e1a" stroke="#27ae60" stroke-width="3"/>
     
     <text x="265" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
       Módulos Independientes
@@ -129,10 +129,10 @@
       <path d="M 230,30 L 255,30" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowGreen)"/>
     </g>
     
-    <text x="265" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+    <text x="265" y="252" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
       Cambios localizados
     </text>
-    <text x="265" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#2ecc71" font-weight="bold">
+    <text x="265" y="272" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#2ecc71" font-weight="bold">
       Módulos reutilizables
     </text>
   </g>
@@ -143,7 +143,7 @@
       Alto Acoplamiento ❌
     </text>
     
-    <rect x="65" y="35" width="400" height="230" rx="10" fill="#2d1a1a" stroke="#c0392b" stroke-width="3"/>
+    <rect x="65" y="35" width="400" height="260" rx="10" fill="#2d1a1a" stroke="#c0392b" stroke-width="3"/>
     
     <text x="265" y="62" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#e0e0e0">
       Módulos Entrelazados
@@ -177,10 +177,10 @@
       <path d="M 220,90 L 305,55" stroke="#e74c3c" stroke-width="2" stroke-dasharray="3,3"/>
     </g>
     
-    <text x="265" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
+    <text x="265" y="252" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle" fill="#c0c0c0">
       Cambios en cascada (efecto dominó)
     </text>
-    <text x="265" y="240" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#e74c3c" font-weight="bold">
+    <text x="265" y="272" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle" fill="#e74c3c" font-weight="bold">
       Sistema frágil y rígido
     </text>
   </g>

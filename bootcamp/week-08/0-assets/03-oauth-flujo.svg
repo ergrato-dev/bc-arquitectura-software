@@ -139,7 +139,7 @@
   <text x="574" y="278" class="small" fill="#c4b5fd">→ RFC 7636 — obligatorio en SPAs y apps móviles</text>
 
   <!-- ===== Roles legend ===== -->
-  <rect x="564" y="300" width="300" height="88" fill="#0f172a" rx="8" stroke="#334155" stroke-width="1"/>
+  <rect x="564" y="300" width="300" height="102" fill="#0f172a" rx="8" stroke="#334155" stroke-width="1"/>
   <text x="714" y="320" text-anchor="middle" class="label" fill="#94a3b8">Roles OAuth 2.0</text>
   <rect x="574" y="330" width="8" height="8" fill="#3b82f6"/>
   <text x="590" y="340" class="small">Resource Owner — quien autoriza (el usuario)</text>
