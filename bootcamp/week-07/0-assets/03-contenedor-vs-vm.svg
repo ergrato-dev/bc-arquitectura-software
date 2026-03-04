@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520">
+  <rect width="960" height="520" fill="#1e1e1e"/>
+
+  <!-- Título -->
+  <text x="480" y="36" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Contenedor vs M&#xE1;quina Virtual</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LADO IZQUIERDO: Máquinas Virtuales -->
+  <!-- ══════════════════════════════════════════ -->
+  <text x="240" y="70" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">M&#xE1;quinas Virtuales (VMs)</text>
+  <rect x="40" y="82" width="400" height="390" rx="10" fill="#2a2a2a" stroke="#ef4444" stroke-width="2"/>
+
+  <!-- VM 1 -->
+  <rect x="60" y="96" width="170" height="230" rx="8" fill="#1a1a1a" stroke="#f87171" stroke-width="1.5"/>
+  <text x="145" y="116" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">VM 1</text>
+  <!-- App A -->
+  <rect x="72" y="124" width="146" height="30" rx="4" fill="#7f1d1d"/>
+  <text x="145" y="143" fill="#fca5a5" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">App (Node.js)</text>
+  <!-- Libs A -->
+  <rect x="72" y="160" width="146" height="30" rx="4" fill="#991b1b"/>
+  <text x="145" y="179" fill="#fca5a5" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Librer&#xED;as (Node 18)</text>
+  <!-- Guest OS A -->
+  <rect x="72" y="196" width="146" height="40" rx="4" fill="#b91c1c"/>
+  <text x="145" y="213" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Guest OS</text>
+  <text x="145" y="229" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Ubuntu 22.04</text>
+  <!-- Binaries A -->
+  <rect x="72" y="242" width="146" height="30" rx="4" fill="#dc2626"/>
+  <text x="145" y="261" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Binaries / Daemons</text>
+  <!-- Size label -->
+  <rect x="72" y="278" width="146" height="26" rx="4" fill="#450a0a"/>
+  <text x="145" y="295" fill="#fca5a5" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">&#x22C6; Tama&#xF1;o: 2-10 GB</text>
+
+  <!-- VM 2 -->
+  <rect x="248" y="96" width="170" height="230" rx="8" fill="#1a1a1a" stroke="#f87171" stroke-width="1.5"/>
+  <text x="333" y="116" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">VM 2</text>
+  <rect x="260" y="124" width="146" height="30" rx="4" fill="#7f1d1d"/>
+  <text x="333" y="143" fill="#fca5a5" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">App (Python)</text>
+  <rect x="260" y="160" width="146" height="30" rx="4" fill="#991b1b"/>
+  <text x="333" y="179" fill="#fca5a5" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Librer&#xED;as (Python 3.11)</text>
+  <rect x="260" y="196" width="146" height="40" rx="4" fill="#b91c1c"/>
+  <text x="333" y="213" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Guest OS</text>
+  <text x="333" y="229" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">CentOS 7</text>
+  <rect x="260" y="242" width="146" height="30" rx="4" fill="#dc2626"/>
+  <text x="333" y="261" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Binaries / Daemons</text>
+  <rect x="260" y="278" width="146" height="26" rx="4" fill="#450a0a"/>
+  <text x="333" y="295" fill="#fca5a5" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">&#x22C6; Tama&#xF1;o: 2-10 GB</text>
+
+  <!-- Hypervisor VM -->
+  <rect x="60" y="338" width="358" height="40" rx="6" fill="#dc2626" opacity="0.9"/>
+  <text x="239" y="362" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Hypervisor (VMware / KVM / VirtualBox)</text>
+
+  <!-- Host OS VM -->
+  <rect x="60" y="384" width="358" height="36" rx="6" fill="#7f1d1d" opacity="0.9"/>
+  <text x="239" y="406" fill="#fecaca" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Host OS (Linux / Windows)</text>
+
+  <!-- Hardware VM -->
+  <rect x="60" y="426" width="358" height="34" rx="6" fill="#450a0a" opacity="0.9"/>
+  <text x="239" y="447" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle">Hardware F&#xED;sico (CPU, RAM, Disco)</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- Separador central -->
+  <!-- ══════════════════════════════════════════ -->
+  <line x1="480" y1="82" x2="480" y2="472" stroke="#475569" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="480" y="282" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" text-anchor="middle">VS</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LADO DERECHO: Contenedores -->
+  <!-- ══════════════════════════════════════════ -->
+  <text x="720" y="70" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Contenedores Docker</text>
+  <rect x="520" y="82" width="400" height="390" rx="10" fill="#2a2a2a" stroke="#10b981" stroke-width="2"/>
+
+  <!-- Contenedor 1 -->
+  <rect x="540" y="96" width="170" height="180" rx="8" fill="#1a1a1a" stroke="#34d399" stroke-width="1.5"/>
+  <text x="625" y="116" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Contenedor 1</text>
+  <!-- App -->
+  <rect x="552" y="124" width="146" height="30" rx="4" fill="#064e3b"/>
+  <text x="625" y="143" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">App (Node.js)</text>
+  <!-- Libs -->
+  <rect x="552" y="160" width="146" height="30" rx="4" fill="#065f46"/>
+  <text x="625" y="179" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Librer&#xED;as (Node 18)</text>
+  <!-- Bins -->
+  <rect x="552" y="196" width="146" height="30" rx="4" fill="#047857"/>
+  <text x="625" y="215" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Binaries</text>
+  <!-- Size label -->
+  <rect x="552" y="232" width="146" height="26" rx="4" fill="#022c22"/>
+  <text x="625" y="249" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">&#x22C6; Tama&#xF1;o: 80-200 MB</text>
+
+  <!-- Contenedor 2 -->
+  <rect x="728" y="96" width="170" height="180" rx="8" fill="#1a1a1a" stroke="#34d399" stroke-width="1.5"/>
+  <text x="813" y="116" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Contenedor 2</text>
+  <rect x="740" y="124" width="146" height="30" rx="4" fill="#064e3b"/>
+  <text x="813" y="143" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">App (Python)</text>
+  <rect x="740" y="160" width="146" height="30" rx="4" fill="#065f46"/>
+  <text x="813" y="179" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Librer&#xED;as (Py 3.11)</text>
+  <rect x="740" y="196" width="146" height="30" rx="4" fill="#047857"/>
+  <text x="813" y="215" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Binaries</text>
+  <rect x="740" y="232" width="146" height="26" rx="4" fill="#022c22"/>
+  <text x="813" y="249" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">&#x22C6; Tama&#xF1;o: 80-200 MB</text>
+
+  <!-- Docker Engine -->
+  <rect x="540" y="288" width="358" height="42" rx="6" fill="#047857" opacity="0.9"/>
+  <text x="719" y="308" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Docker Engine (daemon)</text>
+  <text x="719" y="324" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Namespaces &#xB7; cgroups &#xB7; Union FS</text>
+
+  <!-- Host OS Contenedor -->
+  <rect x="540" y="336" width="358" height="74" rx="6" fill="#065f46" opacity="0.9"/>
+  <text x="719" y="356" fill="#d1fae5" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Host OS + Kernel (compartido)</text>
+  <text x="719" y="374" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">&#x2605; Todos los contenedores comparten el mismo kernel</text>
+  <text x="719" y="390" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">No hay virtualizaci&#xF3;n de SO &#x2192; inicio instant&#xE1;neo</text>
+  <text x="719" y="406" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Aislamiento por namespaces de Linux</text>
+
+  <!-- Hardware Contenedor -->
+  <rect x="540" y="416" width="358" height="44" rx="6" fill="#022c22" opacity="0.9"/>
+  <text x="719" y="442" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle">Hardware F&#xED;sico (CPU, RAM, Disco)</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- Tabla comparativa inferior -->
+  <!-- ══════════════════════════════════════════ -->
+  <text x="180" y="488" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Arranque: minutos &#xB7; Peso: GBs</text>
+  <text x="180" y="504" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Aislamiento fuerte &#xB7; Overhead alto</text>
+  <text x="720" y="488" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Arranque: segundos &#xB7; Peso: MBs</text>
+  <text x="720" y="504" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Aislamiento por namespaces &#xB7; Overhead m&#xED;nimo</text>
+</svg>

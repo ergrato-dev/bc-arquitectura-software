@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520">
+  <rect width="960" height="520" fill="#1e1e1e"/>
+
+  <!-- Título -->
+  <text x="480" y="36" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Arquitectura Docker</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- CLIENTE DOCKER -->
+  <!-- ══════════════════════════════════════════ -->
+  <rect x="30" y="60" width="200" height="380" rx="10" fill="#2a2a2a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="130" y="88" fill="#3b82f6" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Docker Client</text>
+  <text x="130" y="106" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">CLI / API</text>
+
+  <!-- Comandos -->
+  <rect x="50" y="118" width="160" height="32" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="138" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">docker build</text>
+
+  <rect x="50" y="158" width="160" height="32" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="178" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">docker run</text>
+
+  <rect x="50" y="198" width="160" height="32" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="218" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">docker pull</text>
+
+  <rect x="50" y="238" width="160" height="32" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="258" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">docker push</text>
+
+  <rect x="50" y="278" width="160" height="32" rx="5" fill="#1e3a5f"/>
+  <text x="130" y="298" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">docker compose</text>
+
+  <text x="130" y="340" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Comunica v&#xED;a REST API</text>
+  <text x="130" y="356" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">con el Daemon</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- Flecha Cliente → Daemon -->
+  <!-- ══════════════════════════════════════════ -->
+  <line x1="230" y1="250" x2="300" y2="250" stroke="#3b82f6" stroke-width="2.5"/>
+  <polygon points="300,244 310,250 300,256" fill="#3b82f6"/>
+  <text x="265" y="242" fill="#3b82f6" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">API REST</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- DOCKER DAEMON (centro) -->
+  <!-- ══════════════════════════════════════════ -->
+  <rect x="310" y="60" width="320" height="380" rx="10" fill="#2a2a2a" stroke="#10b981" stroke-width="2"/>
+  <text x="470" y="88" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Docker Daemon (dockerd)</text>
+  <text x="470" y="106" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Gestiona objetos Docker</text>
+
+  <!-- Sub-sección: Imágenes -->
+  <rect x="328" y="118" width="138" height="140" rx="6" fill="#1a2e1a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="397" y="138" fill="#4ade80" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Im&#xE1;genes</text>
+
+  <rect x="338" y="148" width="118" height="26" rx="4" fill="#14532d"/>
+  <text x="397" y="165" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">node:20-alpine</text>
+
+  <rect x="338" y="180" width="118" height="26" rx="4" fill="#14532d"/>
+  <text x="397" y="197" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">eduflow-api:1.0</text>
+
+  <rect x="338" y="212" width="118" height="26" rx="4" fill="#14532d"/>
+  <text x="397" y="229" fill="#86efac" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">postgres:15-alpine</text>
+
+  <text x="397" y="252" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Solo lectura / capas</text>
+
+  <!-- Sub-sección: Contenedores -->
+  <rect x="474" y="118" width="138" height="140" rx="6" fill="#1a1a2e" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="543" y="138" fill="#818cf8" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Contenedores</text>
+
+  <rect x="484" y="148" width="118" height="26" rx="4" fill="#312e81"/>
+  <text x="543" y="165" fill="#a5b4fc" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">eduflow-api (running)</text>
+
+  <rect x="484" y="180" width="118" height="26" rx="4" fill="#312e81"/>
+  <text x="543" y="197" fill="#a5b4fc" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">eduflow-db (running)</text>
+
+  <rect x="484" y="212" width="118" height="26" rx="4" fill="#1e293b"/>
+  <text x="543" y="229" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">old-container (stopped)</text>
+
+  <text x="543" y="252" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Imagen + capa de escritura</text>
+
+  <!-- Sub-sección: Volúmenes y Redes -->
+  <rect x="328" y="272" width="130" height="80" rx="6" fill="#2a1a0a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="393" y="292" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Vol&#xFA;menes</text>
+  <text x="393" y="312" fill="#fcd34d" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">postgres_data</text>
+  <text x="393" y="330" fill="#fcd34d" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">app_uploads</text>
+  <text x="393" y="344" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Persistencia de datos</text>
+
+  <rect x="470" y="272" width="142" height="80" rx="6" fill="#1a0a2e" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="541" y="292" fill="#c084fc" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Redes</text>
+  <text x="541" y="312" fill="#d8b4fe" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">eduflow-network</text>
+  <text x="541" y="330" fill="#d8b4fe" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">bridge (default)</text>
+  <text x="541" y="344" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Comunicaci&#xF3;n entre cont.</text>
+
+  <text x="470" y="390" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">/var/run/docker.sock</text>
+  <text x="470" y="406" fill="#475569" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Socket Unix para comunicaci&#xF3;n</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- Flecha Daemon → Registry -->
+  <!-- ══════════════════════════════════════════ -->
+  <line x1="630" y1="250" x2="700" y2="250" stroke="#f59e0b" stroke-width="2.5"/>
+  <polygon points="700,244 710,250 700,256" fill="#f59e0b"/>
+  <line x1="700" y1="250" x2="630" y2="250" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="0"/>
+  <!-- doble flecha -->
+  <polygon points="630,244 620,250 630,256" fill="#f59e0b"/>
+  <text x="665" y="242" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">push/pull</text>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- REGISTRY -->
+  <!-- ══════════════════════════════════════════ -->
+  <rect x="710" y="60" width="220" height="380" rx="10" fill="#2a2a2a" stroke="#f59e0b" stroke-width="2"/>
+  <text x="820" y="88" fill="#f59e0b" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Registry</text>
+  <text x="820" y="106" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Repositorio de Im&#xE1;genes</text>
+
+  <!-- Docker Hub -->
+  <rect x="728" y="118" width="184" height="80" rx="6" fill="#1a1500" stroke="#facc15" stroke-width="1.5"/>
+  <text x="820" y="140" fill="#facc15" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Docker Hub</text>
+  <text x="820" y="158" fill="#fde68a" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">hub.docker.com</text>
+  <text x="820" y="174" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">P&#xFA;blico y privado</text>
+  <text x="820" y="190" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Millones de im&#xE1;genes oficiales</text>
+
+  <!-- AWS ECR -->
+  <rect x="728" y="210" width="184" height="60" rx="6" fill="#1a0a0a" stroke="#f87171" stroke-width="1.5"/>
+  <text x="820" y="230" fill="#f87171" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">AWS ECR</text>
+  <text x="820" y="250" fill="#fca5a5" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Elastic Container Registry</text>
+  <text x="820" y="264" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Privado &#xB7; integrado con ECS/EKS</text>
+
+  <!-- GH Container Registry -->
+  <rect x="728" y="282" width="184" height="60" rx="6" fill="#0f0a1a" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="820" y="302" fill="#a78bfa" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">GitHub Container</text>
+  <text x="820" y="320" fill="#c4b5fd" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">ghcr.io</text>
+  <text x="820" y="336" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Integrado con GitHub Actions</text>
+
+  <!-- Ejemplo URL -->
+  <text x="820" y="370" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle">Formato de imagen:</text>
+  <text x="820" y="386" fill="#10b981" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle" font-style="italic">registry/imagen:tag</text>
+  <text x="820" y="400" fill="#4ade80" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle" font-style="italic">node:20-alpine</text>
+  <text x="820" y="416" fill="#4ade80" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle" font-style="italic">ghcr.io/org/eduflow:v1.0</text>
+
+  <!-- Leyenda inferior -->
+  <text x="480" y="470" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Flujo: docker build → imagen local → docker push → registry → docker pull en servidor</text>
+  <text x="480" y="490" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">La misma imagen que construiste en dev es exactamente la que corre en producci&#xF3;n</text>
+</svg>
