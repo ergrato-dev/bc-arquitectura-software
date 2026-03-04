@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640">
+  <defs>
+    <style>
+      .title    { font: bold 22px sans-serif; fill: #2c3e50; }
+      .cat-title{ font: bold 15px sans-serif; fill: #fff; }
+      .pat-name { font: 12px sans-serif; fill: #2c3e50; }
+      .pat-small{ font: 11px sans-serif; fill: #555; }
+      .note     { font: italic 11px sans-serif; fill: #7f8c8d; }
+      .cat-label{ font: bold 13px sans-serif; fill: #fff; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="36" class="title" text-anchor="middle">Los 23 Patrones GoF — Gang of Four (1994)</text>
+
+  <!-- CREACIONALES (5) -->
+  <rect x="30" y="55" width="250" height="265" rx="10" fill="#2980b9" stroke="#1a6fa0" stroke-width="2"/>
+  <rect x="30" y="55" width="250" height="40" rx="10" fill="#1a6fa0"/>
+  <rect x="30" y="85" width="250" height="10" fill="#1a6fa0"/>
+  <text x="155" y="82" class="cat-title" text-anchor="middle">CREACIONALES (5)</text>
+  <text x="155" y="116" class="cat-label" text-anchor="middle">¿Cómo crear objetos?</text>
+
+  <rect x="50" y="130" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="155" y="148" class="pat-name" text-anchor="middle" font-weight="bold">Factory Method</text>
+  <text x="155" y="161" class="pat-small" text-anchor="middle">Delegar creación a subclases</text>
+
+  <rect x="50" y="172" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="155" y="190" class="pat-name" text-anchor="middle" font-weight="bold">Abstract Factory</text>
+  <text x="155" y="203" class="pat-small" text-anchor="middle">Familias de objetos relacionados</text>
+
+  <rect x="50" y="214" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="155" y="232" class="pat-name" text-anchor="middle" font-weight="bold">Builder</text>
+  <text x="155" y="245" class="pat-small" text-anchor="middle">Construcción paso a paso</text>
+
+  <rect x="50" y="256" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="155" y="274" class="pat-name" text-anchor="middle" font-weight="bold">Prototype</text>
+  <text x="155" y="287" class="pat-small" text-anchor="middle">Clonar objetos existentes</text>
+
+  <rect x="50" y="298" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="155" y="316" class="pat-name" text-anchor="middle" font-weight="bold">Singleton</text>
+  <text x="155" y="329" class="pat-small" text-anchor="middle">Una sola instancia global</text>
+
+  <!-- ESTRUCTURALES (7) -->
+  <rect x="325" y="55" width="250" height="375" rx="10" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <rect x="325" y="55" width="250" height="40" rx="10" fill="#1e8449"/>
+  <rect x="325" y="85" width="250" height="10" fill="#1e8449"/>
+  <text x="450" y="82" class="cat-title" text-anchor="middle">ESTRUCTURALES (7)</text>
+  <text x="450" y="116" class="cat-label" text-anchor="middle">¿Cómo componer objetos?</text>
+
+  <rect x="345" y="130" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="450" y="148" class="pat-name" text-anchor="middle" font-weight="bold">Adapter</text>
+  <text x="450" y="161" class="pat-small" text-anchor="middle">Interfaces incompatibles</text>
+
+  <rect x="345" y="172" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="450" y="190" class="pat-name" text-anchor="middle" font-weight="bold">Bridge</text>
+  <text x="450" y="203" class="pat-small" text-anchor="middle">Separar abstracción de impl.</text>
+
+  <rect x="345" y="214" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="450" y="232" class="pat-name" text-anchor="middle" font-weight="bold">Composite</text>
+  <text x="450" y="245" class="pat-small" text-anchor="middle">Árbol de objetos uniformes</text>
+
+  <rect x="345" y="256" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="450" y="274" class="pat-name" text-anchor="middle" font-weight="bold">Decorator</text>
+  <text x="450" y="287" class="pat-small" text-anchor="middle">Responsabilidades dinámicas</text>
+
+  <rect x="345" y="298" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="450" y="316" class="pat-name" text-anchor="middle" font-weight="bold">Facade</text>
+  <text x="450" y="329" class="pat-small" text-anchor="middle">Interfaz simplificada</text>
+
+  <rect x="345" y="340" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="450" y="358" class="pat-name" text-anchor="middle" font-weight="bold">Flyweight</text>
+  <text x="450" y="371" class="pat-small" text-anchor="middle">Compartir estado para eficiencia</text>
+
+  <rect x="345" y="382" width="210" height="36" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="450" y="400" class="pat-name" text-anchor="middle" font-weight="bold">Proxy</text>
+  <text x="450" y="413" class="pat-small" text-anchor="middle">Control de acceso a un objeto</text>
+
+  <!-- COMPORTAMIENTO (11) -->
+  <rect x="620" y="55" width="255" height="530" rx="10" fill="#8e44ad" stroke="#7d3c98" stroke-width="2"/>
+  <rect x="620" y="55" width="255" height="40" rx="10" fill="#7d3c98"/>
+  <rect x="620" y="85" width="255" height="10" fill="#7d3c98"/>
+  <text x="747" y="82" class="cat-title" text-anchor="middle">COMPORTAMIENTO (11)</text>
+  <text x="747" y="116" class="cat-label" text-anchor="middle">¿Cómo comunican objetos?</text>
+
+  <rect x="638" y="130" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="148" class="pat-name" text-anchor="middle" font-weight="bold">Chain of Responsibility</text>
+  <text x="747" y="160" class="pat-small" text-anchor="middle">Cadena de manejadores</text>
+
+  <rect x="638" y="169" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="187" class="pat-name" text-anchor="middle" font-weight="bold">Command</text>
+  <text x="747" y="199" class="pat-small" text-anchor="middle">Encapsular solicitudes como objetos</text>
+
+  <rect x="638" y="208" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="226" class="pat-name" text-anchor="middle" font-weight="bold">Interpreter</text>
+  <text x="747" y="238" class="pat-small" text-anchor="middle">Gramática de un lenguaje</text>
+
+  <rect x="638" y="247" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="265" class="pat-name" text-anchor="middle" font-weight="bold">Iterator</text>
+  <text x="747" y="277" class="pat-small" text-anchor="middle">Recorrer colecciones</text>
+
+  <rect x="638" y="286" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="304" class="pat-name" text-anchor="middle" font-weight="bold">Mediator</text>
+  <text x="747" y="316" class="pat-small" text-anchor="middle">Coordinación centralizada</text>
+
+  <rect x="638" y="325" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="343" class="pat-name" text-anchor="middle" font-weight="bold">Memento</text>
+  <text x="747" y="355" class="pat-small" text-anchor="middle">Capturar y restaurar estado</text>
+
+  <rect x="638" y="364" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="382" class="pat-name" text-anchor="middle" font-weight="bold" fill="#c0392b">Observer ★</text>
+  <text x="747" y="394" class="pat-small" text-anchor="middle">Suscripción a eventos</text>
+
+  <rect x="638" y="403" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="421" class="pat-name" text-anchor="middle" font-weight="bold">State</text>
+  <text x="747" y="433" class="pat-small" text-anchor="middle">Comportamiento según estado</text>
+
+  <rect x="638" y="442" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="460" class="pat-name" text-anchor="middle" font-weight="bold" fill="#c0392b">Strategy ★</text>
+  <text x="747" y="472" class="pat-small" text-anchor="middle">Algoritmos intercambiables</text>
+
+  <rect x="638" y="481" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="499" class="pat-name" text-anchor="middle" font-weight="bold">Template Method</text>
+  <text x="747" y="511" class="pat-small" text-anchor="middle">Esqueleto de algoritmo</text>
+
+  <rect x="638" y="520" width="218" height="34" rx="6" fill="#fff" fill-opacity="0.9"/>
+  <text x="747" y="538" class="pat-name" text-anchor="middle" font-weight="bold">Visitor</text>
+  <text x="747" y="550" class="pat-small" text-anchor="middle">Operaciones sin modificar clases</text>
+
+  <!-- Note -->
+  <text x="450" y="620" class="note" text-anchor="middle">★ = patrones estudiados esta semana en detalle · GoF — "Design Patterns: Elements of Reusable Object-Oriented Software" (1994)</text>
+</svg>

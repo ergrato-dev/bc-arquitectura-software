@@ -22,11 +22,13 @@ Los patrones estructurales describen **cómo combinar clases y objetos** para co
 ### ¿Qué impacto tiene?
 
 **Si los aplicas:**
+
 - ✅ Integras sistemas heredados o APIs de terceros sin tocar su código
 - ✅ Extiendes objetos en tiempo de ejecución sin herencia
 - ✅ Reduces la complejidad que el cliente debe manejar
 
 **Si no los aplicas:**
+
 - ❌ Modificas clases existentes para adaptarlas (violación de OCP)
 - ❌ La herencia se convierte en un árbol inmanejable de subclases
 - ❌ El cliente está acoplado a la complejidad interna de los subsistemas
@@ -52,6 +54,8 @@ Solución: Un Adapter "traduce" las llamadas de tu interfaz a la
 Un adaptador de corriente de viaje: tu cargador tiene clavija americana (tipo A), pero el tomacorriente en Europa es tipo C. El adaptador en el medio hace que ambos sean compatibles sin modificar ni el cargador ni el tomacorriente.
 
 ### Estructura
+
+![Diagrama Adapter](../0-assets/05-adapter.svg)
 
 ```
 ┌─────────────┐     usa      ┌──────────────────┐
@@ -79,7 +83,7 @@ class PaymentProcessor {
    * @returns {{ success: boolean, transactionId: string }}
    */
   process(amount, currency, metadata) {
-    throw new Error('process() debe ser implementado');
+    throw new Error("process() debe ser implementado");
   }
 }
 
@@ -89,10 +93,12 @@ class PaymentProcessor {
 class StripeSDK {
   // Stripe tiene su propia nomenclatura y estructura
   createCharge({ amount_cents, currency_code, card_token, description }) {
-    console.log(`[Stripe SDK] Cobrar ${amount_cents} centavos en ${currency_code}`);
+    console.log(
+      `[Stripe SDK] Cobrar ${amount_cents} centavos en ${currency_code}`,
+    );
     return {
       charge_id: `ch_${Date.now()}`,
-      status: 'succeeded',
+      status: "succeeded",
       amount_charged: amount_cents,
     };
   }
@@ -113,15 +119,15 @@ class StripeAdapter extends PaymentProcessor {
   process(amount, currency, metadata) {
     // Adaptamos: nuestro `amount` (pesos) → centavos de Stripe
     const result = this.#stripeSDK.createCharge({
-      amount_cents: amount * 100,  // Stripe trabaja en centavos
+      amount_cents: amount * 100, // Stripe trabaja en centavos
       currency_code: currency.toLowerCase(),
       card_token: metadata.cardToken,
-      description: metadata.description ?? 'Compra ShopFlow',
+      description: metadata.description ?? "Compra ShopFlow",
     });
 
     // Adaptamos la respuesta de Stripe a nuestra interfaz estándar
     return {
-      success: result.status === 'succeeded',
+      success: result.status === "succeeded",
       transactionId: result.charge_id,
     };
   }
@@ -133,7 +139,7 @@ class StripeAdapter extends PaymentProcessor {
 class NequiSDK {
   transferir({ valor, celular, referencia }) {
     console.log(`[Nequi SDK] Transferir $${valor} al ${celular}`);
-    return { codigo: 'APROBADO', id_transaccion: `NQ${Date.now()}` };
+    return { codigo: "APROBADO", id_transaccion: `NQ${Date.now()}` };
   }
 }
 
@@ -150,11 +156,11 @@ class NequiAdapter extends PaymentProcessor {
     const result = this.#nequiSDK.transferir({
       valor: amount,
       celular: metadata.phone,
-      referencia: metadata.orderId ?? 'SHOPFLOW',
+      referencia: metadata.orderId ?? "SHOPFLOW",
     });
 
     return {
-      success: result.codigo === 'APROBADO',
+      success: result.codigo === "APROBADO",
       transactionId: result.id_transaccion,
     };
   }
@@ -165,7 +171,7 @@ export { PaymentProcessor, StripeAdapter, NequiAdapter };
 // ──────────────────────────────────────────
 // Uso — el cliente trabaja con la misma interfaz sin importar el proveedor
 // ──────────────────────────────────────────
-import { StripeAdapter, NequiAdapter } from './payment-adapter.js';
+import { StripeAdapter, NequiAdapter } from "./payment-adapter.js";
 
 const getProcessor = (method) => {
   const processors = {
@@ -175,21 +181,24 @@ const getProcessor = (method) => {
   return processors[method] ?? null;
 };
 
-const processor = getProcessor('nequi');
-const result = processor.process(150000, 'COP', {
-  phone: '+573001234567',
-  orderId: 'ord_001',
+const processor = getProcessor("nequi");
+const result = processor.process(150000, "COP", {
+  phone: "+573001234567",
+  orderId: "ord_001",
 });
 console.log(result); // { success: true, transactionId: 'NQ...' }
 ```
 
 **Principios SOLID reforzados:**
+
 - 🟢 **OCP**: Agregar PayPal = nueva clase `PayPalAdapter`. Sin modificar nada existente.
 - 🟢 **DIP**: El cliente depende de `PaymentProcessor` (abstracción), no de `StripeSDK`.
 
 ---
 
 ## 🎨 Decorator
+
+![Diagrama Decorator](../0-assets/06-decorator.svg)
 
 ### ¿Qué es?
 
@@ -217,18 +226,24 @@ Un café: primero tienes el café solo (objeto base). Le agregas leche (decorado
 // Interfaz base
 class UserService {
   async findById(id) {
-    throw new Error('Debe ser implementado');
+    throw new Error("Debe ser implementado");
   }
   async save(user) {
-    throw new Error('Debe ser implementado');
+    throw new Error("Debe ser implementado");
   }
 }
 
 // Implementación concreta
 class UserServiceImpl extends UserService {
   #users = new Map([
-    ['usr_001', { id: 'usr_001', name: 'Ana García', email: 'ana@sena.edu.co' }],
-    ['usr_002', { id: 'usr_002', name: 'Carlos Ruiz', email: 'carlos@sena.edu.co' }],
+    [
+      "usr_001",
+      { id: "usr_001", name: "Ana García", email: "ana@sena.edu.co" },
+    ],
+    [
+      "usr_002",
+      { id: "usr_002", name: "Carlos Ruiz", email: "carlos@sena.edu.co" },
+    ],
   ]);
 
   async findById(id) {
@@ -243,7 +258,7 @@ class UserServiceImpl extends UserService {
 
 // Decorador de logging — envuelve cualquier UserService
 class LoggingUserServiceDecorator extends UserService {
-  #service;  // El objeto decorado
+  #service; // El objeto decorado
   #logger;
 
   constructor(service, logger = console) {
@@ -257,7 +272,9 @@ class LoggingUserServiceDecorator extends UserService {
     const start = Date.now();
     const result = await this.#service.findById(id);
     const duration = Date.now() - start;
-    this.#logger.log(`[LOG] findById completado en ${duration}ms. Encontrado: ${!!result}`);
+    this.#logger.log(
+      `[LOG] findById completado en ${duration}ms. Encontrado: ${!!result}`,
+    );
     return result;
   }
 
@@ -287,7 +304,7 @@ class CachedUserServiceDecorator extends UserService {
       console.log(`[CACHE] Hit para id="${id}"`);
       return cached.data;
     }
-    
+
     const result = await this.#service.findById(id);
     if (result) {
       this.#cache.set(id, { data: result, timestamp: Date.now() });
@@ -303,7 +320,11 @@ class CachedUserServiceDecorator extends UserService {
   }
 }
 
-export { UserServiceImpl, LoggingUserServiceDecorator, CachedUserServiceDecorator };
+export {
+  UserServiceImpl,
+  LoggingUserServiceDecorator,
+  CachedUserServiceDecorator,
+};
 
 // ──────────────────────────────────────────
 // Uso — combinando decoradores como capas de cebolla
@@ -315,15 +336,17 @@ const loggedService = new LoggingUserServiceDecorator(baseService);
 
 // Opción 2: Con caché Y logging (los decoradores se apilan)
 const fullyDecoratedService = new LoggingUserServiceDecorator(
-  new CachedUserServiceDecorator(baseService, 30000)
+  new CachedUserServiceDecorator(baseService, 30000),
 );
 
-const user = await fullyDecoratedService.findById('usr_001');
+const user = await fullyDecoratedService.findById("usr_001");
 ```
 
 ---
 
 ## 🏰 Facade
+
+![Diagrama Facade](../0-assets/07-facade.svg)
 
 ### ¿Qué es?
 
@@ -331,7 +354,7 @@ El **Facade** proporciona una **interfaz simplificada** a un conjunto de interfa
 
 ```
 Problema: Tu cliente necesita coordinar múltiples subsistemas
-          complejos (APIs de envío, cálculo de impuestos, 
+          complejos (APIs de envío, cálculo de impuestos,
           verificación de inventario...).
 
 Solución: Una Facade reúne todas esas interacciones en métodos
@@ -351,29 +374,29 @@ El salpicadero de un auto: no necesitas saber cómo funciona el motor, la transm
 // Subsistema 1: Servientrega
 class ServientregaAPI {
   constructor() {
-    console.log('[Servientrega] Inicializando cliente API...');
+    console.log("[Servientrega] Inicializando cliente API...");
   }
   calcularTarifa({ peso, volumen, origen, destino }) {
     return { tarifa: 12000, tiempo_dias: 3 };
   }
   crearGuia({ pedido_id, remitente, destinatario }) {
-    return { guia: `SV${Date.now()}`, estado: 'CREADA' };
+    return { guia: `SV${Date.now()}`, estado: "CREADA" };
   }
   rastrearEnvio(guia) {
-    return { guia, estado: 'EN_TRANSITO', ubicacion: 'Bogotá' };
+    return { guia, estado: "EN_TRANSITO", ubicacion: "Bogotá" };
   }
 }
 
 // Subsistema 2: Coordinadora
 class CoordinadoraAPI {
   authenticate(apiKey) {
-    return { token: 'coord_token_' + Date.now() };
+    return { token: "coord_token_" + Date.now() };
   }
   getShippingRate(params) {
     return { price: 15000, delivery_days: 5 };
   }
   createShipment(params) {
-    return { tracking_number: `CO${Date.now()}`, status: 'CREATED' };
+    return { tracking_number: `CO${Date.now()}`, status: "CREATED" };
   }
 }
 
@@ -383,10 +406,13 @@ class FedExAPI {
     this.credentials = { accountNumber, meterNumber };
   }
   getRates(shipFrom, shipTo, packageDetails) {
-    return { totalNetCharge: { amount: 85.50, currency: 'USD' }, deliveryDays: 7 };
+    return {
+      totalNetCharge: { amount: 85.5, currency: "USD" },
+      deliveryDays: 7,
+    };
   }
   createShipment(data) {
-    return { trackingNumber: `FX${Date.now()}`, serviceCategory: 'EXPRESS' };
+    return { trackingNumber: `FX${Date.now()}`, serviceCategory: "EXPRESS" };
   }
 }
 
@@ -403,10 +429,12 @@ class ShippingFacade {
     // Inicializa los subsistemas internamente
     this.#servientrega = new ServientregaAPI();
     this.#coordinadora = new CoordinadoraAPI();
-    this.#fedex = new FedExAPI('ACCOUNT_123', 'METER_456');
+    this.#fedex = new FedExAPI("ACCOUNT_123", "METER_456");
 
     // Autenticar Coordinadora
-    const auth = this.#coordinadora.authenticate(process.env.COORD_API_KEY ?? 'test_key');
+    const auth = this.#coordinadora.authenticate(
+      process.env.COORD_API_KEY ?? "test_key",
+    );
     this.#coordToken = auth.token;
   }
 
@@ -417,23 +445,23 @@ class ShippingFacade {
    */
   calculateShipping(order, address) {
     // La Facade decide qué carrier usar según las reglas de negocio
-    if (address.country !== 'CO') {
+    if (address.country !== "CO") {
       const rate = this.#fedex.getRates(
-        { city: 'Bogota', country: 'CO' },
+        { city: "Bogota", country: "CO" },
         { city: address.city, country: address.country },
-        { weight: 1 }
+        { weight: 1 },
       );
       return {
-        carrier: 'FedEx',
+        carrier: "FedEx",
         cost: rate.totalNetCharge.amount * 4000, // USD a COP aprox.
         estimatedDays: rate.deliveryDays,
-        currency: 'COP',
+        currency: "COP",
       };
     }
 
     if (order.total >= 200000) {
       return {
-        carrier: 'Servientrega',
+        carrier: "Servientrega",
         cost: 0,
         estimatedDays: 3,
         isFree: true,
@@ -442,7 +470,7 @@ class ShippingFacade {
 
     const rate = this.#coordinadora.getShippingRate({ orderId: order.id });
     return {
-      carrier: 'Coordinadora',
+      carrier: "Coordinadora",
       cost: rate.price,
       estimatedDays: rate.delivery_days,
     };
@@ -454,16 +482,16 @@ class ShippingFacade {
   createShipment(order, address) {
     const shipping = this.calculateShipping(order, address);
 
-    if (shipping.carrier === 'Servientrega') {
+    if (shipping.carrier === "Servientrega") {
       const guia = this.#servientrega.crearGuia({
         pedido_id: order.id,
-        remitente: { nombre: 'ShopFlow Bodega', ciudad: 'Bogotá' },
+        remitente: { nombre: "ShopFlow Bodega", ciudad: "Bogotá" },
         destinatario: { nombre: address.name, ciudad: address.city },
       });
       return { ...shipping, trackingNumber: guia.guia };
     }
 
-    if (shipping.carrier === 'Coordinadora') {
+    if (shipping.carrier === "Coordinadora") {
       const shipment = this.#coordinadora.createShipment({
         token: this.#coordToken,
         orderId: order.id,
@@ -483,12 +511,12 @@ export { ShippingFacade };
 // ──────────────────────────────────────────
 // Uso — el cliente solo habla con la Facade
 // ──────────────────────────────────────────
-import { ShippingFacade } from './shipping-facade.js';
+import { ShippingFacade } from "./shipping-facade.js";
 
 const shipping = new ShippingFacade();
 
-const order = { id: 'ord_001', total: 350000 };
-const address = { name: 'Ana García', city: 'Medellín', country: 'CO' };
+const order = { id: "ord_001", total: 350000 };
+const address = { name: "Ana García", city: "Medellín", country: "CO" };
 
 // Simple, claro — sin saber nada de Servientrega, Coordinadora ni FedEx
 const result = shipping.createShipment(order, address);
@@ -500,14 +528,14 @@ console.log(result);
 
 ## 📊 Comparación de Patrones Estructurales
 
-| Patrón | Propósito | Caso típico en JavaScript |
-|--------|-----------|--------------------------|
-| **Adapter** | Compatibilizar interfaces incompatibles | Integrar SDKs de terceros (Stripe, Twilio) |
-| **Decorator** | Agregar comportamiento sin modificar la clase | Logging, caché, autenticación como capas |
-| **Facade** | Simplificar un subsistema complejo | Unificar múltiples APIs en una interfaz |
-| **Composite** | Tratar objetos individuales y colecciones igual | Árbol de categorías, sistema de archivos |
-| **Proxy** | Controlar el acceso a un objeto | Lazy loading, autorización, caché |
-| **Bridge** | Separar abstracción de implementación | Drivers multi-plataforma |
+| Patrón        | Propósito                                       | Caso típico en JavaScript                  |
+| ------------- | ----------------------------------------------- | ------------------------------------------ |
+| **Adapter**   | Compatibilizar interfaces incompatibles         | Integrar SDKs de terceros (Stripe, Twilio) |
+| **Decorator** | Agregar comportamiento sin modificar la clase   | Logging, caché, autenticación como capas   |
+| **Facade**    | Simplificar un subsistema complejo              | Unificar múltiples APIs en una interfaz    |
+| **Composite** | Tratar objetos individuales y colecciones igual | Árbol de categorías, sistema de archivos   |
+| **Proxy**     | Controlar el acceso a un objeto                 | Lazy loading, autorización, caché          |
+| **Bridge**    | Separar abstracción de implementación           | Drivers multi-plataforma                   |
 
 ---
 

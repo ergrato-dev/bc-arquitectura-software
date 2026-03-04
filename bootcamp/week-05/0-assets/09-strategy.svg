@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510">
+  <rect width="900" height="510" fill="#1e1e1e"/>
+
+  <text x="450" y="42" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Patr&#xF3;n Strategy</text>
+  <text x="450" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#999">Intercambia algoritmos en tiempo de ejecuci&#xF3;n sin modificar el contexto</text>
+
+  <defs>
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1abc9c"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- IDiscountStrategy interface -->
+  <rect x="310" y="85" width="280" height="85" rx="10" fill="#2a2a2a" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3"/>
+  <rect x="310" y="85" width="280" height="28" rx="10" fill="#4a1a6a"/>
+  <text x="450" y="96" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#ccc">&#xAB;interface&#xBB;</text>
+  <text x="450" y="111" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#9b59b6">IDiscountStrategy</text>
+  <line x1="310" y1="113" x2="590" y2="113" stroke="#9b59b6" stroke-width="1"/>
+  <text x="330" y="133" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#d7bde2">+ calculate(basePrice: number,</text>
+  <text x="330" y="151" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#d7bde2">    ctx: OrderContext): number</text>
+
+  <!-- PriceCalculator context -->
+  <rect x="60" y="230" width="230" height="120" rx="10" fill="#2a2a2a" stroke="#1abc9c" stroke-width="2.5"/>
+  <rect x="60" y="230" width="230" height="28" rx="10" fill="#0e6655"/>
+  <text x="175" y="249" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1abc9c">PriceCalculator</text>
+  <line x1="60" y1="258" x2="290" y2="258" stroke="#1abc9c" stroke-width="1"/>
+  <text x="80" y="276" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a2d9ce">- #strategy: IDiscountStrategy</text>
+  <line x1="60" y1="285" x2="290" y2="285" stroke="#555" stroke-width="1"/>
+  <text x="80" y="303" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ setStrategy(s): void</text>
+  <text x="80" y="321" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ getTotal(price, ctx): number</text>
+  <text x="80" y="340" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">  delega a #strategy.calculate()</text>
+
+  <!-- Flecha context -> interface -->
+  <line x1="290" y1="290" x2="307" y2="160" stroke="#1abc9c" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrowPurple)"/>
+  <text x="264" y="210" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">depende de</text>
+
+  <!-- VipDiscount -->
+  <rect x="30" y="400" width="175" height="75" rx="8" fill="#2a2a2a" stroke="#3498db" stroke-width="2"/>
+  <rect x="30" y="400" width="175" height="26" rx="8" fill="#1a3a5c"/>
+  <text x="117" y="418" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#3498db">VipDiscountStrategy</text>
+  <line x1="30" y1="426" x2="205" y2="426" stroke="#3498db" stroke-width="1"/>
+  <text x="50" y="444" font-family="Inter, system-ui, sans-serif" font-size="10.5" fill="#a8d8f0">+ calculate(price, ctx)</text>
+  <text x="50" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">precio * 0.70 (30% off)</text>
+  <text x="50" y="474" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">solo clientes VIP</text>
+
+  <!-- CouponDiscount -->
+  <rect x="230" y="400" width="185" height="75" rx="8" fill="#2a2a2a" stroke="#2ecc71" stroke-width="2"/>
+  <rect x="230" y="400" width="185" height="26" rx="8" fill="#1a5c2a"/>
+  <text x="322" y="418" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#2ecc71">CouponDiscountStrategy</text>
+  <line x1="230" y1="426" x2="415" y2="426" stroke="#2ecc71" stroke-width="1"/>
+  <text x="250" y="444" font-family="Inter, system-ui, sans-serif" font-size="10.5" fill="#abebc6">+ calculate(price, ctx)</text>
+  <text x="250" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">valida cup&#xF3;n y aplica %</text>
+  <text x="250" y="474" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">o monto fijo</text>
+
+  <!-- VolumeDiscount -->
+  <rect x="438" y="400" width="185" height="75" rx="8" fill="#2a2a2a" stroke="#e67e22" stroke-width="2"/>
+  <rect x="438" y="400" width="185" height="26" rx="8" fill="#5a2a0a"/>
+  <text x="530" y="418" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#e67e22">VolumeDiscountStrategy</text>
+  <line x1="438" y1="426" x2="623" y2="426" stroke="#e67e22" stroke-width="1"/>
+  <text x="458" y="444" font-family="Inter, system-ui, sans-serif" font-size="10.5" fill="#fad7a0">+ calculate(price, ctx)</text>
+  <text x="458" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">descuento por cantidad</text>
+  <text x="458" y="474" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">&gt;10 unid &#x2192; 15% off</text>
+
+  <!-- NoDiscount -->
+  <rect x="646" y="400" width="175" height="75" rx="8" fill="#2a2a2a" stroke="#7f8c8d" stroke-width="2"/>
+  <rect x="646" y="400" width="175" height="26" rx="8" fill="#2a2a2a"/>
+  <text x="733" y="418" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#bdc3c7">NoDiscountStrategy</text>
+  <line x1="646" y1="426" x2="821" y2="426" stroke="#7f8c8d" stroke-width="1"/>
+  <text x="666" y="444" font-family="Inter, system-ui, sans-serif" font-size="10.5" fill="#bdc3c7">+ calculate(price, ctx)</text>
+  <text x="666" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">retorna price sin cambios</text>
+  <text x="666" y="474" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">Null Object Pattern</text>
+
+  <!-- Flechas strategies implements interface -->
+  <line x1="117" y1="400" x2="370" y2="172" stroke="#3498db" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+  <line x1="322" y1="400" x2="420" y2="172" stroke="#2ecc71" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+  <line x1="530" y1="400" x2="490" y2="172" stroke="#e67e22" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+  <line x1="733" y1="400" x2="540" y2="172" stroke="#7f8c8d" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+
+  <!-- Nota OCP -->
+  <rect x="420" y="230" width="450" height="55" rx="8" fill="#1a2a1a" stroke="#1abc9c" stroke-width="1.5"/>
+  <text x="645" y="253" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1abc9c">OCP &#x2705; — DIP &#x2705;</text>
+  <text x="645" y="271" font-family="Inter, system-ui, sans-serif" font-size="10.5" text-anchor="middle" fill="#ccc">Nueva promoci&#xF3;n = nueva clase Strategy.</text>
+  <text x="645" y="285" font-family="Inter, system-ui, sans-serif" font-size="10.5" text-anchor="middle" fill="#ccc">PriceCalculator nunca se modifica.</text>
+
+  <!-- Runtime label -->
+  <rect x="420" y="300" width="450" height="75" rx="8" fill="#1a1440" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="645" y="320" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#9b59b6">Intercambio en runtime</text>
+  <text x="445" y="340" font-family="Inter, system-ui, sans-serif" font-size="10.5" fill="#d7bde2">const calc = new PriceCalculator();</text>
+  <text x="445" y="357" font-family="Inter, system-ui, sans-serif" font-size="10.5" fill="#d7bde2">calc.setStrategy(user.isVip ? new VipDiscountStrategy() : new NoDiscountStrategy());</text>
+  <text x="445" y="374" font-family="Inter, system-ui, sans-serif" font-size="10.5" fill="#d7bde2">const total = calc.getTotal(basePrice, ctx);</text>
+</svg>

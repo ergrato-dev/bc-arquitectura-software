@@ -21,11 +21,13 @@ Los patrones creacionales se encargan de **cómo se crean los objetos**. En luga
 ### ¿Qué impacto tiene?
 
 **Si los aplicas:**
+
 - ✅ Cambiar la implementación de un objeto no requiere modificar el código cliente
 - ✅ La creación de objetos complejos es legible y predecible
 - ✅ Facilita el testing (puedes sustituir implementaciones fácilmente)
 
 **Si no los aplicas:**
+
 - ❌ `new ClaseX(a, b, c, d, e, f, g)` disperso en 20 archivos — un cambio en el constructor rompe todo
 - ❌ Objetos complejos construidos de forma inconsistente según el lugar del código
 
@@ -46,6 +48,8 @@ Solución: Define un método para crear el objeto. Las subclases (o
 ```
 
 ### Estructura
+
+![Diagrama Factory Method](../0-assets/02-factory-method.svg)
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -70,14 +74,14 @@ Solución: Define un método para crear el objeto. Las subclases (o
 // Interfaz base (contrato)
 class Notification {
   send(message) {
-    throw new Error('send() debe ser implementado por las subclases');
+    throw new Error("send() debe ser implementado por las subclases");
   }
 }
 
 // Implementaciones concretas
 class EmailNotification extends Notification {
   #email;
-  
+
   constructor(email) {
     super();
     this.#email = email;
@@ -86,7 +90,7 @@ class EmailNotification extends Notification {
   send(message) {
     console.log(`📧 Email enviado a ${this.#email}: ${message}`);
     // Aquí iría la integración real con SendGrid, SES, etc.
-    return { type: 'email', to: this.#email, message, sentAt: new Date() };
+    return { type: "email", to: this.#email, message, sentAt: new Date() };
   }
 }
 
@@ -100,7 +104,7 @@ class SmsNotification extends Notification {
 
   send(message) {
     console.log(`📱 SMS enviado a ${this.#phone}: ${message}`);
-    return { type: 'sms', to: this.#phone, message, sentAt: new Date() };
+    return { type: "sms", to: this.#phone, message, sentAt: new Date() };
   }
 }
 
@@ -113,8 +117,10 @@ class PushNotification extends Notification {
   }
 
   send(message) {
-    console.log(`🔔 Push enviado a dispositivo ${this.#deviceToken}: ${message}`);
-    return { type: 'push', to: this.#deviceToken, message, sentAt: new Date() };
+    console.log(
+      `🔔 Push enviado a dispositivo ${this.#deviceToken}: ${message}`,
+    );
+    return { type: "push", to: this.#deviceToken, message, sentAt: new Date() };
   }
 }
 
@@ -139,23 +145,26 @@ class NotificationFactory {
 export { NotificationFactory };
 
 // Uso del patrón — el cliente NO conoce las clases concretas
-import { NotificationFactory } from './notification.js';
+import { NotificationFactory } from "./notification.js";
 
-const notif1 = NotificationFactory.create('email', 'ana@sena.edu.co');
-const notif2 = NotificationFactory.create('sms', '+573001234567');
-const notif3 = NotificationFactory.create('push', 'device_token_abc123');
+const notif1 = NotificationFactory.create("email", "ana@sena.edu.co");
+const notif2 = NotificationFactory.create("sms", "+573001234567");
+const notif3 = NotificationFactory.create("push", "device_token_abc123");
 
 // Todos se usan de la misma forma — polimorfismo
-[notif1, notif2, notif3].forEach(n => n.send('Tu pedido ha sido confirmado'));
+[notif1, notif2, notif3].forEach((n) => n.send("Tu pedido ha sido confirmado"));
 ```
 
 **Principios SOLID reforzados:**
+
 - 🟢 **OCP**: Agregar un nuevo tipo de notificación (WhatsApp) = nueva clase + agregar entrada al mapa. Sin modificar las existentes.
 - 🟢 **DIP**: El cliente depende de la abstracción `Notification`, no de `EmailNotification`.
 
 ---
 
 ## 🔂 Singleton
+
+![Diagrama Singleton](../0-assets/03-singleton.svg)
 
 ### ¿Qué es?
 
@@ -194,9 +203,9 @@ class DatabaseConnection {
   static getInstance(config) {
     if (!DatabaseConnection.#instance) {
       DatabaseConnection.#instance = new DatabaseConnection(config);
-      console.log('✅ Pool de conexiones creado (primera vez)');
+      console.log("✅ Pool de conexiones creado (primera vez)");
     } else {
-      console.log('♻️  Reutilizando pool de conexiones existente');
+      console.log("♻️  Reutilizando pool de conexiones existente");
     }
     return DatabaseConnection.#instance;
   }
@@ -209,7 +218,7 @@ class DatabaseConnection {
 
   async query(sql, params = []) {
     if (!this.#pool?.active) {
-      throw new Error('No hay conexión activa a la base de datos');
+      throw new Error("No hay conexión activa a la base de datos");
     }
     console.log(`🗄️  Ejecutando: ${sql}`, params);
     // Retornaría los resultados reales
@@ -225,13 +234,13 @@ class DatabaseConnection {
 export { DatabaseConnection };
 
 // Uso — desde múltiples módulos
-import { DatabaseConnection } from './database-connection.js';
+import { DatabaseConnection } from "./database-connection.js";
 
 const DB_CONFIG = {
-  host: 'localhost',
+  host: "localhost",
   port: 5432,
-  database: 'shopflow_db',
-  user: 'app_user',
+  database: "shopflow_db",
+  user: "app_user",
 };
 
 // En el módulo de usuarios
@@ -249,13 +258,15 @@ const db2 = DatabaseConnection.getInstance(); // devuelve la MISMA instancia
 
 ## 🏗️ Builder
 
+![Diagrama Builder](../0-assets/04-builder.svg)
+
 ### ¿Qué es?
 
 El **Builder** separa la **construcción de un objeto complejo** de su representación, de forma que el mismo proceso de construcción pueda crear diferentes representaciones.
 
 ```
 Problema: Tienes un objeto con muchas propiedades opcionales.
-          El constructor se vuelve ilegible: 
+          El constructor se vuelve ilegible:
           new Pedido(id, usuario, items, cupon, dir, metPago, ...)
 
 Solución: Un Builder construye el objeto paso a paso con métodos
@@ -268,21 +279,32 @@ Solución: Un Builder construye el objeto paso a paso con métodos
 // order-builder.js
 
 class Order {
-  constructor({ id, customerId, items, discountCode, shippingAddress, paymentMethod, notes }) {
+  constructor({
+    id,
+    customerId,
+    items,
+    discountCode,
+    shippingAddress,
+    paymentMethod,
+    notes,
+  }) {
     this.id = id;
     this.customerId = customerId;
     this.items = items;
     this.discountCode = discountCode ?? null;
     this.shippingAddress = shippingAddress;
     this.paymentMethod = paymentMethod;
-    this.notes = notes ?? '';
-    this.status = 'pending';
+    this.notes = notes ?? "";
+    this.status = "pending";
     this.createdAt = new Date();
     this.total = this.#calculateTotal();
   }
 
   #calculateTotal() {
-    return this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return this.items.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0,
+    );
   }
 }
 
@@ -293,7 +315,7 @@ class OrderBuilder {
   #discountCode = null;
   #shippingAddress = null;
   #paymentMethod = null;
-  #notes = '';
+  #notes = "";
 
   // Cada método retorna `this` para encadenamiento fluido
   forCustomer(customerId) {
@@ -328,10 +350,13 @@ class OrderBuilder {
 
   // Valida y ensambla el objeto final
   build() {
-    if (!this.#customerId) throw new Error('El pedido requiere un cliente');
-    if (this.#items.length === 0) throw new Error('El pedido requiere al menos un ítem');
-    if (!this.#shippingAddress) throw new Error('El pedido requiere una dirección de envío');
-    if (!this.#paymentMethod) throw new Error('El pedido requiere un método de pago');
+    if (!this.#customerId) throw new Error("El pedido requiere un cliente");
+    if (this.#items.length === 0)
+      throw new Error("El pedido requiere al menos un ítem");
+    if (!this.#shippingAddress)
+      throw new Error("El pedido requiere una dirección de envío");
+    if (!this.#paymentMethod)
+      throw new Error("El pedido requiere un método de pago");
 
     return new Order({
       id: crypto.randomUUID(),
@@ -348,22 +373,23 @@ class OrderBuilder {
 export { OrderBuilder };
 
 // Uso — código expresivo, legible como prosa
-import { OrderBuilder } from './order-builder.js';
+import { OrderBuilder } from "./order-builder.js";
 
 const order = new OrderBuilder()
-  .forCustomer('usr_001')
-  .withItem('prod_abc', 'Teclado Mecánico', 250000, 1)
-  .withItem('prod_def', 'Mouse Gamer', 120000, 2)
-  .withDiscount('SUMMER20')
-  .shippingTo({ street: 'Cra 15 #45-67', city: 'Bogotá', country: 'CO' })
-  .payWith('nequi')
-  .withNotes('Entregar en la portería')
+  .forCustomer("usr_001")
+  .withItem("prod_abc", "Teclado Mecánico", 250000, 1)
+  .withItem("prod_def", "Mouse Gamer", 120000, 2)
+  .withDiscount("SUMMER20")
+  .shippingTo({ street: "Cra 15 #45-67", city: "Bogotá", country: "CO" })
+  .payWith("nequi")
+  .withNotes("Entregar en la portería")
   .build();
 
 console.log(order);
 ```
 
 **Ventajas clave:**
+
 - La construcción es **legible** — puedes leer el `build()` como una historia
 - Las validaciones viven en un solo lugar (el `build()`)
 - Puedes crear diferentes "configuraciones" del objeto sin constructores sobrecargados
@@ -380,18 +406,26 @@ El **Abstract Factory** lleva el Factory Method un paso más allá: crea **famil
 
 // Familia Web
 class WebButton {
-  render() { return '<button class="btn">Click</button>'; }
+  render() {
+    return '<button class="btn">Click</button>';
+  }
 }
 class WebInput {
-  render() { return '<input type="text" class="form-control" />'; }
+  render() {
+    return '<input type="text" class="form-control" />';
+  }
 }
 
 // Familia Mobile
 class MobileButton {
-  render() { return 'TouchableOpacity component'; }
+  render() {
+    return "TouchableOpacity component";
+  }
 }
 class MobileInput {
-  render() { return 'TextInput component'; }
+  render() {
+    return "TextInput component";
+  }
 }
 
 // Abstract Factory
@@ -415,22 +449,22 @@ class UIFactory {
 }
 
 // El cliente trabaja con la familia sin conocer las clases concretas
-const ui = UIFactory.create('web');
+const ui = UIFactory.create("web");
 const button = ui.createButton(); // WebButton
-const input = ui.createInput();   // WebInput
+const input = ui.createInput(); // WebInput
 ```
 
 ---
 
 ## 📊 Comparación de Patrones Creacionales
 
-| Patrón | Cuándo usarlo | Complejidad |
-|--------|---------------|-------------|
-| **Factory Method** | Cuando no sabes de antemano qué clase exacta crear | Baja |
-| **Abstract Factory** | Cuando necesitas familias de objetos relacionados | Media |
-| **Builder** | Cuando un objeto tiene muchos parámetros opcionales o construcción compleja | Media |
-| **Prototype** | Cuando copiar un objeto es más eficiente que crearlo desde cero | Baja |
-| **Singleton** | Cuando necesitas exactamente 1 instancia compartida | Baja |
+| Patrón               | Cuándo usarlo                                                               | Complejidad |
+| -------------------- | --------------------------------------------------------------------------- | ----------- |
+| **Factory Method**   | Cuando no sabes de antemano qué clase exacta crear                          | Baja        |
+| **Abstract Factory** | Cuando necesitas familias de objetos relacionados                           | Media       |
+| **Builder**          | Cuando un objeto tiene muchos parámetros opcionales o construcción compleja | Media       |
+| **Prototype**        | Cuando copiar un objeto es más eficiente que crearlo desde cero             | Baja        |
+| **Singleton**        | Cuando necesitas exactamente 1 instancia compartida                         | Baja        |
 
 ---
 

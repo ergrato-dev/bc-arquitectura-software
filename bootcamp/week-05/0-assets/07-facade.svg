@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <rect width="900" height="500" fill="#1e1e1e"/>
+
+  <text x="450" y="42" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Patr&#xF3;n Facade</text>
+  <text x="450" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#999">Una interfaz simple oculta la complejidad de subsistemas externos</text>
+
+  <defs>
+    <marker id="arrowYellow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f1c40f"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <!-- Client -->
+  <rect x="30" y="175" width="155" height="80" rx="10" fill="#2a2a2a" stroke="#3498db" stroke-width="2.5"/>
+  <rect x="30" y="175" width="155" height="28" rx="10" fill="#1a3a5c"/>
+  <text x="107" y="194" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#3498db">OrderService</text>
+  <line x1="30" y1="203" x2="185" y2="203" stroke="#3498db" stroke-width="1"/>
+  <text x="50" y="221" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ placeOrder()</text>
+  <text x="50" y="239" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ cancelOrder()</text>
+
+  <!-- ShippingFacade -->
+  <rect x="280" y="130" width="220" height="170" rx="10" fill="#2a2a2a" stroke="#f1c40f" stroke-width="3"/>
+  <rect x="280" y="130" width="220" height="28" rx="10" fill="#7d6608"/>
+  <text x="390" y="149" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#f1c40f">ShippingFacade</text>
+  <line x1="280" y1="158" x2="500" y2="158" stroke="#f1c40f" stroke-width="1"/>
+  <text x="300" y="177" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fdebd0">+ quote(origin, dest): Quote</text>
+  <text x="300" y="195" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fdebd0">+ ship(order): Tracking</text>
+  <text x="300" y="213" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fdebd0">+ track(code): Status</text>
+  <text x="300" y="231" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fdebd0">+ cancel(trackingId): void</text>
+  <line x1="280" y1="240" x2="500" y2="240" stroke="#555" stroke-width="1"/>
+  <text x="300" y="256" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f9e79f">- #servientrega: ServientregaAPI</text>
+  <text x="300" y="272" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f9e79f">- #coordinadora: CoordinadoraAPI</text>
+  <text x="300" y="288" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f9e79f">- #fedex: FedExAPI</text>
+
+  <!-- Flecha client -> facade -->
+  <line x1="185" y1="215" x2="277" y2="215" stroke="#f1c40f" stroke-width="2" marker-end="url(#arrowYellow)"/>
+  <text x="230" y="207" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#f1c40f">usa</text>
+
+  <!-- ServientregaAPI -->
+  <rect x="620" y="90" width="230" height="75" rx="8" fill="#1e1e2e" stroke="#7f8c8d" stroke-width="1.5"/>
+  <text x="735" y="113" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#bdc3c7">ServientregaAPI</text>
+  <line x1="620" y1="120" x2="850" y2="120" stroke="#555" stroke-width="1"/>
+  <text x="640" y="138" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7f8c8d">+ cotizar(origen, destino)</text>
+  <text x="640" y="154" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7f8c8d">+ enviar(paquete, destino)</text>
+
+  <!-- CoordinadoraAPI -->
+  <rect x="620" y="195" width="230" height="75" rx="8" fill="#1e1e2e" stroke="#7f8c8d" stroke-width="1.5"/>
+  <text x="735" y="218" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#bdc3c7">CoordinadoraAPI</text>
+  <line x1="620" y1="225" x2="850" y2="225" stroke="#555" stroke-width="1"/>
+  <text x="640" y="243" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7f8c8d">+ solicitarGuia(datos)</text>
+  <text x="640" y="259" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7f8c8d">+ rastrearEnvio(guia)</text>
+
+  <!-- FedExAPI -->
+  <rect x="620" y="300" width="230" height="75" rx="8" fill="#1e1e2e" stroke="#7f8c8d" stroke-width="1.5"/>
+  <text x="735" y="323" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#bdc3c7">FedExAPI</text>
+  <line x1="620" y1="330" x2="850" y2="330" stroke="#555" stroke-width="1"/>
+  <text x="640" y="348" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7f8c8d">+ createShipment(payload)</text>
+  <text x="640" y="364" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7f8c8d">+ trackPackage(id)</text>
+
+  <!-- Flechas facade -> subsistemas -->
+  <line x1="500" y1="190" x2="617" y2="132" stroke="#7f8c8d" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="500" y1="215" x2="617" y2="233" stroke="#7f8c8d" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+  <line x1="500" y1="265" x2="617" y2="325" stroke="#7f8c8d" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- Principio callout -->
+  <rect x="30" y="390" width="840" height="80" rx="8" fill="#2a2a1a" stroke="#f1c40f" stroke-width="1.5"/>
+  <text x="450" y="413" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#f1c40f">ISP &#x2705; — SRP &#x2705; — Law of Demeter &#x2705;</text>
+  <text x="450" y="433" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#ccc">OrderService solo conoce ShippingFacade. No importa si internamente usa Servientrega o FedEx.</text>
+  <text x="450" y="451" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#ccc">Cambiar de transportadora = cambiar solo la Facade, sin tocar el dominio.</text>
+</svg>

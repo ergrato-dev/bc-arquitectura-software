@@ -30,12 +30,14 @@ Patrón  = Solución abstracta a un problema de diseño recurrente
 ### ¿Qué impacto tiene?
 
 **Si los aplicas correctamente:**
+
 - ✅ Tus colegas entienden tu código más rápido
 - ✅ Agregar funcionalidad nueva no rompe lo existente
 - ✅ Los bugs son más fáciles de localizar e aislar
 - ✅ Tu código tiene un nivel profesional reconocible
 
 **Si no los conoces:**
+
 - ❌ Reinventas soluciones que ya existen (y usualmente peor)
 - ❌ Tu código crece en complejidad accidental
 - ❌ Los cambios tienen efectos en cascada impredecibles
@@ -44,6 +46,8 @@ Patrón  = Solución abstracta a un problema de diseño recurrente
 ---
 
 ## 📦 Las Tres Categorías del GoF
+
+![Mapa de los 23 patrones GoF](../0-assets/01-categorias-patrones.svg)
 
 El Gang of Four organizó los 23 patrones en tres categorías según **su propósito principal**:
 
@@ -72,35 +76,43 @@ El Gang of Four organizó los 23 patrones en tres categorías según **su propó
 ```
 
 ### 🏗️ Creacionales
+
 Se ocupan de **cómo se crean los objetos**. Desacoplan el código del consumidor de la lógica de construcción.
+
 - → "No me importa cómo se crea el objeto, solo que exista y funcione"
 
 ### 🧩 Estructurales
+
 Se ocupan de **cómo se componen los objetos** para formar estructuras más grandes.
+
 - → "Tengo objetos con interfaces incompatibles o quiero agregar comportamiento sin modificar clases"
 
 ### 🔄 De Comportamiento
+
 Se ocupan de **cómo se comunican y colaboran** los objetos entre sí.
+
 - → "Quiero delegar responsabilidades de forma flexible sin acoplamiento fuerte"
 
 ---
 
 ## 🌍 Patrones en el Mundo Real (JavaScript)
 
+![Patrones GoF en el ecosistema JavaScript](../0-assets/11-patrones-en-js.svg)
+
 Los patrones están **en todas partes** en el ecosistema que ya usas:
 
-| Patrón | Dónde lo ves hoy |
-|--------|------------------|
-| **Observer** | `EventEmitter` en Node.js, `addEventListener` en el navegador, `useState` en React |
+| Patrón        | Dónde lo ves hoy                                                                          |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| **Observer**  | `EventEmitter` en Node.js, `addEventListener` en el navegador, `useState` en React        |
 | **Singleton** | Pool de conexiones a BD, módulos de configuración (ES modules son singletons por default) |
-| **Factory** | `document.createElement()`, `React.createElement()` |
-| **Decorator** | Middleware en Express.js, `@Injectable()` en NestJS |
-| **Strategy** | Passport.js (estrategias de autenticación: local, Google, JWT) |
-| **Adapter** | Drivers de bases de datos (Mongoose, Sequelize, Prisma) |
-| **Facade** | SDK de AWS, cliente de Stripe, librerías de terceros |
-| **Builder** | Query builders (Knex.js, TypeORM QueryBuilder) |
-| **Command** | Redux (acciones), sistema de undo/redo, colas de trabajo |
-| **Iterator** | `for...of`, generadores (`function*`), `Symbol.iterator` |
+| **Factory**   | `document.createElement()`, `React.createElement()`                                       |
+| **Decorator** | Middleware en Express.js, `@Injectable()` en NestJS                                       |
+| **Strategy**  | Passport.js (estrategias de autenticación: local, Google, JWT)                            |
+| **Adapter**   | Drivers de bases de datos (Mongoose, Sequelize, Prisma)                                   |
+| **Facade**    | SDK de AWS, cliente de Stripe, librerías de terceros                                      |
+| **Builder**   | Query builders (Knex.js, TypeORM QueryBuilder)                                            |
+| **Command**   | Redux (acciones), sistema de undo/redo, colas de trabajo                                  |
+| **Iterator**  | `for...of`, generadores (`function*`), `Symbol.iterator`                                  |
 
 ---
 
@@ -113,16 +125,19 @@ Complejidad innecesaria = Anti-patrón por sí mismo
 ```
 
 Un patrón agrega:
+
 - Más clases / archivos
 - Más abstracciones que aprender
 - Más indirección que seguir al debuggear
 
 **Usa un patrón cuando:**
+
 - ✅ Ya tienes el problema que el patrón resuelve (no el potencial problema futuro)
 - ✅ El código sin el patrón ya es difícil de mantener
 - ✅ El equipo conoce el patrón (o está dispuesto a aprenderlo)
 
 **No uses un patrón cuando:**
+
 - ❌ "Lo pongo por si acaso en el futuro lo necesito"
 - ❌ El sistema es simple y el patrón lo complica innecesariamente
 - ❌ Solo quieres parecer que escribes código "avanzado"
@@ -135,13 +150,13 @@ Un patrón agrega:
 
 Los patrones de diseño son **implementaciones concretas de los principios SOLID**:
 
-| Principio SOLID | Patrones que lo refuerzan |
-|-----------------|--------------------------|
-| **S** - Single Responsibility | Command, Strategy, Observer |
-| **O** - Open/Closed | Strategy, Decorator, Factory Method |
-| **L** - Liskov Substitution | Template Method, Strategy |
-| **I** - Interface Segregation | Adapter, Facade |
-| **D** - Dependency Inversion | Factory Method, Abstract Factory, Dependency Injection |
+| Principio SOLID               | Patrones que lo refuerzan                              |
+| ----------------------------- | ------------------------------------------------------ |
+| **S** - Single Responsibility | Command, Strategy, Observer                            |
+| **O** - Open/Closed           | Strategy, Decorator, Factory Method                    |
+| **L** - Liskov Substitution   | Template Method, Strategy                              |
+| **I** - Interface Segregation | Adapter, Facade                                        |
+| **D** - Dependency Inversion  | Factory Method, Abstract Factory, Dependency Injection |
 
 ---
 
@@ -149,18 +164,18 @@ Los patrones de diseño son **implementaciones concretas de los principios SOLID
 
 Cada patrón en el libro del GoF tiene la misma estructura. Aprenderla te ayuda a estudiarlos sistemáticamente:
 
-| Sección | Contenido |
-|---------|-----------|
-| **Nombre** | Identificador único del patrón |
-| **Intención** | ¿Qué problema resuelve en una oración? |
-| **También conocido como** | Nombres alternativos |
-| **Motivación** | Escenario concreto que lo justifica |
-| **Aplicabilidad** | ¿Cuándo usarlo? |
-| **Estructura** | Diagrama de clases UML |
-| **Participantes** | Roles en el patrón |
-| **Colaboraciones** | Cómo interactúan los participantes |
-| **Consecuencias** | Trade-offs: qué ganas y qué pierdes |
-| **Implementación** | Código de ejemplo |
+| Sección                   | Contenido                              |
+| ------------------------- | -------------------------------------- |
+| **Nombre**                | Identificador único del patrón         |
+| **Intención**             | ¿Qué problema resuelve en una oración? |
+| **También conocido como** | Nombres alternativos                   |
+| **Motivación**            | Escenario concreto que lo justifica    |
+| **Aplicabilidad**         | ¿Cuándo usarlo?                        |
+| **Estructura**            | Diagrama de clases UML                 |
+| **Participantes**         | Roles en el patrón                     |
+| **Colaboraciones**        | Cómo interactúan los participantes     |
+| **Consecuencias**         | Trade-offs: qué ganas y qué pierdes    |
+| **Implementación**        | Código de ejemplo                      |
 
 ---
 

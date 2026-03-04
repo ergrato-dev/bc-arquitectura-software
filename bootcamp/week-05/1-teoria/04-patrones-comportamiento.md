@@ -21,11 +21,13 @@ Los patrones de comportamiento describen **cómo los objetos interactúan y dist
 ### ¿Qué impacto tiene?
 
 **Si los aplicas:**
+
 - ✅ Algoritmos son intercambiables sin modificar el código cliente
 - ✅ Los objetos pueden reaccionar a eventos sin conocerse entre sí
 - ✅ Las operaciones pueden deshacerse, encolarse o reintentarse con facilidad
 
 **Si no los aplicas:**
+
 - ❌ Lógica de `if/else` o `switch` gigante para manejar variaciones de comportamiento
 - ❌ Cadenas de notificaciones manuales que se rompen cuando agregas un nuevo receptor
 - ❌ Código cliente atado a implementaciones específicas de algoritmos
@@ -39,13 +41,13 @@ Los patrones de comportamiento describen **cómo los objetos interactúan y dist
 El **Observer** define una dependencia de uno a muchos entre objetos: cuando un objeto (el **Subject/Observable**) cambia su estado, todos los objetos dependientes (**Observers/Suscriptores**) son notificados y actualizados automáticamente.
 
 ```
-Problema: Cuando el estado de un pedido cambia, necesitas 
+Problema: Cuando el estado de un pedido cambia, necesitas
           notificar a 5 sistemas distintos: email, SMS, analytics,
           inventario, push notifications.
-          Si lo haces manualmente, cada nuevo sistema = 
+          Si lo haces manualmente, cada nuevo sistema =
           modificar el método que cambia el estado.
 
-Solución: El pedido emite un evento. Los observadores se 
+Solución: El pedido emite un evento. Los observadores se
           registran y reaccionan. El pedido NO sabe quiénes
           son los observadores.
 ```
@@ -55,6 +57,8 @@ Solución: El pedido emite un evento. Los observadores se
 Una suscripción a YouTube. El canal (Subject) publica un video (cambio de estado). Todos los suscriptores (Observers) reciben la notificación. El canal no sabe quiénes son los suscriptores individualmente.
 
 ### Estructura
+
+![Diagrama Observer](../0-assets/08-observer.svg)
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -113,7 +117,7 @@ class OrderEventEmitter {
     const observers = this.#observers.get(event);
     if (!observers || observers.size === 0) return;
 
-    observers.forEach(observer => {
+    observers.forEach((observer) => {
       try {
         observer(data);
       } catch (error) {
@@ -126,24 +130,39 @@ class OrderEventEmitter {
 
 // Observers concretos — cada uno es una función o clase independiente
 const emailObserver = ({ orderId, status, customerId }) => {
-  console.log(`📧 [Email] Notificando al cliente ${customerId}: pedido ${orderId} → ${status}`);
+  console.log(
+    `📧 [Email] Notificando al cliente ${customerId}: pedido ${orderId} → ${status}`,
+  );
 };
 
 const smsObserver = ({ orderId, status, customerPhone }) => {
-  console.log(`📱 [SMS] Enviando a ${customerPhone}: tu pedido ${orderId} está ${status}`);
+  console.log(
+    `📱 [SMS] Enviando a ${customerPhone}: tu pedido ${orderId} está ${status}`,
+  );
 };
 
 const analyticsObserver = ({ orderId, status, total }) => {
-  console.log(`📊 [Analytics] Registrando: pedido ${orderId} cambió a ${status}, total $${total}`);
+  console.log(
+    `📊 [Analytics] Registrando: pedido ${orderId} cambió a ${status}, total $${total}`,
+  );
 };
 
 const inventoryObserver = ({ orderId, items, status }) => {
-  if (status === 'confirmed') {
-    console.log(`📦 [Inventario] Reservando stock para pedido ${orderId}:`, items.map(i => i.name));
+  if (status === "confirmed") {
+    console.log(
+      `📦 [Inventario] Reservando stock para pedido ${orderId}:`,
+      items.map((i) => i.name),
+    );
   }
 };
 
-export { OrderEventEmitter, emailObserver, smsObserver, analyticsObserver, inventoryObserver };
+export {
+  OrderEventEmitter,
+  emailObserver,
+  smsObserver,
+  analyticsObserver,
+  inventoryObserver,
+};
 
 // ──────────────────────────────────────────
 // Integración con el modelo Order
@@ -154,7 +173,7 @@ import {
   smsObserver,
   analyticsObserver,
   inventoryObserver,
-} from './order-event-emitter.js';
+} from "./order-event-emitter.js";
 
 class Order {
   #eventEmitter;
@@ -165,18 +184,20 @@ class Order {
     this.customerId = data.customerId;
     this.items = data.items;
     this.total = data.total;
-    this.#status = 'pending';
+    this.#status = "pending";
     this.#eventEmitter = eventEmitter;
   }
 
-  get status() { return this.#status; }
+  get status() {
+    return this.#status;
+  }
 
   changeStatus(newStatus, metadata = {}) {
     const previousStatus = this.#status;
     this.#status = newStatus;
 
     // Emitir el evento — los observers reaccionan automáticamente
-    this.#eventEmitter.emit('status_changed', {
+    this.#eventEmitter.emit("status_changed", {
       orderId: this.id,
       previousStatus,
       status: newStatus,
@@ -190,18 +211,23 @@ class Order {
 
 // Configuración de observers
 const emitter = new OrderEventEmitter();
-emitter.subscribe('status_changed', emailObserver);
-emitter.subscribe('status_changed', smsObserver);
-emitter.subscribe('status_changed', analyticsObserver);
-emitter.subscribe('status_changed', inventoryObserver);
+emitter.subscribe("status_changed", emailObserver);
+emitter.subscribe("status_changed", smsObserver);
+emitter.subscribe("status_changed", analyticsObserver);
+emitter.subscribe("status_changed", inventoryObserver);
 
 // Uso — un llamado dispara todas las notificaciones
 const order = new Order(
-  { id: 'ord_001', customerId: 'usr_001', items: [{ name: 'Teclado' }], total: 250000 },
-  emitter
+  {
+    id: "ord_001",
+    customerId: "usr_001",
+    items: [{ name: "Teclado" }],
+    total: 250000,
+  },
+  emitter,
 );
 
-order.changeStatus('confirmed', { customerPhone: '+573001234567' });
+order.changeStatus("confirmed", { customerPhone: "+573001234567" });
 // 📧 [Email] Notificando...
 // 📱 [SMS] Enviando...
 // 📊 [Analytics] Registrando...
@@ -209,6 +235,7 @@ order.changeStatus('confirmed', { customerPhone: '+573001234567' });
 ```
 
 **Principios SOLID reforzados:**
+
 - 🟢 **OCP**: Agregar un nuevo observer (WhatsApp) = suscribirlo. Sin modificar `Order`.
 - 🟢 **SRP**: El pedido no sabe nada de notificaciones. Cada observer tiene una sola responsabilidad.
 
@@ -216,15 +243,17 @@ order.changeStatus('confirmed', { customerPhone: '+573001234567' });
 
 ## 🎯 Strategy
 
+![Diagrama Strategy](../0-assets/09-strategy.svg)
+
 ### ¿Qué es?
 
 El **Strategy** define una familia de algoritmos, encapsula cada uno de ellos y los hace intercambiables. Permite que el algoritmo varíe independientemente de los clientes que lo usan.
 
 ```
-Problema: Tienes un proceso que puede ejecutarse de varias 
-          formas (calcular descuentos, ordenar datos, validar 
+Problema: Tienes un proceso que puede ejecutarse de varias
+          formas (calcular descuentos, ordenar datos, validar
           pagos...) y el enfoque cambia según el contexto.
-          Con if/else manejas la variación, pero cada nueva 
+          Con if/else manejas la variación, pero cada nueva
           variante modifica el código existente.
 
 Solución: Cada variación es una clase Strategy separada.
@@ -248,7 +277,7 @@ class DiscountStrategy {
    * @returns {{ discount: number, finalPrice: number, description: string }}
    */
   apply(subtotal) {
-    throw new Error('apply() debe ser implementado');
+    throw new Error("apply() debe ser implementado");
   }
 }
 
@@ -261,7 +290,7 @@ class VipDiscountStrategy extends DiscountStrategy {
     return {
       discount,
       finalPrice: subtotal - discount,
-      description: 'Descuento VIP 15%',
+      description: "Descuento VIP 15%",
     };
   }
 }
@@ -270,10 +299,10 @@ class VipDiscountStrategy extends DiscountStrategy {
 class CouponDiscountStrategy extends DiscountStrategy {
   // Cupones válidos con sus porcentajes
   static #coupons = new Map([
-    ['SUMMER20', 0.20],
-    ['FLASH10', 0.10],
-    ['WELCOME15', 0.15],
-    ['SENA2025', 0.25],
+    ["SUMMER20", 0.2],
+    ["FLASH10", 0.1],
+    ["WELCOME15", 0.15],
+    ["SENA2025", 0.25],
   ]);
 
   #couponCode;
@@ -286,7 +315,11 @@ class CouponDiscountStrategy extends DiscountStrategy {
   apply(subtotal) {
     const rate = CouponDiscountStrategy.#coupons.get(this.#couponCode);
     if (!rate) {
-      return { discount: 0, finalPrice: subtotal, description: 'Cupón inválido' };
+      return {
+        discount: 0,
+        finalPrice: subtotal,
+        description: "Cupón inválido",
+      };
     }
     const discount = subtotal * rate;
     return {
@@ -300,9 +333,9 @@ class CouponDiscountStrategy extends DiscountStrategy {
 // Estrategia 3: Descuento por volumen
 class VolumeDiscountStrategy extends DiscountStrategy {
   static #tiers = [
-    { minItems: 10, rate: 0.15, label: '15%' },
-    { minItems: 5, rate: 0.10, label: '10%' },
-    { minItems: 3, rate: 0.05, label: '5%' },
+    { minItems: 10, rate: 0.15, label: "15%" },
+    { minItems: 5, rate: 0.1, label: "10%" },
+    { minItems: 3, rate: 0.05, label: "5%" },
   ];
 
   #itemCount;
@@ -313,9 +346,15 @@ class VolumeDiscountStrategy extends DiscountStrategy {
   }
 
   apply(subtotal) {
-    const tier = VolumeDiscountStrategy.#tiers.find(t => this.#itemCount >= t.minItems);
+    const tier = VolumeDiscountStrategy.#tiers.find(
+      (t) => this.#itemCount >= t.minItems,
+    );
     if (!tier) {
-      return { discount: 0, finalPrice: subtotal, description: 'Sin descuento por volumen' };
+      return {
+        discount: 0,
+        finalPrice: subtotal,
+        description: "Sin descuento por volumen",
+      };
     }
     const discount = subtotal * tier.rate;
     return {
@@ -329,7 +368,7 @@ class VolumeDiscountStrategy extends DiscountStrategy {
 // Estrategia 4: Sin descuento
 class NoDiscountStrategy extends DiscountStrategy {
   apply(subtotal) {
-    return { discount: 0, finalPrice: subtotal, description: 'Sin descuento' };
+    return { discount: 0, finalPrice: subtotal, description: "Sin descuento" };
   }
 }
 
@@ -369,7 +408,7 @@ console.log(calculator.calculate(300000));
 // { discount: 45000, finalPrice: 255000, description: 'Descuento VIP 15%' }
 
 // Con cupón
-calculator.setStrategy(new CouponDiscountStrategy('SENA2025'));
+calculator.setStrategy(new CouponDiscountStrategy("SENA2025"));
 console.log(calculator.calculate(300000));
 // { discount: 75000, finalPrice: 225000, description: 'Cupón SENA2025 (25%)' }
 
@@ -380,16 +419,18 @@ console.log(calculator.calculate(300000));
 
 ## ⚙️ Command
 
+![Diagrama Command](../0-assets/10-command.svg)
+
 ### ¿Qué es?
 
 El **Command** encapsula una solicitud como un objeto, permitiendo parametrizar clientes con diferentes solicitudes, encolar o registrar solicitudes, y soportar operaciones reversibles (undo/redo).
 
 ```
-Problema: Necesitas registrar quién hizo qué, poder deshacer 
+Problema: Necesitas registrar quién hizo qué, poder deshacer
           acciones, o encolar operaciones para ejecutarlas más tarde.
 
-Solución: Cada acción es un objeto Command con execute() y 
-          opcionalmente undo(). Un Invoker ejecuta comandos sin 
+Solución: Cada acción es un objeto Command con execute() y
+          opcionalmente undo(). Un Invoker ejecuta comandos sin
           saber qué hacen internamente.
 ```
 
@@ -408,15 +449,37 @@ Solución: Cada acción es un objeto Command con execute() y
 
 // Almacén de datos (simulación)
 const taskStore = new Map([
-  ['task_001', { id: 'task_001', title: 'Diseñar mockups', status: 'pending', priority: 'high' }],
-  ['task_002', { id: 'task_002', title: 'Implementar API', status: 'pending', priority: 'medium' }],
+  [
+    "task_001",
+    {
+      id: "task_001",
+      title: "Diseñar mockups",
+      status: "pending",
+      priority: "high",
+    },
+  ],
+  [
+    "task_002",
+    {
+      id: "task_002",
+      title: "Implementar API",
+      status: "pending",
+      priority: "medium",
+    },
+  ],
 ]);
 
 // Contrato base de un Command
 class Command {
-  execute() { throw new Error('execute() debe ser implementado'); }
-  undo() { throw new Error('undo() debe ser implementado'); }
-  getDescription() { return this.constructor.name; }
+  execute() {
+    throw new Error("execute() debe ser implementado");
+  }
+  undo() {
+    throw new Error("undo() debe ser implementado");
+  }
+  getDescription() {
+    return this.constructor.name;
+  }
 }
 
 // Command concreto: cambiar estado de tarea
@@ -434,22 +497,26 @@ class ChangeTaskStatusCommand extends Command {
   execute() {
     const task = taskStore.get(this.#taskId);
     if (!task) throw new Error(`Tarea "${this.#taskId}" no encontrada`);
-    
+
     this.#previousStatus = task.status; // Guardar para undo
     task.status = this.#newStatus;
     taskStore.set(this.#taskId, { ...task });
-    
-    console.log(`✅ Tarea "${task.title}": ${this.#previousStatus} → ${this.#newStatus}`);
+
+    console.log(
+      `✅ Tarea "${task.title}": ${this.#previousStatus} → ${this.#newStatus}`,
+    );
   }
 
   undo() {
     const task = taskStore.get(this.#taskId);
     if (!task || this.#previousStatus === undefined) return;
-    
+
     task.status = this.#previousStatus;
     taskStore.set(this.#taskId, { ...task });
-    
-    console.log(`↩️  Deshecho: "${task.title}" vuelve a ${this.#previousStatus}`);
+
+    console.log(
+      `↩️  Deshecho: "${task.title}" vuelve a ${this.#previousStatus}`,
+    );
   }
 
   getDescription() {
@@ -472,22 +539,26 @@ class ChangeTaskPriorityCommand extends Command {
   execute() {
     const task = taskStore.get(this.#taskId);
     if (!task) throw new Error(`Tarea "${this.#taskId}" no encontrada`);
-    
+
     this.#previousPriority = task.priority;
     task.priority = this.#newPriority;
     taskStore.set(this.#taskId, { ...task });
-    
-    console.log(`✅ Prioridad de "${task.title}": ${this.#previousPriority} → ${this.#newPriority}`);
+
+    console.log(
+      `✅ Prioridad de "${task.title}": ${this.#previousPriority} → ${this.#newPriority}`,
+    );
   }
 
   undo() {
     const task = taskStore.get(this.#taskId);
     if (!task || this.#previousPriority === undefined) return;
-    
+
     task.priority = this.#previousPriority;
     taskStore.set(this.#taskId, { ...task });
-    
-    console.log(`↩️  Deshecho: prioridad de "${task.title}" vuelve a ${this.#previousPriority}`);
+
+    console.log(
+      `↩️  Deshecho: prioridad de "${task.title}" vuelve a ${this.#previousPriority}`,
+    );
   }
 }
 
@@ -506,7 +577,7 @@ class TaskCommandInvoker {
   undo() {
     const command = this.#history.pop();
     if (!command) {
-      console.log('[Undo] No hay comandos para deshacer');
+      console.log("[Undo] No hay comandos para deshacer");
       return;
     }
     command.undo();
@@ -516,7 +587,7 @@ class TaskCommandInvoker {
   redo() {
     const command = this.#redoStack.pop();
     if (!command) {
-      console.log('[Redo] No hay comandos para rehacer');
+      console.log("[Redo] No hay comandos para rehacer");
       return;
     }
     command.execute();
@@ -524,30 +595,34 @@ class TaskCommandInvoker {
   }
 
   getHistory() {
-    return this.#history.map(cmd => cmd.getDescription());
+    return this.#history.map((cmd) => cmd.getDescription());
   }
 }
 
-export { TaskCommandInvoker, ChangeTaskStatusCommand, ChangeTaskPriorityCommand };
+export {
+  TaskCommandInvoker,
+  ChangeTaskStatusCommand,
+  ChangeTaskPriorityCommand,
+};
 
 // ──────────────────────────────────────────
 // Uso — ejecutar, deshacer, rehacer
 // ──────────────────────────────────────────
 const invoker = new TaskCommandInvoker();
 
-invoker.execute(new ChangeTaskStatusCommand('task_001', 'in_progress'));
-invoker.execute(new ChangeTaskPriorityCommand('task_001', 'critical'));
-invoker.execute(new ChangeTaskStatusCommand('task_002', 'in_progress'));
+invoker.execute(new ChangeTaskStatusCommand("task_001", "in_progress"));
+invoker.execute(new ChangeTaskPriorityCommand("task_001", "critical"));
+invoker.execute(new ChangeTaskStatusCommand("task_002", "in_progress"));
 
-console.log('\nHistorial:', invoker.getHistory());
+console.log("\nHistorial:", invoker.getHistory());
 
-console.log('\n--- Deshacer último ---');
+console.log("\n--- Deshacer último ---");
 invoker.undo();
 
-console.log('\n--- Deshacer otro ---');
+console.log("\n--- Deshacer otro ---");
 invoker.undo();
 
-console.log('\n--- Rehacer ---');
+console.log("\n--- Rehacer ---");
 invoker.redo();
 ```
 
@@ -555,19 +630,19 @@ invoker.redo();
 
 ## 📊 Los 11 Patrones de Comportamiento — Resumen Rápido
 
-| Patrón | En una línea | Ejemplo en JavaScript |
-|--------|--------------|----------------------|
-| **Observer** | Suscripción a eventos | EventEmitter, React hooks |
-| **Strategy** | Algoritmos intercambiables | Passport.js strategies |
-| **Command** | Encapsular acciones como objetos | Redux actions, undo/redo |
-| **Chain of Responsibility** | Pasar solicitud por cadena de handlers | Middleware de Express.js |
-| **Iterator** | Recorrer colecciones sin exponer estructura | `for...of`, generadores |
-| **Mediator** | Objeto central coordina la comunicación | Redux store, EventBus |
-| **State** | Comportamiento cambia según estado interno | Máquina de estados de un pedido |
-| **Template Method** | Esqueleto de algoritmo, pasos variables | Clase base con métodos hook |
-| **Memento** | Capturar y restaurar estado interno | Sistema de undo, snapshots |
-| **Visitor** | Operaciones sobre estructura sin modificarla | AST transformers, compiladores |
-| **Interpreter** | Gramática para un lenguaje | Parsers, motores de reglas |
+| Patrón                      | En una línea                                 | Ejemplo en JavaScript           |
+| --------------------------- | -------------------------------------------- | ------------------------------- |
+| **Observer**                | Suscripción a eventos                        | EventEmitter, React hooks       |
+| **Strategy**                | Algoritmos intercambiables                   | Passport.js strategies          |
+| **Command**                 | Encapsular acciones como objetos             | Redux actions, undo/redo        |
+| **Chain of Responsibility** | Pasar solicitud por cadena de handlers       | Middleware de Express.js        |
+| **Iterator**                | Recorrer colecciones sin exponer estructura  | `for...of`, generadores         |
+| **Mediator**                | Objeto central coordina la comunicación      | Redux store, EventBus           |
+| **State**                   | Comportamiento cambia según estado interno   | Máquina de estados de un pedido |
+| **Template Method**         | Esqueleto de algoritmo, pasos variables      | Clase base con métodos hook     |
+| **Memento**                 | Capturar y restaurar estado interno          | Sistema de undo, snapshots      |
+| **Visitor**                 | Operaciones sobre estructura sin modificarla | AST transformers, compiladores  |
+| **Interpreter**             | Gramática para un lenguaje                   | Parsers, motores de reglas      |
 
 ---
 
@@ -590,11 +665,11 @@ Esta combinación es lo que hace un sistema real robusto.
 
 ## ✅ Resumen de la Semana 05
 
-| Categoría | Patrones vistos | Principio SOLID clave |
-|-----------|----------------|----------------------|
-| Creacionales | Factory Method, Singleton, Builder, Abstract Factory | DIP, OCP |
-| Estructurales | Adapter, Decorator, Facade | OCP, ISP, DIP |
-| Comportamiento | Observer, Strategy, Command | SRP, OCP |
+| Categoría      | Patrones vistos                                      | Principio SOLID clave |
+| -------------- | ---------------------------------------------------- | --------------------- |
+| Creacionales   | Factory Method, Singleton, Builder, Abstract Factory | DIP, OCP              |
+| Estructurales  | Adapter, Decorator, Facade                           | OCP, ISP, DIP         |
+| Comportamiento | Observer, Strategy, Command                          | SRP, OCP              |
 
 ---
 

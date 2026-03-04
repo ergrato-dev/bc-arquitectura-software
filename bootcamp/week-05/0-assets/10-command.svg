@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="#1e1e1e"/>
+
+  <text x="450" y="42" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Patr&#xF3;n Command</text>
+  <text x="450" y="65" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#999">Encapsula acciones como objetos &#x2014; habilita undo/redo e historial</text>
+
+  <defs>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e67e22"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+
+  <!-- ICommand interface -->
+  <rect x="320" y="85" width="260" height="80" rx="10" fill="#2a2a2a" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,3"/>
+  <rect x="320" y="85" width="260" height="28" rx="10" fill="#4a1a6a"/>
+  <text x="450" y="96" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#ccc">&#xAB;interface&#xBB;</text>
+  <text x="450" y="111" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#9b59b6">ICommand</text>
+  <line x1="320" y1="113" x2="580" y2="113" stroke="#9b59b6" stroke-width="1"/>
+  <text x="340" y="133" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#d7bde2">+ execute(): Promise&#x3C;void&#x3E;</text>
+  <text x="340" y="151" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#d7bde2">+ undo(): Promise&#x3C;void&#x3E;</text>
+
+  <!-- TaskCommandInvoker -->
+  <rect x="30" y="200" width="240" height="155" rx="10" fill="#2a2a2a" stroke="#e67e22" stroke-width="2.5"/>
+  <rect x="30" y="200" width="240" height="28" rx="10" fill="#5a2a0a"/>
+  <text x="150" y="219" font-family="Inter, system-ui, sans-serif" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#e67e22">TaskCommandInvoker</text>
+  <line x1="30" y1="228" x2="270" y2="228" stroke="#e67e22" stroke-width="1"/>
+  <text x="50" y="246" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fad7a0">- #history: ICommand[]</text>
+  <text x="50" y="264" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fad7a0">- #redoStack: ICommand[]</text>
+  <line x1="30" y1="273" x2="270" y2="273" stroke="#555" stroke-width="1"/>
+  <text x="50" y="291" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ execute(cmd): Promise</text>
+  <text x="50" y="308" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">  cmd.execute() &#x2192; push #history</text>
+  <text x="50" y="326" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ undo(): Promise</text>
+  <text x="50" y="343" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">  pop #history &#x2192; cmd.undo()</text>
+
+  <!-- Flecha invoker -> interface -->
+  <line x1="270" y1="273" x2="317" y2="145" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrowPurple)"/>
+  <text x="255" y="200" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7f8c8d">usa</text>
+
+  <!-- Stack visual -->
+  <rect x="30" y="390" width="240" height="100" rx="8" fill="#1a1a1a" stroke="#e67e22" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="150" y="408" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#e67e22">#history (stack)</text>
+  <rect x="50" y="415" width="200" height="20" rx="4" fill="#5a2a0a"/>
+  <text x="150" y="430" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#fad7a0">ChangeStatusCommand</text>
+  <rect x="50" y="438" width="200" height="20" rx="4" fill="#3a1a0a"/>
+  <text x="150" y="453" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#fad7a0">ChangePriorityCommand</text>
+  <rect x="50" y="461" width="200" height="20" rx="4" fill="#2a0a0a"/>
+  <text x="150" y="476" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#7f8c8d">AssignToUserCommand</text>
+  <text x="150" y="494" font-family="Inter, system-ui, sans-serif" font-size="9" text-anchor="middle" fill="#555">&#x2191; top (&#xFA;ltimo ejecutado)</text>
+
+  <!-- ChangeStatusCommand -->
+  <rect x="370" y="220" width="220" height="100" rx="8" fill="#2a2a2a" stroke="#3498db" stroke-width="2"/>
+  <rect x="370" y="220" width="220" height="26" rx="8" fill="#1a3a5c"/>
+  <text x="480" y="238" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#3498db">ChangeStatusCommand</text>
+  <line x1="370" y1="246" x2="590" y2="246" stroke="#3498db" stroke-width="1"/>
+  <text x="390" y="264" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">- taskId, newStatus, prevStatus</text>
+  <line x1="370" y1="272" x2="590" y2="272" stroke="#555" stroke-width="1"/>
+  <text x="390" y="289" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ execute(): actualiza estado</text>
+  <text x="390" y="307" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a8d8f0">+ undo(): restaura estado prev</text>
+
+  <!-- ChangePriorityCommand -->
+  <rect x="620" y="220" width="230" height="100" rx="8" fill="#2a2a2a" stroke="#2ecc71" stroke-width="2"/>
+  <rect x="620" y="220" width="230" height="26" rx="8" fill="#1a5c2a"/>
+  <text x="735" y="238" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#2ecc71">ChangePriorityCommand</text>
+  <line x1="620" y1="246" x2="850" y2="246" stroke="#2ecc71" stroke-width="1"/>
+  <text x="640" y="264" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#abebc6">- taskId, newPri, prevPri</text>
+  <line x1="620" y1="272" x2="850" y2="272" stroke="#555" stroke-width="1"/>
+  <text x="640" y="289" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#abebc6">+ execute(): cambia prioridad</text>
+  <text x="640" y="307" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#abebc6">+ undo(): restaura prioridad</text>
+
+  <!-- Flechas commands -> interface -->
+  <line x1="480" y1="220" x2="450" y2="168" stroke="#3498db" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+  <line x1="735" y1="220" x2="530" y2="168" stroke="#2ecc71" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+
+  <!-- Beneficios callout -->
+  <rect x="370" y="360" width="490" height="120" rx="8" fill="#2a2a1a" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="615" y="382" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e67e22">Beneficios del patr&#xF3;n Command</text>
+  <text x="390" y="402" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ccc">&#x2705;  Undo/Redo: historial completo de acciones</text>
+  <text x="390" y="420" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ccc">&#x2705;  Queue: encola operaciones para ejecuci&#xF3;n diferida</text>
+  <text x="390" y="438" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ccc">&#x2705;  Log: auditor&#xED;a de cada acci&#xF3;n ejecutada</text>
+  <text x="390" y="456" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#ccc">&#x2705;  Retry: reintenta comandos fallidos f&#xE1;cilmente</text>
+  <text x="390" y="474" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7f8c8d">Casos reales: editores de texto, transacciones DB, Ctrl+Z</text>
+</svg>
