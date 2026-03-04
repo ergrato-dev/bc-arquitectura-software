@@ -52,6 +52,9 @@ config.local.json
 postgres-data/
 pgdata/
 
+# PDFs
+*_pdf
+
 # ============================================
 # Logs y Archivos Temporales
 # ============================================

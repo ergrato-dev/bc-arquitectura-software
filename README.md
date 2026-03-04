@@ -351,16 +351,6 @@ Serás capaz de:
 - [🤖 Instrucciones para Copilot](.github/copilot-instructions.md)
 - [📋 Planeación Pedagógica](_docs/PLANEACION_PEDAGOGICA-ARQUITECTURA_DE_SOFTWARE.md)
 
----
-
-## 📺 Contenido en YouTube
-
-Suscríbete al canal **bc-channel-epti** para acceder a:
-
-- 📹 Videos teóricos por semana
-- 📹 Tutoriales prácticos paso a paso
-- 📹 Análisis de casos reales
-- 📹 Sesiones de code review
 
 ---
 
