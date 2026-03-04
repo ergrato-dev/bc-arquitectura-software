@@ -1,256 +1,256 @@
-# 🚀 Proyecto Semana 06 — EduFlow Hexagonal
+# 🚀 Proyecto Semana 06 — Arquitectura Hexagonal en Tu Dominio
 
 > **Fecha de entrega**: Al finalizar la semana 06
-> **Modalidad**: Individual o grupos de 2
-> **Repositorio base**: Continúa sobre el código de EduFlow (semanas 04 y 05)
+> **Modalidad**: Individual
+> **Repositorio base**: Continúa sobre **tu proyecto personal** de las semanas 04 y 05
+
+> ⚠️ **Política anticopia**: Cada aprendiz trabaja con su dominio asignado en semana 01. Este proyecto debe reflejar las entidades, reglas de negocio y lógica propia de **tu** dominio. El reto de la semana (que sirve de ejemplo didáctico) no es el entregable.
 
 ---
 
 ## 🎯 Descripción
 
-Refactoriza la plataforma **EduFlow** desde su arquitectura actual (Express + lógica mezclada) hacia una **Arquitectura Hexagonal (Ports & Adapters)** completa.
+Refactoriza **tu proyecto personal** (dominio asignado en semana 01) desde su arquitectura actual (Express + lógica mezclada) hacia una **Arquitectura Hexagonal (Ports & Adapters)** completa.
 
-Al finalizar, cualquier módulo del dominio debe ser testeable en **menos de 1 segundo** sin levantar servidor, sin conectar a BD y sin red.
+Al finalizar, cualquier módulo del dominio debe ser testeable en **menos de 2 segundos** sin levantar servidor, sin conectar a BD y sin red.
 
 ---
 
-## 📐 Arquitectura objetivo
+## 📐 Arquitectura Objetivo
+
+Adapta la estructura de carpetas a los nombres de las entidades de **tu dominio**. A continuación se muestra la plantilla genérica:
 
 ```
-bootcamp/week-06/3-proyecto/eduflow/
+proyecto-[tu-dominio]/
 ├── src/
 │   ├── domain/
 │   │   ├── entities/
-│   │   │   ├── student.entity.js
-│   │   │   ├── course.entity.js
-│   │   │   └── submission.entity.js
+│   │   │   ├── [entidad-principal].entity.js    ← Entidad 1  de tu dominio
+│   │   │   ├── [entidad-secundaria].entity.js   ← Entidad 2 de tu dominio
+│   │   │   └── [entidad-relacion].entity.js     ← Entidad de relación (si aplica)
 │   │   ├── value-objects/
-│   │   │   ├── email.vo.js
-│   │   │   ├── grade.vo.js
-│   │   │   └── cohort.vo.js
+│   │   │   ├── [campo-validado].vo.js           ← Ej: email.vo.js, precio.vo.js
+│   │   │   └── [campo-validado-2].vo.js
 │   │   ├── aggregates/
-│   │   │   └── enrollment.aggregate.js
+│   │   │   └── [transaccion-principal].aggregate.js  ← La operación de negocio más importante
 │   │   ├── ports/
 │   │   │   ├── primary/
-│   │   │   │   └── student-service.port.js
+│   │   │   │   └── [entidad]-service.port.js    ← Interfaz que expone el dominio
 │   │   │   └── secondary/
-│   │   │       ├── student.repository.port.js
-│   │   │       ├── course.repository.port.js
-│   │   │       └── notification.port.js
+│   │   │       ├── [entidad].repository.port.js ← Puerto de persistencia
+│   │   │       └── notification.port.js         ← Puerto de notificaciones
 │   │   └── services/
-│   │       └── enrollment.domain-service.js
+│   │       └── [operacion].domain-service.js    ← Reglas que involucran 2+ entidades
 │   ├── application/
 │   │   └── use-cases/
-│   │       ├── enroll-student.use-case.js
-│   │       ├── submit-task.use-case.js
-│   │       └── grade-submission.use-case.js
+│   │       ├── [crear-recurso].use-case.js      ← Caso de uso 1
+│   │       ├── [actualizar-recurso].use-case.js ← Caso de uso 2
+│   │       └── [consultar-recurso].use-case.js  ← Caso de uso 3
 │   ├── infrastructure/
 │   │   ├── repositories/
-│   │   │   ├── in-memory-student.repository.js
-│   │   │   └── postgres-student.repository.js
+│   │   │   ├── in-memory-[entidad].repository.js   ← Para tests
+│   │   │   └── postgres-[entidad].repository.js    ← Para producción
 │   │   └── notifications/
-│   │       ├── console-notification.adapter.js
-│   │       └── in-memory-notification.adapter.js
+│   │       └── console-notification.adapter.js
 │   ├── interfaces/
 │   │   └── http/
-│   │       ├── students.controller.js
-│   │       └── courses.controller.js
+│   │       ├── [entidad].controller.js
+│   │       └── [entidad-secundaria].controller.js
 │   └── main.js
 ├── tests/
 │   ├── domain/
-│   │   ├── student.test.js
-│   │   ├── grade.test.js
-│   │   └── enrollment.test.js
+│   │   ├── [entidad-principal].test.js
+│   │   └── [transaccion].test.js
 │   └── application/
-│       ├── enroll-student.test.js
-│       └── submit-task.test.js
+│       └── [caso-de-uso].test.js
 ├── package.json
 └── README.md
 ```
 
+**Antes de escribir código**, completa esta tabla para tu dominio:
+
+| Placeholder               | Tu valor concreto                      | Ejemplo                               |
+| ------------------------- | -------------------------------------- | ------------------------------------- |
+| `[entidad-principal]`     | ¿Cuál es la entidad central?           | `patient`, `product`, `vehicle`       |
+| `[entidad-secundaria]`    | ¿Qué otra entidad importante hay?      | `appointment`, `order`, `booking`     |
+| `[transaccion-principal]` | ¿Cuál es la operación más importante?  | `appointment`, `purchase`, `rental`   |
+| `[campo-validado]`        | ¿Qué campo tiene reglas de validación? | `email`, `price`, `license-plate`     |
+| `[caso-de-uso-1]`         | ¿Primera acción de negocio?            | `schedule-appointment`, `place-order` |
+
 ---
 
-## 📋 Requerimientos del dominio EduFlow
+## 📋 Reglas de negocio de tu dominio
+
+Antes de implementar, documenta las reglas de negocio propias de **tu dominio asignado**. Estas reglas deben vivir en la capa de dominio, nunca en controllers ni en la base de datos.
+
+Usa la siguiente plantilla y rellena con tus reglas reales:
 
 ### Reglas de negocio (DEBEN vivir en el dominio)
 
-1. **Registro de aprendices**
-   - El email es único en el sistema
-   - El nombre debe tener mínimo 3 caracteres
-   - El cohort es obligatorio (ej: `2025-1`, `2025-2`)
+1. **[Entidad principal] — Creación y validación**
+   - ¿Qué campos son obligatorios?
+   - ¿Qué validaciones tiene el identificador único (email, código, placa…)?
+   - ¿Qué restricciones de formato o longitud aplican?
 
-2. **Matrículas (Enrollment)**
-   - Un aprendiz puede estar matriculado en máximo **5 cursos activos**
-   - No puede matricularse en el mismo curso dos veces
-   - Un curso no puede tener más de **30 aprendices**
+2. **[Transacción principal] — La operación central de tu negocio**
+   - ¿Cuántas veces puede un [Entidad1] hacer [Operación] en [Entidad2]?
+   - ¿Cuándo se debe rechazar la operación?
+   - ¿Cuál es el límite máximo de capacidad o cantidad?
 
-3. **Tareas y calificaciones**
-   - La nota mínima es 0 y la máxima es 10
-   - Una nota >= 6 es aprobatoria
-   - Para aprobar un curso el promedio de notas debe ser >= 6
-   - Una tarea solo puede calificarse una vez (no modificable)
+3. **[Campo con lógica] — Value Object**
+   - ¿Cuál es el rango válido o el formato aceptado?
+   - ¿Qué valor representa un estado "aprobado" o "exitoso"?
+   - ¿Es inmutable una vez asignado?
 
-4. **Notificaciones automáticas**
-   - Al matricularse: notificar al aprendiz y al instructor
-   - Al calificar con nota < 6: notificar al aprendiz con retroalimentación
-   - Al aprobar el curso: notificar con certificado de aprobación
+4. **Notificaciones o efectos secundarios**
+   - ¿Qué evento dispara una notificación?
+   - ¿A quién se notifica?
+   - ¿Qué información contiene la notificación?
+
+> 💡 **Tip**: Consulta el proyecto de semana 01 donde describiste las reglas de negocio de tu dominio. Si aún no las tienes claras, este es el momento de definirlas antes de escribir código.
 
 ---
 
 ## 🛠️ Implementación paso a paso
 
+> Los ejemplos de código a continuación usan `[TuEntidad]` y `[TuCampo]` como marcadores de posición. **Reemplázalos** con los nombres concretos de tu dominio antes de escribir los archivos.
+
 ### Fase 1 — Modelado del dominio (sin infraestructura)
 
-**Student entity:**
+**Entidad principal:**
 
 ```javascript
-// src/domain/entities/student.entity.js
-import { randomUUID } from "crypto";
-import { Email } from "../value-objects/email.vo.js";
-import { Cohort } from "../value-objects/cohort.vo.js";
+// src/domain/entities/[entidad-principal].entity.js
+import { randomUUID } from 'crypto';
+import { [TuCampoVO] } from '../value-objects/[campo-validado].vo.js';
 
-export class Student {
+export class [TuEntidad] {
   #id;
-  #name;
-  #email;
-  #cohort;
-  #isActive;
+  #nombre;         // ← renombra según tu dominio
+  #[campoUnico];   // ← el campo identificador único de tu entidad
+  #estado;
 
-  constructor({ id = randomUUID(), name, email, cohort }) {
-    if (!name || name.trim().length < 3) {
-      throw new Error("Student name must have at least 3 characters");
+  constructor({ id = randomUUID(), nombre, [campoUnico] }) {
+    // Regla 1: validaciones de la entidad (ej: nombre mínimo N caracteres)
+    if (!nombre || nombre.trim().length < 3) {
+      throw new Error('[TuEntidad] nombre must have at least 3 characters');
     }
+
     this.#id = id;
-    this.#name = name.trim();
-    this.#email = email instanceof Email ? email : new Email(email);
-    this.#cohort = cohort instanceof Cohort ? cohort : new Cohort(cohort);
-    this.#isActive = true;
+    this.#nombre = nombre.trim();
+    this.#[campoUnico] = [campoUnico] instanceof [TuCampoVO]
+      ? [campoUnico]
+      : new [TuCampoVO]([campoUnico]);
+    this.#estado = 'ACTIVO';
   }
 
-  deactivate() {
-    this.#isActive = false;
+  desactivar() {
+    this.#estado = 'INACTIVO';
   }
 
-  get id() {
-    return this.#id;
-  }
-  get name() {
-    return this.#name;
-  }
-  get email() {
-    return this.#email.value;
-  }
-  get cohort() {
-    return this.#cohort.value;
-  }
-  get isActive() {
-    return this.#isActive;
-  }
+  get id()           { return this.#id; }
+  get nombre()       { return this.#nombre; }
+  get [campoUnico]() { return this.#[campoUnico].value; }
+  get estado()       { return this.#estado; }
 }
 ```
 
-**Grade value object:**
+**Value Object para campo con lógica de validación:**
 
 ```javascript
-// src/domain/value-objects/grade.vo.js
-export class Grade {
+// src/domain/value-objects/[campo-validado].vo.js
+export class [TuCampoVO] {
   #value;
 
   constructor(value) {
+    // Regla 2: define aquí el rango/formato válido de tu campo
+    // Ejemplo: un campo numérico entre MIN y MAX
     const num = Number(value);
-    if (isNaN(num) || num < 0 || num > 10) {
-      throw new Error(`Invalid grade: ${value}. Must be between 0 and 10`);
+    if (isNaN(num) || num < [MIN] || num > [MAX]) {
+      throw new Error(`[TuCampoVO] inválido: ${value}. Debe estar entre [MIN] y [MAX]`);
     }
-    this.#value = Math.round(num * 10) / 10; // 1 decimal
+    this.#value = num;
     Object.freeze(this);
   }
 
-  get isApproved() {
-    return this.#value >= 6;
+  // Agrega métodos de lógica de negocio relevantes para tu campo
+  // Ejemplo: ¿supera el umbral de aprobación?
+  get superaUmbral() {
+    return this.#value >= [UMBRAL];
   }
-  get value() {
-    return this.#value;
-  }
+
+  get value() { return this.#value; }
 
   equals(other) {
-    return other instanceof Grade && this.#value === other.value;
-  }
-
-  toString() {
-    return this.#value.toString();
+    return other instanceof [TuCampoVO] && this.#value === other.value;
   }
 }
 ```
 
-**Enrollment aggregate:**
+**Aggregate (la transacción principal de negocio):**
 
 ```javascript
-// src/domain/aggregates/enrollment.aggregate.js
-import { randomUUID } from "crypto";
-import { Grade } from "../value-objects/grade.vo.js";
+// src/domain/aggregates/[transaccion-principal].aggregate.js
+import { randomUUID } from 'crypto';
+import { [TuCampoVO] } from '../value-objects/[campo-validado].vo.js';
 
-export class Enrollment {
+export class [TuTransaccion] {
   #id;
-  #studentId;
-  #courseId;
-  #grades = [];
-  #status;
+  #[entidadPrincipalId];
+  #[entidadSecundariaId];
+  #estado;
+  #registros = [];   // ← colección de VO o datos asociados
   #events = [];
 
-  static MAX_GRADE_ENTRIES = 10;
-
-  constructor({
-    id = randomUUID(),
-    studentId,
-    courseId,
-    status = "ACTIVE",
-    grades = [],
-  }) {
+  constructor({ id = randomUUID(), [entidadPrincipalId], [entidadSecundariaId], estado = 'ACTIVO', registros = [] }) {
     this.#id = id;
-    this.#studentId = studentId;
-    this.#courseId = courseId;
-    this.#status = status;
-    this.#grades = grades.map((g) => (g instanceof Grade ? g : new Grade(g)));
+    this.#[entidadPrincipalId] = [entidadPrincipalId];
+    this.#[entidadSecundariaId] = [entidadSecundariaId];
+    this.#estado = estado;
+    this.#registros = registros.map(r => r instanceof [TuCampoVO] ? r : new [TuCampoVO](r));
   }
 
-  addGrade(value) {
-    if (this.#status !== "ACTIVE") {
-      throw new Error("Cannot add grade to non-active enrollment");
+  // La operación central de negocio del aggregate
+  registrar(valor) {
+    if (this.#estado !== 'ACTIVO') {
+      throw new Error('No se puede registrar en una transacción inactiva');
     }
-    const grade = new Grade(value);
-    this.#grades.push(grade);
+    const registro = new [TuCampoVO](valor);
+    this.#registros.push(registro);
 
+    // Disparar evento de dominio
     this.#events.push({
-      type: "GradeAdded",
-      enrollmentId: this.#id,
-      studentId: this.#studentId,
-      courseId: this.#courseId,
-      grade: grade.value,
-      isApproved: grade.isApproved,
+      type: '[TuTransaccion]Registrada',
+      aggregateId: this.#id,
+      valor: registro.value,
+      superaUmbral: registro.superaUmbral,
     });
 
-    // Verificar si completo el curso
-    if (this.#grades.length >= Enrollment.MAX_GRADE_ENTRIES) {
-      this.#checkCompletion();
+    // Verificar compleción (agrega tu lógica de negocio)
+    if (this.#debeFinalizarse()) {
+      this.#finalizarTransaccion();
     }
   }
 
-  #checkCompletion() {
-    const avg = this.averageGrade;
-    this.#status = avg >= 6 ? "APPROVED" : "FAILED";
+  #debeFinalizarse() {
+    // Regla 3: ¿Cuándo se completa/cierra la transacción?
+    return this.#registros.length >= [MAX_REGISTROS];
+  }
+
+  #finalizarTransaccion() {
+    const promedio = this.promedio;
+    this.#estado = promedio >= [UMBRAL] ? 'APROBADO' : 'RECHAZADO';
     this.#events.push({
-      type: this.#status === "APPROVED" ? "CourseApproved" : "CourseFailed",
-      enrollmentId: this.#id,
-      studentId: this.#studentId,
-      courseId: this.#courseId,
-      averageGrade: avg,
+      type: this.#estado === 'APROBADO' ? '[TuTransaccion]Aprobada' : '[TuTransaccion]Rechazada',
+      aggregateId: this.#id,
+      promedio,
     });
   }
 
-  get averageGrade() {
-    if (!this.#grades.length) return null;
-    const sum = this.#grades.reduce((acc, g) => acc + g.value, 0);
-    return Math.round((sum / this.#grades.length) * 10) / 10;
+  get promedio() {
+    if (!this.#registros.length) return null;
+    const sum = this.#registros.reduce((acc, r) => acc + r.value, 0);
+    return Math.round((sum / this.#registros.length) * 10) / 10;
   }
 
   pullEvents() {
@@ -259,21 +259,8 @@ export class Enrollment {
     return events;
   }
 
-  get id() {
-    return this.#id;
-  }
-  get studentId() {
-    return this.#studentId;
-  }
-  get courseId() {
-    return this.#courseId;
-  }
-  get status() {
-    return this.#status;
-  }
-  get grades() {
-    return this.#grades.map((g) => g.value);
-  }
+  get id()    { return this.#id; }
+  get estado(){ return this.#estado; }
 }
 ```
 
@@ -282,58 +269,52 @@ export class Enrollment {
 ### Fase 2 — Casos de uso
 
 ```javascript
-// src/application/use-cases/enroll-student.use-case.js
-import { Enrollment } from "../../domain/aggregates/enrollment.aggregate.js";
+// src/application/use-cases/[operacion-principal].use-case.js
+import { [TuTransaccion] } from '../../domain/aggregates/[transaccion-principal].aggregate.js';
 
-export class EnrollStudentUseCase {
-  #studentRepository;
-  #courseRepository;
-  #enrollmentRepository;
+export class [OperacionPrincipal]UseCase {
+  #[entidadPrincipal]Repository;
+  #[entidadSecundaria]Repository;
+  #[transaccion]Repository;
   #notificationPort;
-  #enrollmentService;
+  #domainService;
 
   constructor({
-    studentRepository,
-    courseRepository,
-    enrollmentRepository,
+    [entidadPrincipal]Repository,
+    [entidadSecundaria]Repository,
+    [transaccion]Repository,
     notificationPort,
-    enrollmentService,
+    domainService,
   }) {
-    this.#studentRepository = studentRepository;
-    this.#courseRepository = courseRepository;
-    this.#enrollmentRepository = enrollmentRepository;
-    this.#notificationPort = notificationPort;
-    this.#enrollmentService = enrollmentService;
+    this.#[entidadPrincipal]Repository  = [entidadPrincipal]Repository;
+    this.#[entidadSecundaria]Repository = [entidadSecundaria]Repository;
+    this.#[transaccion]Repository       = [transaccion]Repository;
+    this.#notificationPort              = notificationPort;
+    this.#domainService                 = domainService;
   }
 
-  async execute({ studentId, courseId }) {
-    const [student, course] = await Promise.all([
-      this.#studentRepository.findById(studentId),
-      this.#courseRepository.findById(courseId),
+  async execute({ [entidadPrincipalId], [entidadSecundariaId] }) {
+    // 1. Cargar entidades
+    const [[entidadPrincipal], [entidadSecundaria]] = await Promise.all([
+      this.#[entidadPrincipal]Repository.findById([entidadPrincipalId]),
+      this.#[entidadSecundaria]Repository.findById([entidadSecundariaId]),
     ]);
 
-    if (!student) throw new Error(`Student ${studentId} not found`);
-    if (!course) throw new Error(`Course ${courseId} not found`);
+    if (![entidadPrincipal]) throw new Error(`[TuEntidad] ${[entidadPrincipalId]} no encontrado`);
+    if (![entidadSecundaria]) throw new Error(`[EntidadSecundaria] ${[entidadSecundariaId]} no encontrada`);
 
-    const activeEnrollments =
-      await this.#enrollmentRepository.findActiveByStudent(studentId);
-    const courseEnrollments =
-      await this.#enrollmentRepository.findByCourse(courseId);
+    // 2. Validar reglas de negocio con servicio de dominio
+    const existentes = await this.#[transaccion]Repository.findActivosBy[EntidadPrincipal]([entidadPrincipalId]);
+    this.#domainService.validar[OperacionPrincipal]([entidadPrincipal], [entidadSecundaria], existentes);
 
-    // Reglas de negocio via servicio de dominio
-    this.#enrollmentService.validateEnrollment(
-      student,
-      course,
-      activeEnrollments,
-      courseEnrollments,
-    );
+    // 3. Crear y persistir el aggregate
+    const transaccion = new [TuTransaccion]({ [entidadPrincipalId], [entidadSecundariaId] });
+    await this.#[transaccion]Repository.save(transaccion);
 
-    const enrollment = new Enrollment({ studentId, courseId });
-    await this.#enrollmentRepository.save(enrollment);
+    // 4. Notificar (a través del puerto secundario)
+    await this.#notificationPort.[operacionRealizada]({ [entidadPrincipal], [entidadSecundaria] });
 
-    await this.#notificationPort.studentEnrolled({ student, course });
-
-    return enrollment;
+    return transaccion;
   }
 }
 ```
@@ -343,17 +324,79 @@ export class EnrollStudentUseCase {
 ### Fase 3 — Tests (sin BD, sin servidor)
 
 ```javascript
-// tests/application/enroll-student.test.js
-import { describe, it, beforeEach } from "node:test";
-import assert from "node:assert/strict";
-import { EnrollStudentUseCase } from "../../src/application/use-cases/enroll-student.use-case.js";
+// tests/application/[operacion-principal].test.js
+import { describe, it, beforeEach } from 'node:test';
+import assert from 'node:assert/strict';
+import { [OperacionPrincipal]UseCase } from '../../src/application/use-cases/[operacion-principal].use-case.js';
 
-describe("EnrollStudentUseCase", () => {
-  // TODO: Implementa los mocks y pruebas aquí
-  // PISTA: Usa objetos JavaScript simples como mocks de repositorios
-  it("enrolls student in available course", async () => {
-    // Tu implementación aquí
-    assert.ok(true); // Reemplaza con assertion real
+describe('[OperacionPrincipal]UseCase', () => {
+
+  // Mock de repositorio InMemory
+  let [entidadPrincipal]Repo;
+  let transaccionRepo;
+  let notificationMock;
+  let useCase;
+
+  beforeEach(() => {
+    // Crea tus mocks aquí — objetos simples que implementan los puertos
+    [entidadPrincipal]Repo = {
+      data: new Map(),
+      findById(id) { return Promise.resolve(this.data.get(id) ?? null); },
+      save(entity) { this.data.set(entity.id, entity); return Promise.resolve(); },
+    };
+
+    transaccionRepo = {
+      data: [],
+      findActivosBy[EntidadPrincipal]: () => Promise.resolve([]),
+      save(t) { this.data.push(t); return Promise.resolve(); },
+    };
+
+    notificationMock = { [operacionRealizada]: () => Promise.resolve() };
+
+    useCase = new [OperacionPrincipal]UseCase({
+      [entidadPrincipal]Repository: [entidadPrincipal]Repo,
+      // agrega los demás repositorios según tu caso de uso
+      [transaccion]Repository: transaccionRepo,
+      notificationPort: notificationMock,
+      domainService: { validar[OperacionPrincipal]: () => {} }, // mock que no lanza
+    });
+  });
+
+  it('realiza [operacion] exitosamente', async () => {
+    // Arrange: prepara datos de prueba con tus entidades reales
+    const entidad = new [TuEntidad]({ nombre: 'Nombre Prueba', [campoUnico]: '[valor-valido]' });
+    [entidadPrincipal]Repo.data.set(entidad.id, entidad);
+
+    // Act
+    const resultado = await useCase.execute({ [entidadPrincipalId]: entidad.id, /* otros parámetros */ });
+
+    // Assert
+    assert.ok(resultado, 'Debe retornar el aggregate creado');
+    assert.strictEqual(transaccionRepo.data.length, 1, 'Debe persistir exactamente 1 transacción');
+  });
+
+  it('rechaza [operacion] cuando se viola una regla de negocio', async () => {
+    // Configura el mock del domainService para lanzar la excepción esperada
+    useCase = new [OperacionPrincipal]UseCase({
+      [entidadPrincipal]Repository: [entidadPrincipal]Repo,
+      [transaccion]Repository: transaccionRepo,
+      notificationPort: notificationMock,
+      domainService: {
+        validar[OperacionPrincipal]: () => {
+          throw new Error('Regla de negocio violada: [describe la regla]');
+        },
+      },
+    });
+
+    // Arrange
+    const entidad = new [TuEntidad]({ nombre: 'Nombre Prueba', [campoUnico]: '[valor-valido]' });
+    [entidadPrincipal]Repo.data.set(entidad.id, entidad);
+
+    // Act & Assert
+    await assert.rejects(
+      () => useCase.execute({ [entidadPrincipalId]: entidad.id }),
+      /Regla de negocio violada/,
+    );
   });
 });
 ```
@@ -362,12 +405,12 @@ describe("EnrollStudentUseCase", () => {
 
 ## 📊 Entregables
 
-| Entregable                              | Descripción                                   | Peso |
-| --------------------------------------- | --------------------------------------------- | ---- |
-| `domain/` completo                      | Entidades, VOs, Agregados, Puertos, Servicios | 30%  |
-| `application/` con 3 casos de uso       | enroll, submit-task, grade-submission         | 25%  |
-| `infrastructure/` con InMemory adapters | Cada repositorio y notificación               | 20%  |
-| Tests corriendo sin BD                  | `node --test tests/` < 2 segundos             | 25%  |
+| Entregable                              | Descripción                                                                | Peso |
+| --------------------------------------- | -------------------------------------------------------------------------- | ---- |
+| `domain/` completo                      | Entidades, VOs, Aggregates, Puertos y DomainService de **tu dominio**      | 30%  |
+| `application/` con 3 casos de uso       | Las 3 operaciones principales de tu dominio (crear, actualizar, consultar) | 25%  |
+| `infrastructure/` con InMemory adapters | Repositorios InMemory y adaptador de notificaciones para testing           | 20%  |
+| Tests corriendo sin BD                  | `node --test tests/` finaliza en < 2 segundos, mínimo 10 pruebas           | 25%  |
 
 ---
 
@@ -377,18 +420,21 @@ describe("EnrollStudentUseCase", () => {
 # Comando de verificación
 node --test tests/
 
-# Resultado esperado:
-# ✓ Student entity - valid creation
-# ✓ Student entity - rejects short name
-# ✓ Grade VO - approves >= 6
-# ✓ Enrollment aggregate - adds grade and fires event
-# ✓ EnrollStudentUseCase - enrolls successfully
-# ✓ EnrollStudentUseCase - rejects when max enrollments reached
+# Resultado esperado (con nombres de TU dominio):
+# ✓ [TuEntidad] entity - creación válida
+# ✓ [TuEntidad] entity - rechaza [campo inválido]
+# ✓ [TuCampoVO] VO - acepta valor dentro del rango
+# ✓ [TuCampoVO] VO - rechaza valor fuera del rango
+# ✓ [TuTransaccion] aggregate - registra operación y dispara evento
+# ✓ [OperacionPrincipal]UseCase - ejecuta exitosamente
+# ✓ [OperacionPrincipal]UseCase - rechaza cuando se viola regla de negocio
 # ... (mínimo 10 pruebas pasando)
 #
 # Duration: < 2000ms
 # No DB connections. No HTTP servers. No network calls.
 ```
+
+> ⚠️ Los nombres de las pruebas deben reflejar **tu dominio**, no EduFlow ni ningún otro dominio ajeno.
 
 ---
 

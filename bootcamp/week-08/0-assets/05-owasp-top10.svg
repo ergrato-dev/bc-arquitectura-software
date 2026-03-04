@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <defs>
+    <style>
+      text { font-family: Inter, system-ui, sans-serif; }
+      .title  { font-size: 18px; font-weight: 700; fill: #e2e8f0; }
+      .sub    { font-size: 12px; fill: #94a3b8; }
+      .id     { font-size: 13px; font-weight: 800; }
+      .name   { font-size: 11px; font-weight: 700; fill: #e2e8f0; }
+      .desc   { font-size: 9.5px; fill: #94a3b8; }
+      .fix    { font-size: 9px; fill: #86efac; }
+      .small  { font-size: 10px; fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="620" fill="#1e1e1e" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" class="title">OWASP Top 10 — 2021</text>
+  <text x="450" y="54" text-anchor="middle" class="sub">Las 10 vulnerabilidades más críticas para arquitectos de software</text>
+  <line x1="24" y1="64" x2="876" y2="64" stroke="#334155" stroke-width="1"/>
+
+  <!-- =========== CARD GRID 5×2 =========== -->
+  <!-- Card A01 -->
+  <rect x="24"  y="76" width="164" height="108" fill="#0f172a" rx="8" stroke="#f87171" stroke-width="1.5"/>
+  <text x="36"  y="98"  class="id" fill="#f87171">A01</text>
+  <text x="100" y="98"  text-anchor="middle" class="name">Broken Access Control</text>
+  <text x="36"  y="114" class="desc">Un usuario accede a recursos</text>
+  <text x="36"  y="126" class="desc">de otro usuario o eleva permisos</text>
+  <text x="36"  y="140" class="desc">sin autorización.</text>
+  <text x="36"  y="156" class="fix">→ RBAC + authorize middleware</text>
+  <text x="36"  y="168" class="fix">→ Validar ownership en cada req</text>
+  <rect x="24" y="76" width="4" height="108" fill="#f87171" rx="2 0 0 2"/>
+
+  <!-- Card A02 -->
+  <rect x="200" y="76" width="164" height="108" fill="#0f172a" rx="8" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="212" y="98"  class="id" fill="#fb923c">A02</text>
+  <text x="282" y="98"  text-anchor="middle" class="name">Cryptographic Failures</text>
+  <text x="212" y="114" class="desc">Datos sensibles sin cifrar o con</text>
+  <text x="212" y="126" class="desc">algoritmos obsoletos (MD5, SHA1).</text>
+  <text x="212" y="140" class="desc">Contraseñas en texto plano.</text>
+  <text x="212" y="156" class="fix">→ bcrypt para contraseñas</text>
+  <text x="212" y="168" class="fix">→ TLS 1.2+ en tránsito</text>
+  <rect x="200" y="76" width="4" height="108" fill="#fb923c" rx="2 0 0 2"/>
+
+  <!-- Card A03 -->
+  <rect x="376" y="76" width="164" height="108" fill="#0f172a" rx="8" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="388" y="98"  class="id" fill="#fbbf24">A03</text>
+  <text x="458" y="98"  text-anchor="middle" class="name">Injection</text>
+  <text x="388" y="114" class="desc">SQL, NoSQL, OS, LDAP injection.</text>
+  <text x="388" y="126" class="desc">Datos no validados ejecutados</text>
+  <text x="388" y="138" class="desc">como comandos o queries.</text>
+  <text x="388" y="154" class="fix">→ Parámetros preparados ($1,$2)</text>
+  <text x="388" y="166" class="fix">→ Zod / validate middleware</text>
+  <rect x="376" y="76" width="4" height="108" fill="#fbbf24" rx="2 0 0 2"/>
+
+  <!-- Card A04 -->
+  <rect x="552" y="76" width="164" height="108" fill="#0f172a" rx="8" stroke="#a3e635" stroke-width="1.5"/>
+  <text x="564" y="98"  class="id" fill="#a3e635">A04</text>
+  <text x="634" y="98"  text-anchor="middle" class="name">Insecure Design</text>
+  <text x="564" y="114" class="desc">Flujos de negocio sin casos de</text>
+  <text x="564" y="126" class="desc">abuso modelados. Arquitectura</text>
+  <text x="564" y="138" class="desc">que facilita el ataque.</text>
+  <text x="564" y="154" class="fix">→ Threat modeling en diseño</text>
+  <text x="564" y="166" class="fix">→ Defense in depth por capa</text>
+  <rect x="552" y="76" width="4" height="108" fill="#a3e635" rx="2 0 0 2"/>
+
+  <!-- Card A05 -->
+  <rect x="728" y="76" width="148" height="108" fill="#0f172a" rx="8" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="740" y="98"  class="id" fill="#4ade80">A05</text>
+  <text x="802" y="98"  text-anchor="middle" class="name">Security Misconfig</text>
+  <text x="740" y="114" class="desc">Headers HTTP faltantes, puertos</text>
+  <text x="740" y="126" class="desc">expuestos, errores con stack</text>
+  <text x="740" y="138" class="desc">trace visible al cliente.</text>
+  <text x="740" y="154" class="fix">→ Helmet.js en Express</text>
+  <text x="740" y="166" class="fix">→ NODE_ENV=production</text>
+  <rect x="728" y="76" width="4" height="108" fill="#4ade80" rx="2 0 0 2"/>
+
+  <!-- Row 2 -->
+
+  <!-- Card A06 -->
+  <rect x="24"  y="200" width="164" height="108" fill="#0f172a" rx="8" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="36"  y="222" class="id" fill="#22d3ee">A06</text>
+  <text x="100" y="222" text-anchor="middle" class="name">Vulnerable Components</text>
+  <text x="36"  y="238" class="desc">Librerías con CVEs conocidos.</text>
+  <text x="36"  y="250" class="desc">Versiones sin actualizar en</text>
+  <text x="36"  y="262" class="desc">node_modules.</text>
+  <text x="36"  y="278" class="fix">→ pnpm audit --fix</text>
+  <text x="36"  y="290" class="fix">→ Dependabot / Renovate</text>
+  <rect x="24" y="200" width="4" height="108" fill="#22d3ee" rx="2 0 0 2"/>
+
+  <!-- Card A07 -->
+  <rect x="200" y="200" width="164" height="108" fill="#0f172a" rx="8" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="212" y="222" class="id" fill="#818cf8">A07</text>
+  <text x="282" y="222" text-anchor="middle" class="name">Auth Failures</text>
+  <text x="212" y="238" class="desc">Contraseñas débiles, sin rate</text>
+  <text x="212" y="250" class="desc">limit, sesiones sin expiración,</text>
+  <text x="212" y="262" class="desc">mensaje revelador del error.</text>
+  <text x="212" y="278" class="fix">→ bcrypt + rate-limit en /auth</text>
+  <text x="212" y="290" class="fix">→ JWT con exp + refresh tokens</text>
+  <rect x="200" y="200" width="4" height="108" fill="#818cf8" rx="2 0 0 2"/>
+
+  <!-- Card A08 -->
+  <rect x="376" y="200" width="164" height="108" fill="#0f172a" rx="8" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="388" y="222" class="id" fill="#c084fc">A08</text>
+  <text x="458" y="222" text-anchor="middle" class="name">Integrity Failures</text>
+  <text x="388" y="238" class="desc">Deserialización insegura, pipelines</text>
+  <text x="388" y="250" class="desc">CI/CD comprometidos, updates</text>
+  <text x="388" y="262" class="desc">sin verificación de firma.</text>
+  <text x="388" y="278" class="fix">→ Verificar firmas de paquetes</text>
+  <text x="388" y="290" class="fix">→ pnpm-lock.yaml en git</text>
+  <rect x="376" y="200" width="4" height="108" fill="#c084fc" rx="2 0 0 2"/>
+
+  <!-- Card A09 -->
+  <rect x="552" y="200" width="164" height="108" fill="#0f172a" rx="8" stroke="#f472b6" stroke-width="1.5"/>
+  <text x="564" y="222" class="id" fill="#f472b6">A09</text>
+  <text x="634" y="222" text-anchor="middle" class="name">Logging Failures</text>
+  <text x="564" y="238" class="desc">Sin logs de acceso ni errores.</text>
+  <text x="564" y="250" class="desc">Stack traces visibles al usuario.</text>
+  <text x="564" y="262" class="desc">Logs con datos sensibles.</text>
+  <text x="564" y="278" class="fix">→ Logs estructurados (JSON)</text>
+  <text x="564" y="290" class="fix">→ Nunca loggear contraseñas/JWT</text>
+  <rect x="552" y="200" width="4" height="108" fill="#f472b6" rx="2 0 0 2"/>
+
+  <!-- Card A10 -->
+  <rect x="728" y="200" width="148" height="108" fill="#0f172a" rx="8" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="740" y="222" class="id" fill="#fb7185">A10</text>
+  <text x="802" y="222" text-anchor="middle" class="name">SSRF</text>
+  <text x="740" y="238" class="desc">El servidor hace peticiones a</text>
+  <text x="740" y="250" class="desc">URLs controladas por el atacante</text>
+  <text x="740" y="262" class="desc">(metadatos de cloud, red interna).</text>
+  <text x="740" y="278" class="fix">→ Allowlist de URLs externas</text>
+  <text x="740" y="290" class="fix">→ Nunca fetch(req.body.url)</text>
+  <rect x="728" y="200" width="4" height="108" fill="#fb7185" rx="2 0 0 2"/>
+
+  <!-- =========== IMPACT ROW =========== -->
+  <rect x="24" y="325" width="852" height="1" fill="#334155"/>
+
+  <text x="450" y="348" text-anchor="middle" class="name" fill="#94a3b8">Impacto por categoría de decisión arquitectónica</text>
+
+  <!-- Impact boxes -->
+  <!-- Autenticación -->
+  <rect x="24" y="360" width="196" height="80" fill="#0f172a" rx="8" stroke="#818cf8" stroke-width="1"/>
+  <text x="122" y="382" text-anchor="middle" class="name" fill="#818cf8">🔐 Autenticación</text>
+  <text x="34" y="398" class="desc">A02, A07</text>
+  <text x="34" y="412" class="fix">JWT + bcrypt + rate limit</text>
+  <text x="34" y="426" class="fix">Tokens con expiración corta</text>
+
+  <!-- Autorización -->
+  <rect x="232" y="360" width="196" height="80" fill="#0f172a" rx="8" stroke="#f87171" stroke-width="1"/>
+  <text x="330" y="382" text-anchor="middle" class="name" fill="#f87171">🛡️ Autorización</text>
+  <text x="242" y="398" class="desc">A01, A04</text>
+  <text x="242" y="412" class="fix">RBAC + authorize middleware</text>
+  <text x="242" y="426" class="fix">Principle of least privilege</text>
+
+  <!-- Entrada de datos -->
+  <rect x="440" y="360" width="196" height="80" fill="#0f172a" rx="8" stroke="#fbbf24" stroke-width="1"/>
+  <text x="538" y="382" text-anchor="middle" class="name" fill="#fbbf24">📥 Validación</text>
+  <text x="450" y="398" class="desc">A03, A08</text>
+  <text x="450" y="412" class="fix">Zod en todos los endpoints</text>
+  <text x="450" y="426" class="fix">Parámetros preparados en SQL</text>
+
+  <!-- Infraestructura -->
+  <rect x="648" y="360" width="228" height="80" fill="#0f172a" rx="8" stroke="#4ade80" stroke-width="1"/>
+  <text x="762" y="382" text-anchor="middle" class="name" fill="#4ade80">⚙️ Infraestructura</text>
+  <text x="658" y="398" class="desc">A05, A06, A09, A10</text>
+  <text x="658" y="412" class="fix">Helmet + dependencias auditadas</text>
+  <text x="658" y="426" class="fix">Logs estructurados + SSRF guard</text>
+
+  <!-- =========== RISK SCALE =========== -->
+  <rect x="24" y="460" width="852" height="112" fill="#0f172a" rx="8" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="480" text-anchor="middle" class="name" fill="#94a3b8">Escala de riesgo OWASP (Probabilidad × Impacto)</text>
+
+  <!-- Bars -->
+  <rect x="36" y="492" width="148" height="18" fill="#f87171" rx="3" opacity="0.9"/>
+  <text x="36" y="506" class="fix" fill="#fff" font-weight="700"> A01 · A03 · A07</text>
+  <text x="192" y="506" class="desc">Crítico — muy frecuente + daño severo</text>
+
+  <rect x="36" y="520" width="108" height="18" fill="#fb923c" rx="3" opacity="0.9"/>
+  <text x="36" y="534" class="fix" fill="#fff" font-weight="700"> A02 · A05 · A06</text>
+  <text x="152" y="534" class="desc">Alto — frecuente y con impacto de negocio</text>
+
+  <rect x="36" y="548" width="72" height="18" fill="#fbbf24" rx="3" opacity="0.9"/>
+  <text x="36" y="562" class="fix" fill="#1e1e1e" font-weight="700"> A04·A08·A09·A10</text>
+  <text x="116" y="562" class="desc">Medio — menos frecuente pero creciente</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="588" width="900" height="32" fill="#0f172a"/>
+  <rect x="0" y="576" width="900" height="44" fill="#0f172a" rx="0 0 12 12"/>
+  <text x="450" y="600" text-anchor="middle" class="small">Bootcamp Arquitectura de Software · Semana 08 · bc-channel-epti · owasp.org/Top10</text>
+</svg>

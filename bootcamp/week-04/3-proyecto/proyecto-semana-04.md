@@ -17,59 +17,29 @@ Diseñar e implementar una **API REST completa** con documentación OpenAPI/Swag
 
 ---
 
-## 🏢 Dominios de Negocio Disponibles
+## � Tu Dominio Asignado
 
-Selecciona **UNO** de los siguientes dominios para tu proyecto:
+Continuarás trabajando con el **dominio de negocio único** que te fue asignado en la semana 01 mediante sorteo. Esta semana diseñarás e implementarás la API REST de ese dominio.
 
-### 1. 📚 Biblioteca Digital
+> ⚠️ **Política anticopia**: Cada aprendiz tiene un dominio diferente. Todos los entregables deben reflejar las entidades, reglas de negocio y lógica propia de **tu** dominio asignado. No usar dominios de otros compañeros ni ejemplos del reto (EduFlow) como entrega.
 
-Sistema para gestionar libros, préstamos y usuarios de una biblioteca.
+### Recuerda de tu Análisis Inicial (Semana 01)
 
-**Entidades sugeridas:**
+Con base en tu documento `README.md` de la semana 01, identifica:
 
-- Book (id, title, author, isbn, category, available)
-- User (id, name, email, membershipType)
-- Loan (id, bookId, userId, loanDate, dueDate, returnDate)
+- **Entidad principal**: el recurso central de tu dominio (ej: el recurso que tiene CRUD completo)
+- **Entidades secundarias**: recursos relacionados (mínimo 1 adicional)
+- **Actores del sistema**: quiénes consumen la API (rol 1, rol 2…)
+- **Operaciones críticas**: las 5-7 acciones que el sistema debe soportar
 
-### 2. 🍕 Restaurante / Delivery
+**Plantilla de referencia antes de implementar:**
 
-Sistema para gestionar menú, pedidos y entregas de un restaurante.
-
-**Entidades sugeridas:**
-
-- MenuItem (id, name, description, price, category, available)
-- Order (id, customerId, items[], status, total, deliveryAddress)
-- Customer (id, name, phone, address, orders[])
-
-### 3. 🏋️ Gimnasio
-
-Sistema para gestionar membresías, clases y reservas de un gimnasio.
-
-**Entidades sugeridas:**
-
-- Member (id, name, email, membershipType, status)
-- Class (id, name, instructor, schedule, capacity, enrolled)
-- Booking (id, memberId, classId, date, attended)
-
-### 4. 🎬 Cine
-
-Sistema para gestionar películas, funciones y reservas de un cine.
-
-**Entidades sugeridas:**
-
-- Movie (id, title, genre, duration, rating)
-- Showtime (id, movieId, roomId, dateTime, availableSeats)
-- Reservation (id, showtimeId, customerId, seats[], totalPrice)
-
-### 5. 🏨 Hotel
-
-Sistema para gestionar habitaciones, reservas y huéspedes de un hotel.
-
-**Entidades sugeridas:**
-
-- Room (id, number, type, price, amenities[], status)
-- Guest (id, name, email, phone, document)
-- Reservation (id, guestId, roomId, checkIn, checkOut, status)
+| Elemento            | Tu Dominio                       |
+| ------------------- | -------------------------------- |
+| Entidad principal   | `[NombreEntidad]`                |
+| Entidad secundaria  | `[NombreEntidad2]`               |
+| Campos clave        | id, [campo1], [campo2], [campo3] |
+| Operación principal | Ej: gestionar [recursos]         |
 
 ---
 
@@ -341,12 +311,12 @@ paths:
             type: integer
             default: 10
       responses:
-        '200':
+        "200":
           description: Lista de libros
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PaginatedBooksResponse'
+                $ref: "#/components/schemas/PaginatedBooksResponse"
 ```
 
 ---

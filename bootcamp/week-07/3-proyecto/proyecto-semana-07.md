@@ -1,6 +1,8 @@
-# 🚀 Proyecto Integrador — Semana 07: EduFlow Cloud
+# 🚀 Proyecto Integrador — Semana 07: Tu Dominio en la Nube
 
-> **EduFlow pasa a la nube**: Toma la API REST de EduFlow desarrollada en semanas anteriores y conviértela en una aplicación cloud-ready con Docker, variables de entorno correctas y documentación de despliegue completa.
+> **Tu proyecto pasa a la nube**: Toma la API REST de **tu proyecto personal** desarrollada en semanas anteriores y conviértela en una aplicación cloud-ready con Docker, variables de entorno correctas y documentación de despliegue completa.
+
+> ⚠️ **Política anticopia**: Cada aprendiz trabaja con su dominio asignado en semana 01. Los nombres de la base de datos, servicios, imágenes y variables de entorno deben corresponder a **tu dominio**. El reto de la semana (EduFlow) es el ejemplo didáctico, no el entregable.
 
 ---
 
@@ -19,16 +21,16 @@ Demostrar que puedes aplicar los principios de **Cloud Native / 12-Factor App** 
 
 ## 📋 Descripción del Reto
 
-El equipo de EduFlow ha decidido migrar su infraestructura a la nube. El primer paso es **contenerizar la aplicación** para que cualquier desarrollador pueda levantarla con un solo comando desde un sistema limpio.
+Es momento de llevar **tu proyecto personal** a la nube. El primer paso es **contenerizar la aplicación** para que cualquier desarrollador pueda levantarla con un solo comando desde un sistema limpio.
 
-Tu misión: entregar el repositorio `eduflow-cloud` con la infraestructura completa.
+Tu misión: entregar el repositorio `[tu-dominio]-cloud` con la infraestructura completa. Reemplaza `[tu-dominio]` con el nombre kebab-case de tu dominio asignado (ej: `biblioteca-cloud`, `gimnasio-cloud`, `veterinaria-cloud`).
 
 ---
 
 ## 🏗️ Arquitectura Objetivo
 
 ```
-eduflow-cloud/
+[tu-dominio]-cloud/           ← renombra con tu dominio (ej: biblioteca-cloud)
 ├── Dockerfile                 # Build multi-stage optimizado
 ├── docker-compose.yml         # Desarrollo local
 ├── docker-compose.prod.yml    # Producción (anula compose.yml)
@@ -41,13 +43,21 @@ eduflow-cloud/
     ├── server.js             # Entry point (solo llama a app.listen)
     ├── config.js             # Configuración desde process.env
     ├── routes/
-    │   └── courses.js
+    │   └── [entidad-principal].js    ← tu entidad principal
     ├── services/
-    │   └── course-service.js
+    │   └── [entidad-principal]-service.js
     └── db/
         ├── pool.js           # Pool de conexión PostgreSQL
         └── migrations.js     # Migraciones al arrancar
 ```
+
+**Antes de escribir archivos**, define los nombres concretos de tu dominio:
+
+| Placeholder            | Tu valor                        | Ejemplo                     |
+| ---------------------- | ------------------------------- | --------------------------- |
+| `[tu-dominio]`         | Nombre kebab-case de tu negocio | `biblioteca`, `veterinaria` |
+| `[entidad-principal]`  | Tabla/recurso principal         | `books`, `patients`         |
+| `[entidad-secundaria]` | Segunda tabla                   | `loans`, `appointments`     |
 
 ---
 
@@ -91,8 +101,8 @@ COPY src/ ./src/
 COPY package.json ./
 
 # Metadatos de la imagen
-LABEL org.opencontainers.image.title="EduFlow API"
-LABEL org.opencontainers.image.description="API REST del sistema de gestión de cursos EduFlow"
+LABEL org.opencontainers.image.title="[Tu Dominio] API"
+LABEL org.opencontainers.image.description="API REST de [descripción breve de tu dominio]"
 
 # Exponer puerto (documentación — no abre el puerto, lo hace -p o Compose)
 EXPOSE 3000
@@ -116,8 +126,8 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-eduflow}
-      POSTGRES_USER: ${POSTGRES_USER:-eduflow}
+      POSTGRES_DB: ${POSTGRES_DB:-[tu-dominio]}
+      POSTGRES_USER: ${POSTGRES_USER:-[tu-dominio]}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secret}
     volumes:
       - pgdata:/var/lib/postgresql/data
@@ -127,7 +137,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "pg_isready -U ${POSTGRES_USER:-eduflow} -d ${POSTGRES_DB:-eduflow}",
+          "pg_isready -U ${POSTGRES_USER:-[tu-dominio]} -d ${POSTGRES_DB:-[tu-dominio]}",
         ]
       interval: 10s
       timeout: 5s
@@ -137,7 +147,7 @@ services:
     build: .
     command: node src/db/migrations.js
     environment:
-      DATABASE_URL: postgres://${POSTGRES_USER:-eduflow}:${POSTGRES_PASSWORD:-secret}@db:5432/${POSTGRES_DB:-eduflow}
+      DATABASE_URL: postgres://${POSTGRES_USER:-[tu-dominio]}:${POSTGRES_PASSWORD:-secret}@db:5432/${POSTGRES_DB:-[tu-dominio]}
       NODE_ENV: development
     depends_on:
       db:
@@ -150,7 +160,7 @@ services:
     environment:
       PORT: 3000
       NODE_ENV: development
-      DATABASE_URL: postgres://${POSTGRES_USER:-eduflow}:${POSTGRES_PASSWORD:-secret}@db:5432/${POSTGRES_DB:-eduflow}
+      DATABASE_URL: postgres://${POSTGRES_USER:-[tu-dominio]}:${POSTGRES_PASSWORD:-secret}@db:5432/${POSTGRES_DB:-[tu-dominio]}
     depends_on:
       db:
         condition: service_healthy
@@ -163,7 +173,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4:latest
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@eduflow.com}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@[tu-dominio].local}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
     ports:
       - "5050:80"
@@ -274,39 +284,44 @@ import { getPool } from "./pool.js";
 
 const migrations = [
   {
-    name: "001_create_courses",
+    // Migración 1: Crea la tabla principal de TU dominio
+    // Reemplaza el nombre y las columnas según tus entidades
+    name: "001_create_[entidad-principal]",
     sql: `
-      CREATE TABLE IF NOT EXISTS courses (
+      CREATE TABLE IF NOT EXISTS [entidad_principal] (
         id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-        title      VARCHAR(200) NOT NULL,
-        description TEXT,
-        active     BOOLEAN NOT NULL DEFAULT TRUE,
+        -- Agrega aquí las columnas de tu entidad principal
+        nombre     VARCHAR(200) NOT NULL,
+        [campo_unico] VARCHAR(200) UNIQUE NOT NULL,
+        activo     BOOLEAN NOT NULL DEFAULT TRUE,
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
         updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
       );
     `,
   },
   {
-    name: "002_create_students",
+    // Migración 2: Crea la segunda tabla de TU dominio
+    name: "002_create_[entidad-secundaria]",
     sql: `
-      CREATE TABLE IF NOT EXISTS students (
+      CREATE TABLE IF NOT EXISTS [entidad_secundaria] (
         id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-        name       VARCHAR(200) NOT NULL,
-        email      VARCHAR(200) UNIQUE NOT NULL,
-        enrolled   BOOLEAN NOT NULL DEFAULT TRUE,
+        -- Agrega aquí las columnas de tu entidad secundaria
+        [campo_principal] VARCHAR(200) NOT NULL,
+        activo     BOOLEAN NOT NULL DEFAULT TRUE,
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
       );
     `,
   },
   {
-    name: "003_create_enrollments",
+    // Migración 3: Tabla de relación entre tus entidades (si aplica)
+    name: "003_create_[relacion]",
     sql: `
-      CREATE TABLE IF NOT EXISTS enrollments (
-        id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-        course_id  UUID NOT NULL REFERENCES courses(id),
-        student_id UUID NOT NULL REFERENCES students(id),
-        enrolled_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-        UNIQUE(course_id, student_id)
+      CREATE TABLE IF NOT EXISTS [relacion] (
+        id                     UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        [entidad_principal_id] UUID NOT NULL REFERENCES [entidad_principal](id),
+        [entidad_secundaria_id] UUID NOT NULL REFERENCES [entidad_secundaria](id),
+        fecha                  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        UNIQUE([entidad_principal_id], [entidad_secundaria_id])
       );
     `,
   },
@@ -368,7 +383,8 @@ runMigrations()
 ```javascript
 // src/app.js — Setup Express SIN listen (12-Factor: separar build de run)
 import express from "express";
-import { coursesRouter } from "./routes/courses.js";
+// Importa los routers de TU dominio — reemplaza con tus nombres concretos
+import { [entidadPrincipal]Router } from './routes/[entidad-principal].js';
 
 export const createApp = () => {
   const app = express();
@@ -395,7 +411,9 @@ export const createApp = () => {
     }
   });
 
-  app.use("/api/courses", coursesRouter);
+  // Registra los routers de TU dominio
+  // Ejemplo: app.use('/api/[entidad-principal]', [entidadPrincipal]Router);
+  app.use("/api/[entidad-principal]", [entidadPrincipal]Router);
 
   return app;
 };
@@ -446,46 +464,47 @@ process.on("SIGINT", () => shutdown("SIGINT"));
 ```bash
 # .env.example — copia a .env y rellena los valores reales
 # NUNCA hagas commit del archivo .env original
+# Reemplaza [tu-dominio] con el nombre kebab-case de tu dominio
 
-# Base de datos
-POSTGRES_DB=eduflow
-POSTGRES_USER=eduflow
+# Base de datos — usa el nombre de TU dominio
+POSTGRES_DB=[tu-dominio]
+POSTGRES_USER=[tu-dominio]
 POSTGRES_PASSWORD=CAMBIAR_ESTO
 
 # API
 PORT=3000
 NODE_ENV=development
-DATABASE_URL=postgres://eduflow:CAMBIAR_ESTO@localhost:5432/eduflow
+DATABASE_URL=postgres://[tu-dominio]:CAMBIAR_ESTO@localhost:5432/[tu-dominio]
 
 # pgAdmin (solo desarrollo)
-PGADMIN_EMAIL=admin@eduflow.com
+PGADMIN_EMAIL=admin@[tu-dominio].local
 PGADMIN_PASSWORD=CAMBIAR_ESTO
 ```
 
 ### 6. README.md del Proyecto
 
 ````markdown
-# EduFlow Cloud
+# [Tu Dominio] Cloud
 
-API REST del sistema de gestión de cursos. Cloud native, containerizado con Docker.
+API REST de [descripción de tu negocio]. Cloud native, containerizada con Docker.
 
 ## 🚀 Inicio Rápido (Desarrollo)
 
 ```bash
 # 1. Clonar el repositorio
 git clone <url>
-cd eduflow-cloud
+cd [tu-dominio]-cloud
 
 # 2. Configurar variables de entorno
 cp .env.example .env
-# Editar .env si es necesario
+# Editar .env con tus credenciales reales
 
 # 3. Levantar todos los servicios
 docker compose up --build
 
 # 4. Verificar que funciona
 curl http://localhost:3000/health
-curl http://localhost:3000/api/courses
+curl http://localhost:3000/api/[entidad-principal]
 ```
 ````
 
@@ -498,11 +517,11 @@ docker compose down -v       # Detener + borrar volúmenes (¡borra BD!)
 
 ## 🌐 URLs Disponibles
 
-| Servicio    | URL                          |
-| ----------- | ---------------------------- |
-| API EduFlow | http://localhost:3000        |
-| API Health  | http://localhost:3000/health |
-| pgAdmin     | http://localhost:5050        |
+| Servicio         | URL                          |
+| ---------------- | ---------------------------- |
+| API [Tu Dominio] | http://localhost:3000        |
+| API Health       | http://localhost:3000/health |
+| pgAdmin          | http://localhost:5050        |
 
 ```
 

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+  <rect width="960" height="540" fill="#1e1e1e"/>
+
+  <!-- Título -->
+  <text x="480" y="36" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">CIA Triad — Fundamentos de Seguridad en Arquitectura</text>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- Triángulo CIA central -->
+  <!-- ═══════════════════════════════════ -->
+
+  <!-- Triángulo fondo -->
+  <polygon points="480,80 200,450 760,450" fill="#2a2a2a" stroke="#475569" stroke-width="2"/>
+
+  <!-- Vértice C — Confidencialidad (arriba) -->
+  <circle cx="480" cy="80" r="60" fill="#1d4ed8" opacity="0.9"/>
+  <text x="480" y="72" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" text-anchor="middle">C</text>
+  <text x="480" y="94" fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Confidencialidad</text>
+
+  <!-- Vértice I — Integridad (abajo izquierda) -->
+  <circle cx="200" cy="450" r="60" fill="#7c3aed" opacity="0.9"/>
+  <text x="200" y="442" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" text-anchor="middle">I</text>
+  <text x="200" y="464" fill="#ddd6fe" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Integridad</text>
+
+  <!-- Vértice A — Disponibilidad (abajo derecha) -->
+  <circle cx="760" cy="450" r="60" fill="#059669" opacity="0.9"/>
+  <text x="760" y="442" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="800" text-anchor="middle">A</text>
+  <text x="760" y="464" fill="#a7f3d0" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">Disponibilidad</text>
+
+  <!-- Centro: "Seguridad" -->
+  <circle cx="480" cy="320" r="55" fill="#374151" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="480" y="315" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Seguridad</text>
+  <text x="480" y="333" fill="#9ca3af" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">by design</text>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- Panel Confidencialidad -->
+  <!-- ═══════════════════════════════════ -->
+  <rect x="20" y="60" width="160" height="120" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="100" y="82" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Confidencialidad</text>
+  <text x="100" y="100" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Solo autorizado accede</text>
+  <text x="30" y="118" fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="10">• JWT + RBAC</text>
+  <text x="30" y="133" fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="10">• Cifrado TLS/HTTPS</text>
+  <text x="30" y="148" fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="10">• bcrypt passwords</text>
+  <text x="30" y="163" fill="#bfdbfe" font-family="Inter, system-ui, sans-serif" font-size="10">• Least Privilege</text>
+
+  <!-- Panel Integridad -->
+  <rect x="20" y="200" width="160" height="120" rx="8" fill="#2e1065" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="100" y="222" fill="#a78bfa" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Integridad</text>
+  <text x="100" y="240" fill="#c4b5fd" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Datos no modificados</text>
+  <text x="30" y="258" fill="#ddd6fe" font-family="Inter, system-ui, sans-serif" font-size="10">• Firma JWT</text>
+  <text x="30" y="273" fill="#ddd6fe" font-family="Inter, system-ui, sans-serif" font-size="10">• Validación inputs</text>
+  <text x="30" y="288" fill="#ddd6fe" font-family="Inter, system-ui, sans-serif" font-size="10">• ACID en BD</text>
+  <text x="30" y="303" fill="#ddd6fe" font-family="Inter, system-ui, sans-serif" font-size="10">• Checksums</text>
+
+  <!-- Panel Disponibilidad -->
+  <rect x="780" y="200" width="160" height="120" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="860" y="222" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Disponibilidad</text>
+  <text x="860" y="240" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">Accesible cuando se necesita</text>
+  <text x="790" y="258" fill="#a7f3d0" font-family="Inter, system-ui, sans-serif" font-size="10">• Rate limiting</text>
+  <text x="790" y="273" fill="#a7f3d0" font-family="Inter, system-ui, sans-serif" font-size="10">• Circuit breakers</text>
+  <text x="790" y="288" fill="#a7f3d0" font-family="Inter, system-ui, sans-serif" font-size="10">• Redundancia</text>
+  <text x="790" y="303" fill="#a7f3d0" font-family="Inter, system-ui, sans-serif" font-size="10">• Anti-DDoS</text>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- Principios en la base -->
+  <!-- ═══════════════════════════════════ -->
+  <rect x="230" y="490" width="500" height="38" rx="8" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+  <text x="480" y="507" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Principios: Least Privilege · Defense in Depth · Fail Securely · Secure by Default</text>
+  <text x="480" y="522" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10" text-anchor="middle">La seguridad no se agrega — se diseña desde el inicio</text>
+
+</svg>

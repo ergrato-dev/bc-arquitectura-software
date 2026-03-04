@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <defs>
+    <style>
+      text { font-family: Inter, system-ui, sans-serif; }
+      .title { font-size: 18px; font-weight: 700; fill: #e2e8f0; }
+      .subtitle { font-size: 12px; fill: #94a3b8; }
+      .label { font-size: 11px; fill: #e2e8f0; }
+      .small { font-size: 10px; fill: #94a3b8; }
+      .code { font-family: 'Fira Code', 'Courier New', monospace; font-size: 10px; fill: #86efac; }
+      .arrow-label { font-size: 10px; fill: #fbbf24; font-weight: 600; }
+      .step-num { font-size: 11px; font-weight: 700; fill: #1e1e1e; }
+      .actor-label { font-size: 12px; font-weight: 600; fill: #e2e8f0; }
+      .actor-sub { font-size: 10px; fill: #94a3b8; }
+      .note { font-size: 10px; fill: #c4b5fd; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#fbbf24"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4ade80"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="620" fill="#1e1e1e" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" class="title">OAuth 2.0 — Authorization Code + PKCE</text>
+  <text x="450" y="54" text-anchor="middle" class="subtitle">Flujo recomendado para aplicaciones web y móviles (RFC 6749 + RFC 7636)</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="64" x2="876" y2="64" stroke="#334155" stroke-width="1"/>
+
+  <!-- ===== ACTORS ===== -->
+  <!-- User / Browser -->
+  <rect x="30" y="78" width="100" height="52" fill="#0f172a" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="80" y="100" text-anchor="middle" class="actor-label">👤 Usuario</text>
+  <text x="80" y="116" text-anchor="middle" class="actor-sub">Browser / App</text>
+
+  <!-- Client App -->
+  <rect x="220" y="78" width="110" height="52" fill="#0f172a" rx="8" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="275" y="100" text-anchor="middle" class="actor-label">📱 Client App</text>
+  <text x="275" y="116" text-anchor="middle" class="actor-sub">Tu aplicación</text>
+
+  <!-- Auth Server -->
+  <rect x="420" y="78" width="130" height="52" fill="#0f172a" rx="8" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="485" y="100" text-anchor="middle" class="actor-label">🔐 Auth Server</text>
+  <text x="485" y="116" text-anchor="middle" class="actor-sub">Google/GitHub/Keycloak</text>
+
+  <!-- Resource Server -->
+  <rect x="680" y="78" width="120" height="52" fill="#0f172a" rx="8" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="740" y="100" text-anchor="middle" class="actor-label">🗄️ Resource</text>
+  <text x="740" y="116" text-anchor="middle" class="actor-sub">Server / Tu API</text>
+
+  <!-- Lifelines -->
+  <line x1="80"  y1="130" x2="80"  y2="560" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="275" y1="130" x2="275" y2="560" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="485" y1="130" x2="485" y2="560" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <line x1="740" y1="130" x2="740" y2="560" stroke="#4ade80" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+
+  <!-- ===== STEP 1 — code_challenge ===== -->
+  <circle cx="28" cy="160" r="11" fill="#8b5cf6"/>
+  <text x="28" y="164" text-anchor="middle" class="step-num">1</text>
+  <line x1="80" y1="160" x2="268" y2="160" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="175" y="150" text-anchor="middle" class="arrow-label">Clic "Login con Google"</text>
+
+  <!-- PKCE note -->
+  <rect x="32" y="172" width="220" height="30" fill="#1e293b" rx="4" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="42" y="184" class="code">code_verifier = random(43-128 chars)</text>
+  <text x="42" y="196" class="code">code_challenge = SHA256(verifier)</text>
+
+  <!-- ===== STEP 2 — Auth Request ===== -->
+  <circle cx="28" cy="218" r="11" fill="#8b5cf6"/>
+  <text x="28" y="222" text-anchor="middle" class="step-num">2</text>
+  <line x1="275" y1="218" x2="478" y2="218" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="378" y="208" text-anchor="middle" class="arrow-label">Authorization Request</text>
+  <text x="378" y="232" text-anchor="middle" class="small">?response_type=code&amp;code_challenge=...&amp;scope=openid email</text>
+
+  <!-- ===== STEP 3 — Login UI ===== -->
+  <circle cx="28" cy="262" r="11" fill="#8b5cf6"/>
+  <text x="28" y="266" text-anchor="middle" class="step-num">3</text>
+  <line x1="485" y1="262" x2="87" y2="262" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <text x="285" y="252" text-anchor="middle" class="arrow-label" fill="#60a5fa">Muestra formulario de login</text>
+
+  <!-- ===== STEP 4 — Credentials ===== -->
+  <circle cx="28" cy="296" r="11" fill="#8b5cf6"/>
+  <text x="28" y="300" text-anchor="middle" class="step-num">4</text>
+  <line x1="80" y1="296" x2="478" y2="296" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="285" y="286" text-anchor="middle" class="arrow-label">Usuario ingresa credenciales</text>
+
+  <!-- ===== STEP 5 — Authorization Code ===== -->
+  <circle cx="28" cy="336" r="11" fill="#f59e0b"/>
+  <text x="28" y="340" text-anchor="middle" class="step-num">5</text>
+  <line x1="485" y1="336" x2="282" y2="336" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <text x="378" y="326" text-anchor="middle" class="arrow-label" fill="#60a5fa">Redirect + authorization_code</text>
+  <text x="378" y="350" text-anchor="middle" class="small">Location: redirect_uri?code=xyz (vive ~10 seg)</text>
+
+  <!-- ===== STEP 6 — Token Request (back-channel) ===== -->
+  <circle cx="28" cy="388" r="11" fill="#f59e0b"/>
+  <text x="28" y="392" text-anchor="middle" class="step-num">6</text>
+  <!-- Label background -->
+  <rect x="292" y="370" width="176" height="14" fill="#1e293b" rx="2"/>
+  <text x="380" y="381" text-anchor="middle" class="note">🔒 Back-channel (server-to-server)</text>
+  <line x1="275" y1="390" x2="478" y2="390" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="378" y="405" text-anchor="middle" class="arrow-label">POST /token</text>
+  <text x="378" y="417" text-anchor="middle" class="small">code + code_verifier + client_id</text>
+
+  <!-- ===== STEP 7 — Access + ID Token ===== -->
+  <circle cx="28" cy="444" r="11" fill="#4ade80"/>
+  <text x="28" y="448" text-anchor="middle" class="step-num">7</text>
+  <line x1="485" y1="444" x2="282" y2="444" stroke="#4ade80" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="378" y="434" text-anchor="middle" class="arrow-label" fill="#4ade80">access_token + id_token</text>
+  <text x="378" y="458" text-anchor="middle" class="small">(JWT firmado, expira en 1h)</text>
+
+  <!-- ===== STEP 8 — API Call ===== -->
+  <circle cx="28" cy="493" r="11" fill="#4ade80"/>
+  <text x="28" y="497" text-anchor="middle" class="step-num">8</text>
+  <line x1="275" y1="493" x2="732" y2="493" stroke="#4ade80" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="505" y="483" text-anchor="middle" class="arrow-label" fill="#4ade80">GET /api/recurso</text>
+  <text x="505" y="507" text-anchor="middle" class="small">Authorization: Bearer &lt;access_token&gt;</text>
+
+  <!-- ===== STEP 9 — Protected Resource ===== -->
+  <circle cx="28" cy="536" r="11" fill="#4ade80"/>
+  <text x="28" y="540" text-anchor="middle" class="step-num">9</text>
+  <line x1="740" y1="536" x2="282" y2="536" stroke="#4ade80" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="505" y="526" text-anchor="middle" class="arrow-label" fill="#4ade80">200 OK — Recurso protegido</text>
+
+  <!-- ===== PKCE Why Box ===== -->
+  <rect x="564" y="168" width="300" height="115" fill="#0f172a" rx="8" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="714" y="188" text-anchor="middle" class="label" fill="#fbbf24">¿Por qué PKCE?</text>
+  <text x="574" y="206" class="small">Sin PKCE: si el authorization_code es</text>
+  <text x="574" y="220" class="small">interceptado, el atacante puede canjearlo.</text>
+  <text x="574" y="238" class="small" fill="#86efac">Con PKCE: el código solo tiene valor</text>
+  <text x="574" y="252" class="small" fill="#86efac">junto al code_verifier original.</text>
+  <text x="574" y="268" class="small" fill="#86efac">El servidor valida: SHA256(verifier) == challenge</text>
+  <text x="574" y="278" class="small" fill="#c4b5fd">→ RFC 7636 — obligatorio en SPAs y apps móviles</text>
+
+  <!-- ===== Roles legend ===== -->
+  <rect x="564" y="300" width="300" height="88" fill="#0f172a" rx="8" stroke="#334155" stroke-width="1"/>
+  <text x="714" y="320" text-anchor="middle" class="label" fill="#94a3b8">Roles OAuth 2.0</text>
+  <rect x="574" y="330" width="8" height="8" fill="#3b82f6"/>
+  <text x="590" y="340" class="small">Resource Owner — quien autoriza (el usuario)</text>
+  <rect x="574" y="348" width="8" height="8" fill="#8b5cf6"/>
+  <text x="590" y="358" class="small">Client — tu aplicación (pide acceso)</text>
+  <rect x="574" y="366" width="8" height="8" fill="#f59e0b"/>
+  <text x="590" y="376" class="small">Authorization Server — emite tokens</text>
+  <rect x="574" y="383" width="8" height="8" fill="#4ade80"/>
+  <text x="590" y="393" class="small">Resource Server — tu API (acepta tokens)</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="580" width="900" height="40" fill="#0f172a" rx="0"/>
+  <rect x="0" y="580" width="900" height="40" fill="#0f172a"/>
+  <rect x="0" y="568" width="900" height="52" fill="#0f172a" rx="0 0 12 12"/>
+  <text x="450" y="596" text-anchor="middle" class="small">Bootcamp Arquitectura de Software · Semana 08 · bc-channel-epti</text>
+</svg>
