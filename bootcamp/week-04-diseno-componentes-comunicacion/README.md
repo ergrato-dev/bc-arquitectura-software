@@ -157,7 +157,7 @@ Consulta el **[Glosario de Términos](5-glosario/README.md)** para definiciones 
 
 | Semana Anterior                                             | Semana Actual                     | Semana Siguiente                                      |
 | ----------------------------------------------------------- | --------------------------------- | ----------------------------------------------------- |
-| [Semana 03: Patrones Arquitectónicos](../week-03/README.md) | **Semana 04: Componentes y APIs** | [Semana 05: Patrones de Diseño](../week-05/README.md) |
+| [Semana 03: Patrones Arquitectónicos](../week-03-patrones-arquitectonicos-clasicos/README.md) | **Semana 04: Componentes y APIs** | [Semana 05: Patrones de Diseño](../week-05-patrones-diseno/README.md) |
 
 **¿Cómo conecta?**
 
@@ -173,4 +173,4 @@ Consulta el **[Glosario de Términos](5-glosario/README.md)** para definiciones 
 
 ---
 
-[⬅️ Semana 03](../week-03/README.md) | [🏠 Inicio](../../README.md) | [➡️ Semana 05](../week-05/README.md)
+[⬅️ Semana 03](../week-03-patrones-arquitectonicos-clasicos/README.md) | [🏠 Inicio](../../README.md) | [➡️ Semana 05](../week-05-patrones-diseno/README.md)

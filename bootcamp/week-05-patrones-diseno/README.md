@@ -128,15 +128,15 @@ Ver **[Rúbrica de Evaluación](rubrica-evaluacion.md)** para los criterios comp
 
 | Semana | Tema | Enlace |
 |--------|------|--------|
-| 01 | Fundamentos de Arquitectura | [→ Semana 01](../week-01/README.md) |
-| 02 | Principios SOLID | [→ Semana 02](../week-02/README.md) |
-| 03 | Patrones Arquitectónicos Clásicos | [→ Semana 03](../week-03/README.md) |
-| 04 | Diseño de Componentes y Comunicación | [→ Semana 04](../week-04/README.md) |
+| 01 | Fundamentos de Arquitectura | [→ Semana 01](../week-01-fundamentos-arquitectura/README.md) |
+| 02 | Principios SOLID | [→ Semana 02](../week-02-principios-solid/README.md) |
+| 03 | Patrones Arquitectónicos Clásicos | [→ Semana 03](../week-03-patrones-arquitectonicos-clasicos/README.md) |
+| 04 | Diseño de Componentes y Comunicación | [→ Semana 04](../week-04-diseno-componentes-comunicacion/README.md) |
 | **05** | **Patrones de Diseño** ← estás aquí | |
-| 06 | Arquitecturas Modernas | [→ Semana 06](../week-06/README.md) |
-| 07 | Arquitectura en la Nube | [→ Semana 07](../week-07/README.md) |
-| 08 | Seguridad en Arquitectura | [→ Semana 08](../week-08/README.md) |
-| 09 | Proyecto Integrador Final | [→ Semana 09](../week-09/README.md) |
+| 06 | Arquitecturas Modernas | [→ Semana 06](../week-06-arquitecturas-modernas/README.md) |
+| 07 | Arquitectura en la Nube | [→ Semana 07](../week-07-arquitectura-nube/README.md) |
+| 08 | Seguridad en Arquitectura | [→ Semana 08](../week-08-seguridad-arquitectura/README.md) |
+| 09 | Proyecto Integrador Final | [→ Semana 09](../week-09-proyecto-integrador-final/README.md) |
 
 ---
 

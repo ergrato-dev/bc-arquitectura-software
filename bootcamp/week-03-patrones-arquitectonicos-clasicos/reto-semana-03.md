@@ -240,7 +240,7 @@ class CLIInterface {
 ### 4. Estructura de Carpetas Esperada
 
 ```
-bootcamp/week-03/reto-shopnow/
+bootcamp/week-03-patrones-arquitectonicos-clasicos/reto-shopnow/
 ├── package.json
 ├── README.md
 ├── src/
@@ -356,9 +356,9 @@ Crear `FileRepository` y `MemoryRepository` con misma interfaz.
 ### Paso 1: Crear estructura de carpetas
 
 ```bash
-mkdir -p bootcamp/week-03/reto-shopnow/src/{data,business,presentation,domain}
-mkdir -p bootcamp/week-03/reto-shopnow/tests
-cd bootcamp/week-03/reto-shopnow
+mkdir -p bootcamp/week-03-patrones-arquitectonicos-clasicos/reto-shopnow/src/{data,business,presentation,domain}
+mkdir -p bootcamp/week-03-patrones-arquitectonicos-clasicos/reto-shopnow/tests
+cd bootcamp/week-03-patrones-arquitectonicos-clasicos/reto-shopnow
 pnpm init
 ```
 

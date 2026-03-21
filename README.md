@@ -81,15 +81,15 @@ bootcamp/week-XX/
 
 | Semana | Tema                                             | Conceptos Clave                                       |
 | ------ | ------------------------------------------------ | ----------------------------------------------------- |
-| **01** | [Fundamentos de Arquitectura](bootcamp/week-01/) | Definición, diferencia con diseño, rol del arquitecto |
-| **02** | [Principios SOLID](bootcamp/week-02/)            | SRP, OCP, LSP, ISP, DIP, cohesión, acoplamiento       |
-| **03** | [Patrones Arquitectónicos](bootcamp/week-03/)    | Capas, Cliente-Servidor, Event-Driven                 |
-| **04** | [Diseño de Componentes](bootcamp/week-04/)       | Componentes, comunicación, APIs REST                  |
-| **05** | [Patrones de Diseño](bootcamp/week-05/)          | Creacionales, Estructurales, Comportamiento           |
-| **06** | [Arquitecturas Modernas](bootcamp/week-06/)      | Microservicios, Clean, Hexagonal, DDD                 |
-| **07** | [Arquitectura en la Nube](bootcamp/week-07/)     | IaaS, PaaS, SaaS, Serverless, Docker                  |
-| **08** | [Seguridad](bootcamp/week-08/)                   | Security by Design, OAuth, JWT, OWASP                 |
-| **09** | [Proyecto Integrador](bootcamp/week-09/)         | Aplicación completa con todos los conceptos           |
+| **01** | [Fundamentos de Arquitectura](bootcamp/week-01-fundamentos-arquitectura/) | Definición, diferencia con diseño, rol del arquitecto |
+| **02** | [Principios SOLID](bootcamp/week-02-principios-solid/)            | SRP, OCP, LSP, ISP, DIP, cohesión, acoplamiento       |
+| **03** | [Patrones Arquitectónicos](bootcamp/week-03-patrones-arquitectonicos-clasicos/)    | Capas, Cliente-Servidor, Event-Driven                 |
+| **04** | [Diseño de Componentes](bootcamp/week-04-diseno-componentes-comunicacion/)       | Componentes, comunicación, APIs REST                  |
+| **05** | [Patrones de Diseño](bootcamp/week-05-patrones-diseno/)          | Creacionales, Estructurales, Comportamiento           |
+| **06** | [Arquitecturas Modernas](bootcamp/week-06-arquitecturas-modernas/)      | Microservicios, Clean, Hexagonal, DDD                 |
+| **07** | [Arquitectura en la Nube](bootcamp/week-07-arquitectura-nube/)     | IaaS, PaaS, SaaS, Serverless, Docker                  |
+| **08** | [Seguridad](bootcamp/week-08-seguridad-arquitectura/)                   | Security by Design, OAuth, JWT, OWASP                 |
+| **09** | [Proyecto Integrador](bootcamp/week-09-proyecto-integrador-final/)         | Aplicación completa con todos los conceptos           |
 
 ### 🔑 Componentes Clave
 
@@ -192,7 +192,7 @@ Para aprovechar este bootcamp necesitas:
 
 ### Navegación
 
-1. **Comienza aquí** → `bootcamp/week-01/README.md`
+1. **Comienza aquí** → `bootcamp/week-01-fundamentos-arquitectura/README.md`
 2. **Lee la teoría** → `1-teoria/`
 3. **Practica** → `2-practicas/`
 4. **Desarrolla el proyecto** → `3-proyecto/`
@@ -299,7 +299,7 @@ git remote add origin https://github.com/TU-USUARIO/mi-bootcamp-arquitectura.git
 
 ### Paso 4: Inicia la Semana 1
 
-📖 Dirígete a → [`bootcamp/week-01/README.md`](bootcamp/week-01/README.md)
+📖 Dirígete a → [`bootcamp/week-01-fundamentos-arquitectura/README.md`](bootcamp/week-01-fundamentos-arquitectura/README.md)
 
 ---
 
@@ -385,7 +385,7 @@ Siempre manteniendo la atribución original.
 </p>
 
 <p align="center">
-  <a href="bootcamp/week-01">🚀 Comenzar Semana 1</a> •
+  <a href="bootcamp/week-01-fundamentos-arquitectura">🚀 Comenzar Semana 1</a> •
   <a href="_docs">📚 Ver Documentación</a> •
   <a href="https://github.com/ergrato-dev/bc-arquitectura-software/issues">💬 Soporte</a>
 </p>

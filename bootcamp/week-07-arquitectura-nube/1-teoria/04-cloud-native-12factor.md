@@ -499,4 +499,4 @@ console.log(`¿Cloud Native? ${isCloudNative ? "✅" : "❌ Pendiente"}`);
 
 | ← Anterior                                      | Semana Siguiente →                                              |
 | ----------------------------------------------- | --------------------------------------------------------------- |
-| [03 — Serverless y FaaS](03-serverless-faas.md) | [Semana 08: Seguridad en Arquitectura](../../week-08/README.md) |
+| [03 — Serverless y FaaS](03-serverless-faas.md) | [Semana 08: Seguridad en Arquitectura](../../week-08-seguridad-arquitectura/README.md) |

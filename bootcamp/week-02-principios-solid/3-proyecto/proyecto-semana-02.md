@@ -267,7 +267,7 @@ Incluye en tu `SOLID-APLICADO.md` esta tabla completada:
 ### 1. Carpeta de Proyecto
 
 ```
-bootcamp/week-02/tu-proyecto/
+bootcamp/week-02-principios-solid/tu-proyecto/
 ```
 
 ### 2. Archivos Obligatorios
@@ -315,10 +315,10 @@ Incluye:
 
 ## 📚 Recursos de Apoyo
 
-- **Teoría**: `bootcamp/week-02/1-teoria/`
-- **Prácticas**: `bootcamp/week-02/2-practicas/`
-- **Reto**: `bootcamp/week-02/reto-semana-02.md` (ejemplo de refactorización)
-- **Ebooks**: `bootcamp/week-02/4-recursos/ebooks-free/`
+- **Teoría**: `bootcamp/week-02-principios-solid/1-teoria/`
+- **Prácticas**: `bootcamp/week-02-principios-solid/2-practicas/`
+- **Reto**: `bootcamp/week-02-principios-solid/reto-semana-02.md` (ejemplo de refactorización)
+- **Ebooks**: `bootcamp/week-02-principios-solid/4-recursos/ebooks-free/`
 
 ---
 

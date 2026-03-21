@@ -133,7 +133,7 @@ Documentar el sistema construido semana a semana, generar los ADRs de las decisi
 
 | Semana                              | Tema                                       |
 | ----------------------------------- | ------------------------------------------ |
-| [← Semana 08](../week-08/README.md) | Seguridad en la Arquitectura               |
+| [← Semana 08](../week-08-seguridad-arquitectura/README.md) | Seguridad en la Arquitectura               |
 | **Semana 09**                       | **Proyecto Integrador Final ← Estás aquí** |
 
 ---

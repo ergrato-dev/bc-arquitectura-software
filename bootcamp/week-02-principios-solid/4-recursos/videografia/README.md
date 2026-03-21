@@ -208,7 +208,7 @@
 
 Los guiones detallados para cada video están disponibles en:
 
-- `bootcamp/week-02/4-recursos/videografia/guiones/`
+- `bootcamp/week-02-principios-solid/4-recursos/videografia/guiones/`
 
 ---
 

@@ -129,9 +129,9 @@ Agregar autenticación JWT + autorización RBAC a la API hexagonal containerizad
 
 | Semana                              | Tema                                          |
 | ----------------------------------- | --------------------------------------------- |
-| [← Semana 07](../week-07/README.md) | Arquitectura en la Nube                       |
+| [← Semana 07](../week-07-arquitectura-nube/README.md) | Arquitectura en la Nube                       |
 | **Semana 08**                       | **Seguridad en la Arquitectura** ← Estás aquí |
-| [→ Semana 09](../week-09/README.md) | Proyecto Integrador Final                     |
+| [→ Semana 09](../week-09-proyecto-integrador-final/README.md) | Proyecto Integrador Final                     |
 
 ---
 

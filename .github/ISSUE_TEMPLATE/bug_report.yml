@@ -65,7 +65,7 @@ body:
       label: Ubicación
       description: ¿Dónde está el error?
       placeholder: |
-        Archivo: bootcamp/week-02/1-teoria/solid-principles.md
+        Archivo: bootcamp/week-02-principios-solid/1-teoria/solid-principles.md
         Línea: 45-50
         Sección: "Principio Open/Closed"
     validations:
@@ -95,7 +95,7 @@ body:
       label: Pasos para Reproducir (si aplica)
       description: Si es un error de código, ¿cómo reproducirlo?
       placeholder: |
-        1. Ir a 'bootcamp/week-02/2-practicas/...'
+        1. Ir a 'bootcamp/week-02-principios-solid/2-practicas/...'
         2. Ejecutar el archivo '...'
         3. Ver error en consola
     validations:

@@ -190,8 +190,8 @@ Semana 09 ░░░░░░░░░░░░   0% - Proyecto Final
 
 ## 🔗 Navegación
 
-⬅️ [Semana 02: Principios SOLID](../week-02/README.md)
-➡️ [Semana 04: Diseño de Componentes y Comunicación](../week-04/README.md)
+⬅️ [Semana 02: Principios SOLID](../week-02-principios-solid/README.md)
+➡️ [Semana 04: Diseño de Componentes y Comunicación](../week-04-diseno-componentes-comunicacion/README.md)
 
 ---
 

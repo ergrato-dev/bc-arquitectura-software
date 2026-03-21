@@ -70,7 +70,7 @@ Esta rúbrica está diseñada bajo el modelo de **3 tipos de evidencias** del SE
 
 ### ✅ Entregables:
 
-1. **Carpeta de proyecto**: `bootcamp/week-03/tu-proyecto/`
+1. **Carpeta de proyecto**: `bootcamp/week-03-patrones-arquitectonicos-clasicos/tu-proyecto/`
 2. **Archivos obligatorios**:
    - `PATRON-SELECCIONADO.md` (documento principal)
    - `README.md` (actualizado con sección arquitectura)
@@ -181,10 +181,10 @@ Para aprobar esta semana, el estudiante debe cumplir:
 
 ## 📚 Recursos de Apoyo
 
-- **Teoría completa**: `bootcamp/week-03/1-teoria/`
-- **Ejemplos de código**: `bootcamp/week-03/2-practicas/`
-- **Plantillas de documentación**: `bootcamp/week-03/3-proyecto/`
-- **Videos explicativos**: `bootcamp/week-03/4-recursos/videografia/`
+- **Teoría completa**: `bootcamp/week-03-patrones-arquitectonicos-clasicos/1-teoria/`
+- **Ejemplos de código**: `bootcamp/week-03-patrones-arquitectonicos-clasicos/2-practicas/`
+- **Plantillas de documentación**: `bootcamp/week-03-patrones-arquitectonicos-clasicos/3-proyecto/`
+- **Videos explicativos**: `bootcamp/week-03-patrones-arquitectonicos-clasicos/4-recursos/videografia/`
 - **Consultas**: Foro del bootcamp o sesiones de tutoría
 
 ---

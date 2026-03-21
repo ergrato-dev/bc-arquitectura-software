@@ -132,4 +132,4 @@ Ver criterios completos: **[Rúbrica de Evaluación](rubrica-evaluacion.md)**
 
 | ← Anterior                                                | Semana Actual               | Siguiente →                                  |
 | --------------------------------------------------------- | --------------------------- | -------------------------------------------- |
-| [Semana 06: Arquitecturas Modernas](../week-06/README.md) | **Semana 07: Cloud Native** | [Semana 08: Seguridad](../week-08/README.md) |
+| [Semana 06: Arquitecturas Modernas](../week-06-arquitecturas-modernas/README.md) | **Semana 07: Cloud Native** | [Semana 08: Seguridad](../week-08-seguridad-arquitectura/README.md) |
