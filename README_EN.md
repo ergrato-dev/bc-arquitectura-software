@@ -406,4 +406,20 @@ Always maintaining the original attribution.
 
 ---
 
+## ⚠️ Disclaimer
+
+This repository is a **freely accessible educational resource** created for pedagogical purposes for SENA - Technology in Analysis and Software Development students.
+
+- **Educational use**: The content is intended exclusively for academic training and does not constitute professional or technical advice of any kind.
+- **No warranties**: The material is provided **"as is"**, without warranties of any kind, either express or implied, regarding its accuracy, completeness, fitness for a particular purpose, or freedom from errors.
+- **Limitation of liability**: The authors, contributors, and SENA shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use this material, including data loss or financial harm.
+- **Third-party tools**: References to third-party tools, libraries, frameworks, or services are included for illustrative purposes only. The authors make no guarantees regarding their functionality, security, or future maintenance.
+- **Code examples**: Code snippets are simplified examples for didactic purposes. They should not be used directly in production environments without proper review and adaptation.
+- **Content currency**: Technology evolves constantly. Some material may become outdated over time; always cross-reference with the latest official documentation.
+- **Trademarks**: Product, company, or service names mentioned (Netflix, Spotify, Amazon, Uber, etc.) are trademarks of their respective owners and are used for educational purposes only.
+
+By accessing and using this repository, you agree to the above terms.
+
+---
+
 _Last updated: February 2026_

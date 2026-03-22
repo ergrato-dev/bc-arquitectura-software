@@ -396,4 +396,20 @@ Siempre manteniendo la atribución original.
 
 ---
 
+## ⚠️ Exención de Responsabilidad
+
+Este repositorio es un **recurso educativo de libre acceso** creado con fines pedagógicos para los aprendices del SENA - Tecnología en Análisis y Desarrollo de Software.
+
+- **Uso educativo**: El contenido está destinado exclusivamente a la formación académica y no constituye asesoramiento profesional ni técnico de ningún tipo.
+- **Sin garantías**: El material se proporciona **"tal cual"**, sin garantías de ningún tipo, ya sean expresas o implícitas, sobre su exactitud, completitud, idoneidad para un propósito particular o ausencia de errores.
+- **Limitación de responsabilidad**: Los autores, colaboradores y el SENA no serán responsables por daños directos, indirectos, incidentales o consecuentes derivados del uso o imposibilidad de uso de este material, incluyendo la pérdida de datos o perjuicios económicos.
+- **Herramientas de terceros**: Las referencias a herramientas, librerías, frameworks o servicios de terceros se incluyen únicamente con fines ilustrativos. Los autores no garantizan su funcionamiento, seguridad ni mantenimiento a futuro.
+- **Ejemplos de código**: Los fragmentos de código son ejemplos simplificados con propósito didáctico. No deben usarse directamente en entornos de producción sin una revisión y adaptación adecuada.
+- **Actualización del contenido**: La tecnología evoluciona constantemente. Parte del material puede quedar desactualizado con el tiempo; se recomienda siempre contrastar con la documentación oficial más reciente.
+- **Marcas registradas**: Los nombres de productos, empresas o servicios mencionados (Netflix, Spotify, Amazon, Uber, etc.) son marcas registradas de sus respectivos propietarios y se utilizan únicamente con fines educativos.
+
+Al acceder y utilizar este repositorio, aceptas las condiciones anteriores.
+
+---
+
 _Última actualización: Febrero 2026_
