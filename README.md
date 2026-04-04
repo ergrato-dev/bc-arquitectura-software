@@ -366,15 +366,21 @@ Este es un proyecto educativo del SENA. Si encuentras errores o tienes sugerenci
 
 ## 📄 Licencia
 
-Este material educativo está disponible bajo licencia **MIT**.
+[![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+Este material educativo está disponible bajo licencia **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)** (Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional).
 
 Eres libre de:
 
 - ✅ Usar el material para aprender
-- ✅ Modificarlo según tus necesidades
 - ✅ Compartirlo con otros estudiantes
+- ✅ Adaptarlo y crear derivados con fines educativos
 
-Siempre manteniendo la atribución original.
+Siempre que:
+
+- 📌 **Atribución**: Das crédito apropiado al proyecto original
+- 🚫 **No comercial**: No usas el material con fines comerciales
+- 🔄 **CompartirIgual**: Los derivados se distribuyen bajo la misma licencia
 
 ---
 

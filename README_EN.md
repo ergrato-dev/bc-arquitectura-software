@@ -376,15 +376,21 @@ This is a SENA educational project. If you find errors or have suggestions:
 
 ## 📄 License
 
-This educational material is available under **MIT** license.
+[![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+This educational material is available under the **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)** license (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International).
 
 You are free to:
 
 - ✅ Use the material to learn
-- ✅ Modify it according to your needs
 - ✅ Share it with other students
+- ✅ Adapt and build upon it for educational purposes
 
-Always maintaining the original attribution.
+As long as you:
+
+- 📌 **Attribution**: Give appropriate credit to the original project
+- 🚫 **NonCommercial**: Do not use the material for commercial purposes
+- 🔄 **ShareAlike**: Distribute derivatives under the same license
 
 ---
 
