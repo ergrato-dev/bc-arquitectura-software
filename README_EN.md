@@ -1,7 +1,7 @@
 # 🏛️ Bootcamp: Software Architecture
 
 <p align="center">
-  <img src="_assets/banner-arquitectura-software.svg" alt="Software Architecture Bootcamp" width="800">
+  <img src="assets/banner-arquitectura-software.svg" alt="Software Architecture Bootcamp" width="800">
 </p>
 
 <p align="center">
@@ -349,7 +349,7 @@ You will be able to:
 ### Documentation
 
 - [🤖 Copilot Instructions](.github/copilot-instructions.md)
-- [📋 Pedagogical Planning](_docs/PLANEACION_PEDAGOGICA-ARQUITECTURA_DE_SOFTWARE.md)
+- [📋 Pedagogical Planning](docs/PLANEACION_PEDAGOGICA-ARQUITECTURA_DE_SOFTWARE.md)
 
 ---
 
@@ -402,7 +402,7 @@ As long as you:
 
 <p align="center">
   <a href="bootcamp/week-01-fundamentos-arquitectura">🚀 Start Week 1</a> •
-  <a href="_docs">📚 View Documentation</a> •
+  <a href="docs">📚 View Documentation</a> •
   <a href="https://github.com/ergrato-dev/bc-arquitectura-software/issues">💬 Support</a>
 </p>
 
